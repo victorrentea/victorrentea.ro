@@ -5,7 +5,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="removed full list of talks. Destroyed youtube iframes.">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="website tuned">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/freelancer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -73,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605683751222</updated>
       <workItem from="1605683752764" duration="2475000" />
-      <workItem from="1605686340592" duration="5972000" />
+      <workItem from="1605686340592" duration="7081000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -96,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605687939781</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="website tuned">
+      <created>1605692599815</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605692599816</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +130,8 @@
     <MESSAGE value="website" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="removed full list of talks. Destroyed youtube iframes." />
-    <option name="LAST_COMMIT_MESSAGE" value="removed full list of talks. Destroyed youtube iframes." />
+    <MESSAGE value="website tuned" />
+    <option name="LAST_COMMIT_MESSAGE" value="website tuned" />
   </component>
   <component name="WindowStateProjectService">
     <state x="277" y="62" key="SettingsEditor" timestamp="1605686348765">
@@ -146,9 +154,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1605685426067" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605691904961">
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605704642957">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605691904961" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605704642957" />
   </component>
 </project>

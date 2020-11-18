@@ -673,16 +673,8 @@ div.recommendation {
 .recommendation-author {
 	font-weight: bold;
 }
-section.success a {
-  color: white;
-  text-decoration: underline;
-}
-header a {
-  color: white;
-}
-header a:hover {
-  color: white;
-}
+
+
 
 .recommendation .read-short {
   text-align:center;
@@ -700,10 +692,10 @@ header a:hover {
   transition: max-height 5s ease-out;
   overflow: hidden;
 }
+
 .recommendation.opened .read-full {
   max-height: 800px !important;
   transition: max-height 0.5s ease-in !important;
-
 }
 .recommendation.opened .read-short {
   display:none;
@@ -711,6 +703,21 @@ header a:hover {
 .recommendation .recommendation-author {
   font-size: 11pt
 
+}
+
+
+
+
+
+section.success a {
+  color: white;
+  text-decoration: underline;
+}
+header a {
+  color: white;
+}
+header a:hover {
+  color: white;
 }
 
 /* read more */
