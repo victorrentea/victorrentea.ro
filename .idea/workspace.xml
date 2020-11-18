@@ -5,9 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/talk-list.old.html" afterDir="false" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="removed full list of talks. Destroyed youtube iframes.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/freelancer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605683751222</updated>
       <workItem from="1605683752764" duration="2475000" />
-      <workItem from="1605686340592" duration="1555000" />
+      <workItem from="1605686340592" duration="5972000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605686533483</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="removed full list of talks. Destroyed youtube iframes.">
+      <created>1605687939781</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605687939781</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +122,8 @@
     </ignored-roots>
     <MESSAGE value="website" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="removed full list of talks. Destroyed youtube iframes." />
+    <option name="LAST_COMMIT_MESSAGE" value="removed full list of talks. Destroyed youtube iframes." />
   </component>
   <component name="WindowStateProjectService">
     <state x="277" y="62" key="SettingsEditor" timestamp="1605686348765">
@@ -130,13 +138,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1605686536471" />
-    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605687099671">
+    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605692364597">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1605687099671" />
+    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1605692364597" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1605685426067">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1605685426067" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605691904961">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605691904961" />
   </component>
 </project>

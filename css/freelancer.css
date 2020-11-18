@@ -660,18 +660,57 @@ span.high {
 }
 
 div.recommendation {
-	background-color: white;
+	background-color: #dcf1ff;
 	background-image: url('quote.svg');
 	background-repeat: no-repeat;
 	background-position: 15px 15px;
-	
+  cursor: pointer;
 	color:black;
-	border: 20px solid rgb(24, 188, 156);
+	border: 20px solid white;
 	padding-top:10px;
 }
 
 .recommendation-author {
 	font-weight: bold;
+}
+section.success a {
+  color: white;
+  text-decoration: underline;
+}
+header a {
+  color: white;
+}
+header a:hover {
+  color: white;
+}
+
+.recommendation .read-short {
+  text-align:center;
+  font-size: 15pt;
+}
+.recommendation:hover .read-more-but {
+  background-color: #449d44;
+  border-color: #398439;
+}
+.recommendation.opened {
+  cursor:auto;
+}
+.recommendation .read-full {
+  max-height: 0;
+  transition: max-height 5s ease-out;
+  overflow: hidden;
+}
+.recommendation.opened .read-full {
+  max-height: 800px !important;
+  transition: max-height 0.5s ease-in !important;
+
+}
+.recommendation.opened .read-short {
+  display:none;
+}
+.recommendation .recommendation-author {
+  font-size: 11pt
+
 }
 
 /* read more */
