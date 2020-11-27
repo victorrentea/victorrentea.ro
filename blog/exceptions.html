@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="definitive-guide-to-working-with-exceptions-in-java">Definitive Guide to Working with Exceptions in Java</h1>
+<p><em>Victor is a Java Champion, former Lead Architect at IBM, currently an Independent Trainer, having taught thousands of developers in dozens of companies over 8 years of training activity. He is the founder of one of the largest <a href="https://www.meetup.com/bucharest-software-craftsmanship-community/">developer community</a> in Romania and one of the highest-rated European trainer on Clean Code, Refactoring and Unit Testing. More about him on <a href="http://victorrentea.ro/">victorrentea.ro</a></em></p>
+<p><em>All the code of this article is available at <a href="https://github.com/victorrentea/exceptions-guide/tree/article">https://github.com/victorrentea/exceptions-guide/tree/article</a></em></p>
+<h2 id="a-bit-of-history">A Bit of History</h2>
+<p>At first, there were no exceptions. 40 years ago, when a C function wanted to signal an abnormal termination, it would return a -1 or <code>NULL</code> value. But the caller might forget to check the returned value and the error would go unnoticed. In 1985, C++ tried to fix that by introducing exceptions that propagate down the call stack and, unless caught, terminate the program execution. Developers then faced a new challenge: how would the caller know what exceptions could be thrown by a function?</p>
+<p>10 years later, Java was invented. Since the vast majority of developers at that time were using C/C++, one goal of Java was to attract them with features like Garbage Collection, safe references (vs pointers), smooth build process, unified source code (vs .h/.cpp), portability, and others. At the same time, Gosling tried to fix the problem of mysterious exceptions by forcing developers to be aware of <em>checked exceptions</em> thrown by the functions they called. Of course, some errors couldn’t be foreseen (like <code>ArrayOutOfBoundsException</code> or <code>NullPointerException</code>), so these were left invisible <em>runtime exceptions</em>. If you did your homework, you know that checked exceptions are supposed to be thrown for ‘recoverable errors’. Only then is it worth the pain of forcing your caller to try-catch or throws. </p>
+<p>But all this was happening in The Age of Libraries: in the ‘90s developers were starting to realize the importance of reuse; libraries and frameworks were being created everywhere. When writing a library, it’s very tempting to consider that your callers might recover from a wide range of errors, especially if you don’t have a very clear picture of how your library will be used by its clients. Thus, the urge towards checked exceptions: let’s notify our callers of everything,.. they might be able to recover.</p>
+<p>That age is gone.</p>
+<p>In the applications we write today, we rarely recover from exceptions. Instead, we terminate the execution of that use-case ASAP. In a web application, you’d return a 400/500 status code. When handling messages, you’d reject the message. And in a batch, you’d skip or report that line. We almost never recover from an error anymore. (Disclaimer: This article is about building custom applications, like 99% of my client companies are doing.)</p>
+<p>But 25 years later, checked exceptions are still here.</p>
+<p>How should we handle them, and what’s the risk they incur?</p>
+<h2 id="why-you-should-only-use-runtime-exceptions">Why you should only use Runtime Exceptions</h2>
+<p>Let’s imagine Bill left a hack in this promotion logic: the discount is applicable only until... <em>tomorrow</em>. :stuck_out_tongue_winking_eye:</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-literal">void</span> applyDiscount(<span class="hljs-keyword">Order</span> <span class="hljs-keyword">order</span>, Customer customer) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">order</span>.getOfferDate().before(DateUtils.addDays(<span class="hljs-literal">new</span> <span class="hljs-built_in">Date</span>(), <span class="hljs-number">1</span>))) {
+     System.out.println(<span class="hljs-string">"APPLYING DISCOUNT"</span>);
+     <span class="hljs-keyword">order</span>.setPrice(<span class="hljs-keyword">order</span>.getPrice() * (<span class="hljs-number">100</span> - <span class="hljs-number">2</span> * customer.getMemberCard().getFidelityDiscount()) / <span class="hljs-number">100</span>);
+  } <span class="hljs-keyword">else</span> {
+     System.out.println(<span class="hljs-string">"NO DISCOUNT"</span>);
+  }
+}
+</code></pre><p>Then, at some point after Black Friday he has to replace <em>tomorrow</em> with a fixed date read from the application configuration. To do that, he has to call <code>Config.getLastPromoDate()</code>. Unfortunately, that method throws a <code>ParseException</code> back at him because its author, Alan, imagines you might be able to recover (and frankly, he also doesn’t care/know how to handle it). Being a checked exception, Bill decides to catch it and sends an email to ask his colleagues how to handle that case, leaving a careful <code>// TODO</code> in the catch block.</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> applyDiscount(Order <span class="hljs-keyword">order</span>, Customer customer) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">order</span>.getOfferDate().before(Config.getLastPromoDate())) {
+       System.out.println(<span class="hljs-string">"APPLYING DISCOUNT"</span>);
+       <span class="hljs-keyword">order</span>.setPrice(<span class="hljs-keyword">order</span>.getPrice() * (<span class="hljs-number">100</span> - <span class="hljs-number">2</span> * customer.getMemberCard().getFidelityDiscount()) / <span class="hljs-number">100</span>);
+    } <span class="hljs-keyword">else</span> {
+       System.out.println(<span class="hljs-string">"NO DISCOUNT"</span>);
+    }
+  } <span class="hljs-keyword">catch</span> (ParseException e) {
+    <span class="hljs-comment">// TODO</span>
+  }
+}
+</code></pre><p>Of course, there are more important tasks in a project than error handling, so the email is forgotten. </p>
+<p>Two months later, Alan needs to change <code>Config.getLastPromoDate()</code> to read the end of promotions date from a properties file. After updating the code accordingly, he throws the new <code>IOException</code> to its callers, as usual.</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Date getLastPromoDate() throws ParseException, IOException {
+  Properties props = <span class="hljs-keyword">new</span> <span class="hljs-type">Properties</span>();
+  <span class="hljs-keyword">try</span> (Reader reader = <span class="hljs-keyword">new</span> <span class="hljs-type">FileReader</span>(<span class="hljs-string">"config.properties"</span>)) {
+     props.load(reader);
+  }
+  SimpleDateFormat format = <span class="hljs-keyword">new</span> <span class="hljs-type">SimpleDateFormat</span>(<span class="hljs-string">"yyyy-MM-dd"</span>);
+  <span class="hljs-keyword">return</span> format.parse(props.getProperty(<span class="hljs-string">"last.promo.date"</span>));
+}
+</code></pre><p><strong>Note</strong>: config files shouldn’t be read repeatedly, but cached somehow; this is just a simplified example to illustrate some common exceptions occurring.</p>
+<p>Unfortunately, now the code doesn’t compile anymore. Annoyed that he has to handle exceptions, Alan replaces in Bill’s method <code>catch (ParseException e)</code> with <code>catch (Exception e)</code>, since that’s the common supertype of both <code>ParseException</code> and <code>IOException</code>. Leaving the <code>// TODO</code> there he goes to ask Bill what’s to be done there. A fatal mistake.</p>
+<p>Because they both forget about the issue. Because it’s ... error handling.</p>
+<p>And the code goes to production.</p>
+<p>Two weeks later, a strange bug is reported: for some orders, when the <code>applyDiscount()</code> method was called, it abruptly terminated without printing neither <code>APPLYING DISCOUNT</code>, nor <code>NO DISCOUNT</code>. Here’s the code again - try to guess the cause of the error:</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> applyDiscount(Order <span class="hljs-keyword">order</span>, Customer customer) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">order</span>.getOfferDate().before(Config.getLastPromoDate())) {
+       System.out.println(<span class="hljs-string">"APPLYING DISCOUNT"</span>);
+       <span class="hljs-keyword">order</span>.setPrice(<span class="hljs-keyword">order</span>.getPrice() * (<span class="hljs-number">100</span> - <span class="hljs-number">2</span> * customer.getMemberCard().getFidelityDiscount()) / <span class="hljs-number">100</span>);
+    } <span class="hljs-keyword">else</span> {
+       System.out.println(<span class="hljs-string">"NO DISCOUNT"</span>);
+    }
+  } <span class="hljs-keyword">catch</span> (Exception e) {
+    <span class="hljs-comment">// TODO</span>
+  }
+}
+</code></pre><p>One of the most experienced developers in the team is assigned to trace the bug. He finds the bug, at 1:00 AM, after 3 hours of remote debugging using breakpoints everywhere to trace what’s going on. What happened? A <code>NullPointerException</code> was occurring in the <code>if</code> condition for the Orders with a <code>null</code> offer date. Indeed, the data was corrupted (every Order has to have an offer date set according to business), but there was nothing in the logs to help debug the error. </p>
+<p>Never do this if you want to keep your job.</p>
+<p>This is the infamous <strong>Diaper Anti-Pattern</strong>: catching all exceptions and just “swallowing” them. Run the <code>InProduction</code> class from <a href="https://github.com/victorrentea/exceptions-guide/commit/2f9b92a2e1ae9ab35bc08cadf9cd10b5e12c46ff">this commit</a> to experience the swallowed exception.</p>
+<p>You’d never do that. I know. Plus, instead of <code>Exception</code> you would have put <code>ParseException | IOException</code>. Furthermore, even the default catch block auto-generated by Eclipse or IntelliJ would <code>.printStackTrace()</code>, so you’re safe, right? </p>
+<pre><code><span class="hljs-selector-tag">C</span>:\<span class="hljs-selector-tag">workspace</span>\<span class="hljs-selector-tag">openjdk-15_windows-x64_bin</span>\<span class="hljs-selector-tag">jdk-15</span>\<span class="hljs-selector-tag">bin</span>\<span class="hljs-selector-tag">java</span><span class="hljs-selector-class">.exe</span> ... <span class="hljs-selector-tag">victor</span><span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.InProduction</span>
+<span class="hljs-selector-tag">java</span><span class="hljs-selector-class">.lang</span><span class="hljs-selector-class">.NullPointerException</span>: <span class="hljs-selector-tag">Cannot</span> <span class="hljs-selector-tag">invoke</span> "<span class="hljs-selector-tag">java</span><span class="hljs-selector-class">.util</span><span class="hljs-selector-class">.Date</span><span class="hljs-selector-class">.before</span>(<span class="hljs-selector-tag">java</span><span class="hljs-selector-class">.util</span><span class="hljs-selector-class">.Date</span>)" <span class="hljs-selector-tag">because</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">return</span> <span class="hljs-selector-tag">value</span> <span class="hljs-selector-tag">of</span> "<span class="hljs-selector-tag">victor</span><span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.model</span><span class="hljs-selector-class">.Order</span><span class="hljs-selector-class">.getOfferDate</span>()" <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">null</span>
+    <span class="hljs-selector-tag">at</span> <span class="hljs-selector-tag">victor</span><span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.Biz</span><span class="hljs-selector-class">.applyDiscount</span>(<span class="hljs-selector-tag">Biz</span><span class="hljs-selector-class">.java</span><span class="hljs-selector-pseudo">:20)</span>
+    <span class="hljs-selector-tag">at</span> <span class="hljs-selector-tag">victor</span><span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.InProduction</span><span class="hljs-selector-class">.main</span>(<span class="hljs-selector-tag">InProduction</span><span class="hljs-selector-class">.java</span><span class="hljs-selector-pseudo">:13)</span>
+</code></pre><p>For a moment, let’s enjoy the nice message reported by Java 15 for <code>NullPointerException</code>s. You could be an absolute rookie and still get where the problem is. Up to the last LTS (Java 11), the NPE had a very dull message: </p>
+<pre><code>C:\Users\victo\.jdks\corretto-<span class="hljs-number">11.0</span>.<span class="hljs-number">7</span>\bin\java<span class="hljs-selector-class">.exe</span> ... victor<span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.InProduction</span>
+java<span class="hljs-selector-class">.lang</span><span class="hljs-selector-class">.NullPointerException</span>
+    at victor<span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.Biz</span><span class="hljs-selector-class">.applyDiscount</span>(Biz<span class="hljs-selector-class">.java</span>:<span class="hljs-number">20</span>)
+    at victor<span class="hljs-selector-class">.training</span><span class="hljs-selector-class">.exceptions</span><span class="hljs-selector-class">.InProduction</span><span class="hljs-selector-class">.main</span>(InProduction<span class="hljs-selector-class">.java</span>:<span class="hljs-number">13</span>)
+</code></pre><p>:ok_hand:</p>
+<p>Oh, and here’s a fun fact for you: <code>.printStackTrace()</code> prints the exception to <code>System.err</code>, not <code>System.out</code>. By default most frameworks (Spring Boot included) don&#39;t capture <code>System.err</code> to the logfile unless you <a href="https://stackoverflow.com/questions/11187461/redirect-system-out-and-system-err-to-slf4j">take explicit steps</a> :smirk: So despite that generated <code>e.printStackTrace()</code>, you will probably NOT see anything in your log file.</p>
+<h2 id="how-should-we-handle-checked-exceptions-">How should we handle checked exceptions?</h2>
+<p>By rethrowing them wrapped in a <code>new RuntimeException(checkedException)</code>.</p>
+<blockquote>
+    <p><strong>Best Practice</strong>: Always remember to set the <em>cause</em> of the new exception to the original exception, whenever there is one. Don’t <em>decapitate</em> your exceptions. </p>
+</blockquote>
+<p>But where should we wrap our two exceptions: inside <code>Config.getLastPromoDate()</code> or in <code>Biz.applyDiscount()</code>?</p>
+<p>To understand the right answer, we need to talk about abstractions. An abstraction is a simplification of reality, hiding (complex) implementation details. From this design perspective, a method like <code>getLastPromoDate()</code> declaring <code>throws IOException</code>, is an <em>abstraction leak</em> as it reveals the implementation detail that it’s working with files, or I/O. That’s why, <code>getLastPromoDate()</code> should NOT declare any checked exceptions but instead wrap the checked exceptions in a <code>RuntimeException</code> and throw that instead. Heres the new code (<a href="https://github.com/victorrentea/exceptions-guide/commit/99288a3fd8b34e64323855f05d6377dea495c1b8">commit</a>):</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Date getLastPromoDate() {
+  <span class="hljs-keyword">try</span>{
+     Properties props = <span class="hljs-keyword">new</span> <span class="hljs-type">Properties</span>();
+     <span class="hljs-keyword">try</span> (FileReader reader = <span class="hljs-keyword">new</span> <span class="hljs-type">FileReader</span>(<span class="hljs-string">"config.properties"</span>)) {
+        props.load(reader);
+     }
+     SimpleDateFormat format = <span class="hljs-keyword">new</span> <span class="hljs-type">SimpleDateFormat</span>(<span class="hljs-string">"yyyy-MM-dd"</span>);
+     <span class="hljs-keyword">return</span> format.parse(props.getProperty(<span class="hljs-string">"last.promo.date"</span>));
+  } <span class="hljs-keyword">catch</span> (ParseException | IOException e) {
+     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">RuntimeException</span>(e);
+  }
+}
+</code></pre><blockquote>
+    <p><strong>Best Practice</strong>: Avoid catching Exception unless in a top-level global exception handler (read below); instead, prefer E1|E2 style (as in the code above).</p>
+</blockquote>
+<p>There are mainly two reasons why we only use RuntimeExceptions in our apps today: </p>
+<ol>
+    <li>Avoid abstraction leak and </li>
+    <li>Lower chance of Diaper Anti-Pattern, since developers aren’t forced to <code>try/catch/throws</code> them.</li>
+</ol>
+<p>Even many years after this became the universally accepted best practice, many developers were still suffering from <a href="https://en.wikipedia.org/wiki/Post-traumatic_stress_disorder">PTSD</a> after many debugging nights hunting for swallowed exceptions.</p>
+<p>That’s why another bad habit developed, <strong>The Log-Rethrow Anti-Pattern</strong>:</p>
+<pre><code>} <span class="hljs-built_in">catch</span> (ParseException | IOException e) {
+  <span class="hljs-built_in">log</span>.<span class="hljs-built_in">error</span>(e.getMessage(), e);
+  <span class="hljs-built_in">throw</span> <span class="hljs-built_in">new</span> RuntimeException(e);
+}
+</code></pre><p>Printing and throwing back the exception will cause the same error to be logged multiple times, turning your log into a frustrating, unreadable pile of garbage. Try it: (<a href="https://github.com/victorrentea/exceptions-guide/commit/dd66304cdd7e808e7e277efb2e02876e2735819f">commit</a>). All because the developer was afraid that the exception might slip out without being logged anywhere.</p>
+<blockquote>
+    <p><strong>Best Practice</strong>: always make sure any unhandled exceptions are logged with their stack-traces in the log file of your application, whatever the thread they might occur in.</p>
+</blockquote>
+<p>The real solution to this is to have a global exception handler in place that safely logs every unhandled exception. We will discuss how to implement such a handler for Spring REST services, in the following section below. </p>
+<h2 id="presenting-errors-to-users">Presenting errors to users</h2>
+<p>Before we even start, let’s make it clear: </p>
+<blockquote>
+    <p><strong>NEVER expose stack traces in your API</strong> responses.</p>
+</blockquote>
+<p>That’s not only ugly but dangerous from a security point of view. Based on the line numbers in that stack trace, an attacker might infer the key libraries and versions that you’re using, and attack you by exploiting their known weaknesses.</p>
+<p>Then what to show our users?</p>
+<p>The simplest idea is to display the exception message string to the users. For simple applications, this might work out, but in medium larger applications two issues arise:</p>
+<p>First, you might want to unit-test that a certain exception was thrown. Asserting message strings will lead to brittle tests, especially when you start adding user input to the messages of thrown exceptions.</p>
+<p>Secondly, one might argue that you’re violating <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a>, or at least, that you’re mixing diverging concerns in the same code: formatting the user-visible message AND detecting the business error condition.</p>
+<blockquote>
+    <p><strong>Best Practice</strong>: Use the exception message to report technical details about the error, key parameters, ids, current record index, anything that might be useful for developers investigating the exception. </p>
+</blockquote>
+<p>You might even catch an exception in a method X and rethrow it back wrapped in an exception with a useful message capturing key debug info from method X. That’s the <strong>Catch-rethrow-with-debug-info Pattern</strong>:</p>
+<pre><code><span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">RuntimeException</span>(<span class="hljs-string">"For id: "</span> + keyDebugId, e);
+</code></pre><p>The final stack trace will contain all the useful information, making breakpoint-debugging it useless. Perfect!</p>
+<p>So don’t use exception messages to hold the user error messages, but keep them for messages for developers’ eyes.</p>
+<p>It might be tempting to start creating multiple exception subtypes, one per each business error, and distinguish between errors based on the exception type. Although fun at first, it will lead us to hundreds of exception types in typical applications. Unreasonable.</p>
+<blockquote>
+    <p><strong>Best Practice</strong>: Only create a new exception type E1 if you need a catch(E1) to selectively handle that particular exception type to work-around or recover from it (but in practice, you’ll seldom need that).</p>
+</blockquote>
+<p>So the best solution to distinguish between your non-recoverable error conditions is based on a dedicated error code field, not the exception message, nor the exception type. </p>
+<p>Should that error code be an int? If it were, we would need the <em>Exception Manual</em> at hand every time we walk through the code. Horrid scenario! But wait! Every time the range of values is finite, pre-determined, we should always consider using an enum. Let’s give it a first try:</p>
+<pre><code>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">RuntimeException</span> </span>{
+  public enum <span class="hljs-type">ErrorCode</span> {
+     <span class="hljs-type">GENERAL</span>,
+     <span class="hljs-type">BAD_CONFIG</span>;
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-type">ErrorCode</span> code;
+
+  public <span class="hljs-type">MyException</span>(<span class="hljs-type">ErrorCode</span> code, <span class="hljs-type">Throwable</span> cause) {
+     <span class="hljs-keyword">super</span>(cause);
+     <span class="hljs-keyword">this</span>.code = code;
+  }
+
+  public <span class="hljs-type">ErrorCode</span> getCode() {
+     <span class="hljs-keyword">return</span> code;
+  }
+}
+</code></pre><p>And we’ll replace throwing an opaque RuntimeException with <code>throw new MyException(ErrorCode.BAD_CONFIG, e);</code> in the catch clause in <code>getLastPromoDate()</code>. </p>
+<p>Unless required to report an error condition, always consider displaying an opaque general-purpose error message, like “Internal Server Error, please check the logs”. Realistically weight whether the <del>developer</del> user can do anything about that error condition. If not, do not bother distinguishing between error causes.</p>
+<blockquote>
+    <p><strong>Best Practice</strong>: Avoid reporting errors to users unless they can do anything to fix it.</p>
+</blockquote>
+<p>Then let’s write a GlobalExceptionHandler to catch it and translate it to a friendly user message, using Spring Boot (all other major web frameworks today offer similar functionality):</p>
+<pre><code><span class="hljs-meta">@RestControllerAdvice</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GlobalExceptionHandler</span> </span>{
+  <span class="hljs-keyword">private</span> static <span class="hljs-keyword">final</span> Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.<span class="hljs-keyword">class</span>);
+
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> MessageSource messageSource;
+
+  <span class="hljs-keyword">public</span> GlobalExceptionHandler(MessageSource messageSource) {
+     <span class="hljs-keyword">this</span>.messageSource = messageSource;
+  }
+
+  <span class="hljs-meta">@ExceptionHandler(MyException.class)</span>
+  <span class="hljs-meta">@ResponseStatus</span>
+  <span class="hljs-keyword">public</span> String handleMyException(MyException exception, HttpServletRequest request) {
+     String userMessage = messageSource.getMessage(exception.getCode().name(), <span class="hljs-literal">null</span>, request.getLocale());
+     log.error(userMessage, exception);
+     <span class="hljs-keyword">return</span> userMessage;
+  }
+}
+</code></pre><p>In src/main/resources/messages.properties:</p>
+<pre><code><span class="hljs-attr">BAD_CONFIG</span>=Incorect application configuration.
+</code></pre><p>The framework will hand to this <code>@RestControllerAdvice</code> every <code>MyException</code> that slips unhandled from any REST request handler (<code>@RequestMapping</code>, <code>@GetMapping</code>...). Using a Spring <code>MessageSource</code> we read the user message from a message.properties file for the error code of the exception. Based on the Locale sent by the browser in the <code>Accept-Language</code> header of the HTTP Request, Spring determines what translation file to read from, eg: messages_RO.properties, messages_FR.properties, or default from messages.properties. Ta-da! Free internationalization for our error messages.</p>
+<blockquote>
+    <p><strong>Tip</strong>: keeping the translations of error codes on the backend lowers the impact of defining a new error code to report and allows to check at startup that all the enum values are mapped.</p>
+</blockquote>
+<p>There’s a problem though. The messages in the properties files above are fixed. How can we report the user input causing the error back to the UI? We need parameterized messages. After adding other convenience constructors, here’s the complete code of MyException:</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyException</span> <span class="hljs-title">extends</span> <span class="hljs-title">RuntimeException</span> {
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> ErrorCode {
+     GENERAL,
+     BAD_CONFIG;
+  }
+
+  <span class="hljs-keyword">private</span> final ErrorCode code;
+  <span class="hljs-keyword">private</span> final Object[] <span class="hljs-keyword">params</span>;
+
+  <span class="hljs-comment">// canonical constructor</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">String message, ErrorCode code, Throwable cause, Object... <span class="hljs-keyword">params</span></span>) </span>{
+     super(message, cause);
+     <span class="hljs-keyword">this</span>.code = code;
+     <span class="hljs-keyword">this</span>.<span class="hljs-keyword">params</span> = <span class="hljs-keyword">params</span>;
+  }
+  <span class="hljs-comment">// overloaded constructors:</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">ErrorCode code, Throwable cause, Object... <span class="hljs-keyword">params</span></span>) </span>{
+     <span class="hljs-keyword">this</span>(<span class="hljs-literal">null</span>, code, cause, <span class="hljs-keyword">params</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">ErrorCode code, Object... <span class="hljs-keyword">params</span></span>) </span>{
+     <span class="hljs-keyword">this</span>(<span class="hljs-literal">null</span>, code, <span class="hljs-literal">null</span>, <span class="hljs-keyword">params</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">String message, ErrorCode code, Object... <span class="hljs-keyword">params</span></span>) </span>{
+     <span class="hljs-keyword">this</span>(message, code, <span class="hljs-literal">null</span>, <span class="hljs-keyword">params</span>);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">String message, Throwable cause</span>) </span>{
+     <span class="hljs-keyword">this</span>(message, ErrorCode.GENERAL, cause);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">Throwable cause</span>) </span>{
+     <span class="hljs-keyword">this</span>(ErrorCode.GENERAL);
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span>(<span class="hljs-params">String message</span>) </span>{
+     <span class="hljs-keyword">this</span>(message, ErrorCode.GENERAL);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> ErrorCode <span class="hljs-title">getCode</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">return</span> code;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Object[] <span class="hljs-title">getParams</span>(<span class="hljs-params"></span>) </span>{
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">params</span>;
+  }
+}
+</code></pre><p>In src/main/resources/messages.properties:</p>
+<pre><code><span class="hljs-attr">BAD_CONFIG=</span>Incorect application configuration. <span class="hljs-keyword">User</span> <span class="hljs-title">info</span>: {<span class="hljs-number">0</span>}
+</code></pre><p>To see the entire app running, checkout <a href="https://github.com/victorrentea/exceptions-guide/commit/7aa14bd5215077a415db4cffb05c3bebb0a7405b">this commit</a>, start <code>SpringBoot</code> class and navigate to <a href="http://localhost:8080">http://localhost:8080</a>.</p>
+<h2 id="presenting-unexpected-exceptions">Presenting Unexpected Exceptions</h2>
+<p>How about other unexpected runtime exceptions (not MyException instances)? To test that, let’s “forget” to set the offer date on the Order we pass to <code>biz.applyDiscount()</code>...</p>
+<p>Oh NO!</p>
+<p>A Stack Trace in the browser!!</p>
+<p>To stop the trace from reaching the user, we add a second method in our GlobalExceptionHandler marked with  <code>@ExceptionHandler(RuntimeException.class)</code>.</p>
+<pre><code>@ExceptionHandler(RuntimeException.<span class="hljs-keyword">class</span>)
+@ResponseStatus
+<span class="hljs-keyword">public</span> <span class="hljs-built_in">String</span> handleRuntimeException(RuntimeException exception, HttpServletRequest <span class="hljs-built_in">request</span>) {
+  <span class="hljs-built_in">String</span> userMessage = messageSource.getMessage(ErrorCode.GENERAL.name(), <span class="hljs-literal">null</span>, <span class="hljs-built_in">request</span>.<span class="hljs-built_in">getLocale</span>());
+  <span class="hljs-built_in">log</span>.<span class="hljs-keyword">error</span>(userMessage, exception);
+  return userMessage;
+}
+</code></pre><p>Note that we reused a similar code to the previous method to read the user error messages from the same <code>.properties</code> file.</p>
+<h2 id="reasons-to-catch-rethrow">Reasons to Catch-Rethrow</h2>
+<p>There are four reasons to catch an exception and rethrow it wrapped in a new one:</p>
+<ol>
+    <li>Report user message (via enum codes)</li>
+    <li>Unit-Test a thrown exception (via enum code)</li>
+    <li>Report debugging info (via exception message)</li>
+    <li>Get rid of a Checked Exception (none of the above)</li>
+</ol>
+<p>Let’s focus on the last one.</p>
+<p>In our current setup, we have multiple options to get rid of those annoying checked exception(s):</p>
+<ul>
+    <li><code>throw new MyException(GENERAL, checkedException)</code></li>
+    <li><code>throw new MyException(checkedException)</code> - identic to (1), via overloaded constructor</li>
+    <li><code>throw new RuntimeException(checkedException)</code> - handled just as (1) by our Global Exception Handler</li>
+</ul>
+<p>But if all you’re trying to do is get rid of a checked exception, there’s another shorter solution for you. Coming from the black magic realm of the Lombok library, <code>@SneakyThrows</code> will instruct the Lombok annotation processor to hack the bytecode while javac generates it. This would allow the following code to compile (mind that there’s no <code>catch</code>, nor <code>throws</code> clause for the checked exceptions).</p>
+<pre><code>@SneakyThrows
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Date getLastPromoDate() {
+  Properties props = <span class="hljs-keyword">new</span> <span class="hljs-type">Properties</span>();
+  <span class="hljs-keyword">try</span> (FileReader reader = <span class="hljs-keyword">new</span> <span class="hljs-type">FileReader</span>(<span class="hljs-string">"config.properties"</span>)) {
+     props.load(reader);
+  }
+  SimpleDateFormat format = <span class="hljs-keyword">new</span> <span class="hljs-type">SimpleDateFormat</span>(<span class="hljs-string">"yyyy-MM-dd"</span>);
+  <span class="hljs-keyword">return</span> format.parse(props.getProperty(<span class="hljs-string">"last.promo.date"</span>));
+}
+</code></pre><p>Knowing that Lombok is able to tweak your code <strong>as it’s compiled</strong>, one might expect that the current body of my function will be surrounded by <code>try { ... } catch (Exception e) { throw new RuntimeException(e); }</code>.</p>
+<p>That’s a fair expectation. </p>
+<p>However, since Java8, Lombok does it a bit differently. Let’s see.</p>
+<p>Decompiling the Config.class file we find the following code: </p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Date <span class="hljs-title">getLastPromoDate</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">try</span> {
+    ...&lt;the body of my method&gt;...
+  } <span class="hljs-keyword">catch</span> (Throwable var6) {
+     <span class="hljs-keyword">throw</span> var6;
+  }
+}
+</code></pre><p>Indeed, Lombok did add a try-catch block around my function’s body, but it caught Throwable and rethrew it without wrapping it at all! </p>
+<p>Something is wrong!</p>
+<p>The bytecode throws a <code>Throwable</code> from a method that doesn’t declare <code>throws Throwable</code>! If you copy-paste the code in a .java file, you’ll quickly see that this doesn’t compile!! But was it compiled in the first place?!</p>
+<p>To understand how’s that possible, you have to learn that the distinction between checked and runtime exceptions is only enforced by the Java compiler (javac). The JVM (Java Runtime) does NOT care what kind of exception you throw - it propagates any exception the same way.</p>
+<p>But wait a minute, that’s creepy!!</p>
+<p>..</p>
+<p>And a minute after, you get this strange concern: if the checked exception is invisibly thrown, how can you catch it later? Writing <code>try { Config.getLastPromoDate(); } catch (ParseException e) {}</code> won’t compile because nothing in the <code>try</code> block throws a ParseException. And javac will reject that. See for yourself: <a href="https://github.com/victorrentea/exceptions-guide/commit/aa1ba41cb1b7694ebb087bd405b7580b572b8ab2">commit</a></p>
+<p>So what does this mean? It means that the exceptions hidden using <code>@SneakyThrows</code> aren’t supposed to be caught again separately. Instead, a general <code>catch (Exception)</code> should be in place somewhere down the call stack to catch the <em>invisible checked exception</em>.</p>
+<p>Some of you might be disgusted at this point. Others might be super-excited. I’m not here to judge but only to report the techniques that have become most wide-spread in the hundreds of projects I trained for. I agree that it can be misused if careless (more in an upcoming talk or article).</p>
+<p>Okay, okay... But why?!</p>
+<p>Because Java is a 25-years old language. 25 years is a long time to carry some baggage. So Lombok is effectively hacking the language to make us write less and more focussed code. As <a href="https://twitter.com/VictorRentea/status/1282566184672665601">my tweet puts it</a>, when people get tired of Java’s verbosity, they usually face a decision: become a Scala or Clojure scientist, Kotlin hacker or start cheating Java with Lombok.</p>
+<p>But if you run the project now with an incorrect configuration (just mess a bit with the config.properties), you’ll see a stack trace again! Why?! Because the Global Exception Handler was only catching RuntimeExceptions, but suddenly we have hidden checked exceptions around.</p>
+<p>Don’t panic. Just change RuntimeException to Exception in GlobalExceptionHandler. Here’s the <a href="https://github.com/victorrentea/exceptions-guide/commit/85b43e6c5a1521a9202672d659e1e8b8319cfe3f">final commit on this section</a>.</p>
+<h2 id="handling-null-pointer-exceptions">Handling Null Pointer Exceptions</h2>
+<p>From all the standard Java exceptions, I want to talk about a single one: the terrible <code>NullPointerException</code>, NPE in short. A 2016 <a href="https://www.overops.com/blog/the-top-10-exceptions-types-in-production-java-applications-based-on-1b-events/">study</a> awarded NPE the 1st place in the topmost frequent Java exceptions occurring in production. We’ll explore two techniques to fight it: the self-testing data model and the meaningful null.</p>
+<p>At the beginning of this article, we saw an NPE swallowed by the Diaper Anti-Pattern. If you recall, that exception was caused by <strong>invalid data: a null</strong>, an Order without an offer date. Once the business confirmed that every Order in the system must always have the offer date set, how would you enforce this rule? There are many ways to implement it: validation at creation and update time, using ifs or javax.validation, or even validation via the entity constructor. Let’s explore the latter.</p>
+<p>You can see below the 3 most widely used forms used to null-check in constructor today:</p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Order</span><span class="hljs-params">(@NonNull Date offerDate)</span> </span>{ <span class="hljs-comment">// 3</span>
+  <span class="hljs-keyword">if</span> (offerDate == <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// 1</span>
+     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException();
+  }
+  <span class="hljs-keyword">this</span>.offerDate = Objects.requireNonNull(offerDate); <span class="hljs-comment">// 2</span>
+}
+</code></pre><p>Again, the code above contains 3 alternative ways to do the same thing (any single one would be enough):</p>
+<ol>
+    <li>Classic <code>if</code> check</li>
+    <li>One-liner check using <code>java.util.Objects</code> (since Java 8) and </li>
+    <li>Lombok @NonNull causing an <code>if</code> check to be added in the generated bytecode.</li>
+</ol>
+<p>Of the above, (2) tends to be the most widely used today in projects under development. </p>
+<p>Oh, and one more thing, if you also expose a setter, make sure you repeat the validation in there, or better call your setter from your constructor to avoid implementing the rule twice. </p>
+<p>The advantage of enforcing the null-check in the constructor of your data objects is obvious: developers can’t ever forget to do it. An interesting question arises regarding ORM (like Hibernate) or other frameworks that directly write to private fields of entities, bypassing setters or constructors. Then, my advice is to mark the required columns as NOT NULL in the database, but the problem can get more complicated by ‘tolerated incorrect legacy data’. </p>
+<p>But what if that <strong><code>null</code> has business meaning</strong> and it’s not invalid data? </p>
+<p>For example, imagine our Customer might have a <code>null</code> Member Card, meaning that she didn’t yet create or maybe she didn’t want a member card. </p>
+<blockquote>
+    <p><strong>Best-practice</strong>: Since Java 8, whenever we return a possible absent value, we should wrap it into an <code>Optional&lt;&gt;</code></p>
+</blockquote>
+<h3 id="getters-returning-optional-">Getters returning Optional&lt;&gt;</h3>
+<p>A getter that returns a possible null field should return Optional&lt;&gt;. (Note: the field and setter keep the raw value).</p>
+<p>This change might seem frightening at first because we’re touching the ‘sacred getter’ we are so familiar with. Our next concern is: would the frameworks tolerate that? </p>
+<p>First of all, the field type remains the raw reference type (not Optional) - we only change the getter. </p>
+<p>Secondly, we should apply this technique only on data objects we write logic with. That is, Entities. As I explained in my [Clean Architecture talk] (<a href="https://www.youtube.com/watch?v=tMHO7_RLxgQ&amp;list=PLggcOULvfLL_MfFS_O0MKQ5W_6oWWbIw5&amp;index=3">https://www.youtube.com/watch?v=tMHO7_RLxgQ&amp;list=PLggcOULvfLL_MfFS_O0MKQ5W_6oWWbIw5&amp;index=3</a>), you should avoid writing heavy logic on API data objects (aka DTOs). So <code>Optional&lt;&gt;</code> is for Entity model not DTO/API model.</p>
+<p>Thirdly, under the typical usage pattern, all modern persistence frameworks (eg Hibernate, Mongo, Cassandra, ...) will read reflectively from the private fields by default, so they really don’t care about your getter. Let’s see what happens when we change our <code>Customer.getMemeberCard()</code> to return an <code>Optional&lt;MemberCard&gt;</code>.</p>
+<pre><code><span class="hljs-keyword">public</span> <span class="hljs-keyword">Optional</span>&lt;MemberCard&gt; getMemberCard() {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">Optional</span>.ofNullable(memberCard);
+}
+</code></pre><p>Then, this line doesn’t compile anymore:</p>
+<pre><code>order.setPrice(order.getPrice() * (<span class="hljs-number">100</span> - <span class="hljs-number">2</span> * customer.getMemberCard().getFidelityDiscount()) / <span class="hljs-number">100</span>);
+</code></pre><p>Because we were silently unboxing a possible <code>null</code> Integer. There was a bug lying in there: the developer wasn’t aware that the customer might not have a member card. The code now doesn’t compile until he/we acknowledge this fact. Of course, blindly calling <code>.get()</code> in there will throw a <code>NoSuchElementException</code> if the Optional was empty, just as our NPE occured. To fix it correctly, we realise that we need to call <code>isPresent()</code>:</p>
+<pre><code>public void applyDiscount(<span class="hljs-keyword">Order</span> <span class="hljs-keyword">order</span>, Customer customer) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">order</span>.getOfferDate().before(Config.getLastPromoDate()) &amp;&amp;
+        customer.getMemberCard().isPresent()) {
+     System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"APPLYING DISCOUNT"</span>);
+     <span class="hljs-keyword">order</span>.setPrice(<span class="hljs-keyword">order</span>.getPrice() * (100 - 2 * customer.getMemberCard().<span class="hljs-built_in">get</span>().getFidelityDiscount()) / 100);
+  } <span class="hljs-keyword">else</span> {
+     System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"NO DISCOUNT"</span>);
+  }
+}
+</code></pre><p>Signaling the caller at compile-time that there might be nothing returned to her is an extremely powerful technique. Most NPEs occur in large projects mainly because developers aren’t fully aware that some parts of the data might be missing, some fields might be <code>null</code>. I would strongly advise that you upgrade your entity model such that for every NULLABLE column in the datastore, the getter for that field returns Optional&lt;&gt;. The effort of changing the getters of the core entities in your app is huge, but along the way, you’ll find dozens of dormant NPEs, like we did just now. And at the end, the rate of NPE bugs will be halved (at least), since the main source of nulls in your app, your entity model, will be null-safe.</p>
+<p>In conclusion, there are two major best practices in dealing with null: throw as early as possible or wrap the possible null into an <code>Optional</code>.</p>
+<h2 id="checked-exceptions-and-streams">Checked Exceptions and Streams</h2>
+<p>Java 8 gave us an extremely powerful weapon against the most frequent Exception in Java: the Optional&lt;&gt;. Unfortunately, Java 8 also brought new headaches regarding exceptions, as the default functional interfaces in Java 8 don’t declare throwing any checked exceptions. So every time you get a checked exception within a lambda, you have to fix that somehow:</p>
+<pre><code>List&lt;String&gt; dateList = <span class="hljs-keyword">asList</span>(<span class="hljs-string">"2020-10-11"</span>, <span class="hljs-string">"2020-nov-12"</span>, <span class="hljs-string">"2020-12-01"</span>);
+SimpleDateFormat format = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy-MM-dd"</span>);
+
+List&lt;Date&gt; dates = dateList.stream().map(s -&gt; {
+  <span class="hljs-keyword">try</span> {
+     <span class="hljs-keyword">return</span> format.parse(s);
+  } <span class="hljs-keyword">catch</span> (ParseException e) {
+     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+  }
+}).<span class="hljs-keyword">collect</span>(<span class="hljs-keyword">toList</span>());
+System.out.<span class="hljs-keyword">println</span>(dates);
+</code></pre><p>Horrible code. Of course, we could create a dedicated function doing just .parse and casting a spell on it with @SneakyThrows. That would work since it’s OUR code we’re hacking.</p>
+<pre><code>  <span class="hljs-params">...</span>
+  <span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">Date</span>&gt; dates = dateList.stream().<span class="hljs-built_in">map</span>(s -&gt; uglyParse(format, s)).collect(toList());
+  System.out.println(dates);
+}
+
+@SneakyThrows
+<span class="hljs-keyword">private</span> static <span class="hljs-built_in">Date</span> uglyParse(SimpleDateFormat format, <span class="hljs-built_in">String</span> s) {
+  <span class="hljs-keyword">return</span> format.parse(s);
+}
+</code></pre><p>But creating this new method feels wrong. Or you might not be a Lombok fan. To dive in a little more, if there were a <code>ThrowingFunction</code> interface out there, our <code>s-&gt;format.parse(s)</code> could be <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#target-typing">target-typed</a> to id. This compiles:</p>
+<pre><code>  ...
+  ThrowingFunction&lt;<span class="hljs-keyword">String</span>, <span class="hljs-built_in">Date</span>&gt; p = s -&gt; <span class="hljs-keyword">format</span>.<span class="hljs-built_in">parse</span>(s);
+  Function&lt;<span class="hljs-keyword">String</span>, <span class="hljs-built_in">Date</span>&gt; f = wrapAsRuntime(p); <span class="hljs-comment">// TODO</span>
+  List&lt;<span class="hljs-built_in">Date</span>&gt; dates = dateList.stream().map(f).collect(toList());
+  <span class="hljs-keyword">System</span>.out.println(dates);
+}
+
+interface ThrowingFunction&lt;T,R&gt; {
+  R apply(T t) throws Exception;
+}
+</code></pre><p>Unfortunately, the .map() Stream operation demands a java.util.Function. What we need is a way to convert from a ThrowingFunction into a (non-throwing) Function. Let’s write the <code>wrapAsRuntime()</code> function:</p>
+<pre><code><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> &lt;T,R&gt; <span class="hljs-function"><span class="hljs-keyword">Function</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">R</span>&gt; <span class="hljs-title">wrapAsRuntime</span><span class="hljs-params">(ThrowingFunction&lt;T, R&gt; p)</span> </span>{
+  <span class="hljs-keyword">return</span> t -&gt; {
+     <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> p.apply(t);
+     } <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">Exception</span> e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(e);
+     }
+  };
+}
+</code></pre><p>Notice that we’ve used generics to make it highly reusable. Now that’s a very convenient idea. So convenient that others thought of creating it many years ago... :smile:</p>
+<p>Introducing the <code>Unchecked.function()</code> from the <a href="https://github.com/jOOQ/jOOL">jool library</a> that does EXACTLY what we did just now.</p>
+<pre><code><span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">Date</span>&gt; dates = dateList.stream().<span class="hljs-built_in">map</span>(Unchecked.function(format<span class="hljs-type">::parse</span>)).collect(toList());
+</code></pre><p>If you are deep in Java 8, working for years with it, then this library is a must-have IMHO.</p>
+<blockquote>
+    <p><strong>Best-practice</strong>: Whenever checked exceptions annoy in lambdas or method ::references, use Unchecked.* to rethrow it as a RuntimeException</p>
+</blockquote>
+<p>And just when you thought it’s over ...</p>
+<h2 id="the-try-monad">The Try&lt;&gt; Monad</h2>
+<p>Let’s twist the requirements a bit: we are now requested to parse the valid dates and print them IF at least half are valid. This time you can’t let the exceptions propagate anymore, as this would terminate the execution of your stream. Instead, you want to go through all of the items and collect both results and exceptions. </p>
+<p>Introducing .... the <code>Try&lt;&gt;</code> monad from the <a href="https://www.vavr.io/">vavr library</a>. This class is a specialization of the <code>Either&lt;&gt;</code> concept present in many functional programming languages. It can store either the result or the ocurred exception in a single object.</p>
+<pre><code>List&lt;Try&lt;Date&gt;&gt; tries = dateList.stream<span class="hljs-function"><span class="hljs-params">()</span>.<span class="hljs-title">map</span><span class="hljs-params">(s -&gt; Try.<span class="hljs-keyword">of</span>(() -&gt; format.parse(s)) )</span>.<span class="hljs-title">collect</span><span class="hljs-params">(toList())</span>;</span>
+</code></pre><p>In the list of tries above, there can be items with <code>isSuccess()</code> either true or false. To count the success ratio, the shortest form is:</p>
+<pre><code><span class="hljs-keyword">double</span> successRatio = tries.stream().mapToInt(t -&gt; t.isSuccess() ? <span class="hljs-number">1</span> : 0).average().orElse(0);
+</code></pre><p>Then,</p>
+<pre><code><span class="hljs-keyword">if</span> (successRatio &gt; .<span class="hljs-number">5</span>) {
+  List&lt;Date&gt; dates = tries.stream().filter(<span class="hljs-keyword">Try</span>::isSuccess).map(<span class="hljs-keyword">Try</span>::get).<span class="hljs-keyword">collect</span>(<span class="hljs-keyword">toList</span>());
+  System.out.<span class="hljs-keyword">println</span>(dates);
+}
+</code></pre><p>Inside the if above we got the successful items and collected them into a list. Problem solved. Twisting a bit the code, we can extract a function returning a Try&lt;&gt;, which resembles the style of handling exceptions in other languages like Go and Haskell.</p>
+<pre><code>private static Try&lt;<span class="hljs-built_in">Date</span>&gt; tryParse(SimpleDateFormat <span class="hljs-keyword">format</span>, <span class="hljs-keyword">String</span> s) {
+  <span class="hljs-keyword">return</span> Try.of(() -&gt; <span class="hljs-keyword">format</span>.<span class="hljs-built_in">parse</span>(s));
+}
+</code></pre><blockquote>
+    <p><strong>Tip</strong>: Consider vavr.Try&lt;&gt; when you want to collect both results and exceptions in a single pass through data.</p>
+</blockquote>
+<p>By the way, if you keep thinking at the “Monad” word, here’s a nice article for you: <a href="https://dzone.com/articles/functor-and-monad-examples-in-plain-java">Monads for Java developers</a></p>
+<h2 id="conclusions">Conclusions</h2>
+<ul>
+    <li>Only allow Runtime Exceptions through the logic of your application. </li>
+    <li>Consider <code>Unchecked</code> or <code>@SneakyThrows</code> to work around checked exceptions</li>
+    <li>Avoid Diaper Anti-Pattern: don’t ever swallow exceptions</li>
+    <li>Avoid Log-Rethrow Anti-Pattern: set up and trust the global exception handler</li>
+    <li>Use enum error codes to report errors to users or unit-tests</li>
+    <li>Use exception message for key debugging information</li>
+    <li>Fight <code>NullPointerException</code> with early checks or <code>Optionals</code></li>
+    <li>Be aware of <code>Try&lt;&gt;</code></li>
+</ul>
+<p>If you liked this article, check out <a href="http://victorrentea.ro/">my website</a> for more talks, articles, company, or personal training. If you want to reach me for questions, comments, or any other ideas, the best way is via Twitter: <a href="https://twitter.com/VictorRentea">@victorrentea</a>. I’m also posting there as well as on <a href="https://www.linkedin.com/in/victor-rentea-trainer">LinkedIN</a> and <a href="https://www.facebook.com/VictorRentea.ro">Facebook</a>, so you can find me everywhere :smile:</p>
+<h2 id="left-over-tips">Left-over tips</h2>
+<ul>
+    <li>Don’t throw from a <code>finally</code> block: the new exception might hide a preexisting exception</li>
+    <li>Throw <em>before</em> mutating an object state: leave the objects’ state consistent</li>
+    <li>Don’t use exceptions for <em>normal</em> flow control: they are expensive<h2 id="out-of-scope">Out of Scope</h2>
+    </li>
+    <li>Async exceptions: exceptions occurring in other threads (Executors, <code>@Async</code>, CompletableFuture, Reactive-X, Message Handlers...)</li>
+    <li>How to handle <code>InterruptedExceptions</code>: <a href="https://dzone.com/articles/how-to-handle-the-interruptedexception">article</a></li>
+</ul>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>I kept using SimpleDateFormat throughout this article. I am sorry for that. You should prefer the new Java8 date types whenever possible: LocalDate and LocalDateTime which you can parse without having to deal with any checked exceptions. I used the old java.util.Date because it’s commonly used and easily accessible. One last warning: SimpleDateFormat instances are NOT thread-safe: never cache them in singletons or static fields in a multithread environment.</p>
+<p>LA POSTARE:
+    Mentioneaza (jool @lukaseder), @springcentral, @vavr_io, @project_lombok</p>
+
+</body>
+</html>

@@ -5,9 +5,79 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="website tuned">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="aa">
+      <change afterPath="$PROJECT_DIR$/blog/handling-exeptions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/freelancer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch-meetup/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/brasov/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/clieng-gameloft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/clieng-gameloft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-2checkout.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-2checkout.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-abs.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-abs.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-adobe.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-adobe.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-advantage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-advantage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-avaelgo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-avaelgo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-axway.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-axway.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-betfair.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-betfair.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-blue4it.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-blue4it.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-brain-concert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-brain-concert.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-cegeka.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-cegeka.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-cerner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-cerner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-coface.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-coface.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-crf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-crf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-deloitte.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-deloitte.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-deutsche-bank.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-deutsche-bank.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-ea.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-ea.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-egs.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-egs.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-emag.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-emag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-esolutions-academy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-esolutions-academy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-esolutions.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-esolutions.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-frequentis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-frequentis.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-gameloft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-gameloft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-ibm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-ibm.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-ing.png" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-ing.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-lseg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-lseg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-mhr.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-mhr.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-microfocus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-microfocus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-mindit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-mindit.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-new-horizons.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-new-horizons.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-ocado.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-ocado.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-orange.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-orange.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-politehnica.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-politehnica.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-pro-management.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-pro-management.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-pss.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-pss.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-raiffeisen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-raiffeisen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-socgen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-socgen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-tangoe.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-tangoe.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-temenos.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-temenos.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-thales.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-thales.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-tivo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-tivo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-travix.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-travix.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-ubisoft.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-ubisoft.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-unicredit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-unicredit.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-verint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-verint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-yonder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/client-yonder.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coderetreat/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-agileworks.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-agileworks.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-bjug.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-bjug.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-codecamp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-codecamp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-dev-talks.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-dev-talks.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-devoxx-be.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-devoxx-be.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-devoxx-france.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-devoxx-france.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-devoxx-morocco.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-devoxx-morocco.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-devoxx-poland.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-devoxx-poland.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-devoxx-uk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-devoxx-uk.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-devoxx-ukraine.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-devoxx-ukraine.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-imworld-2016.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-imworld-2016.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-itake.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-itake.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-jbcnconf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-jbcnconf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-jeeconf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-jeeconf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-jpoint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-jpoint.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-jprime.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-jprime.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-vjug.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-vjug.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-voxxed-belgrade.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-voxxed-belgrade.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-voxxed-bucharest.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-voxxed-bucharest.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-voxxed-cluj.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-voxxed-cluj.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf-voxxed-vienna.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/logo/conf-voxxed-vienna.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +87,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
@@ -53,6 +130,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -64,6 +142,25 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\victorrentea.ro\logo" />
+      <recent name="C:\workspace\victorrentea.ro\clients" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,6 +171,8 @@
       <updated>1605683751222</updated>
       <workItem from="1605683752764" duration="2475000" />
       <workItem from="1605686340592" duration="7459000" />
+      <workItem from="1606131894572" duration="48000" />
+      <workItem from="1606492026961" duration="290000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -103,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605692599816</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="aa">
+      <created>1606131907517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606131907517</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +237,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="removed full list of talks. Destroyed youtube iframes." />
     <MESSAGE value="website tuned" />
-    <option name="LAST_COMMIT_MESSAGE" value="website tuned" />
+    <MESSAGE value="aa" />
+    <option name="LAST_COMMIT_MESSAGE" value="aa" />
   </component>
   <component name="WindowStateProjectService">
     <state x="277" y="62" key="SettingsEditor" timestamp="1605686348765">
