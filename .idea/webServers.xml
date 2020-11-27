@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="df546f2e-e2a2-4b48-b0e2-7bb59a60c7a8" name="victorrentea.ro" url="http://victorrentea.ro">
+        <fileTransfer accessType="FTPS" host="ftp.victorrentea.ro" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
