@@ -5,7 +5,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="reorganize images">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="all">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/exceptions.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/exceptions.html" afterDir="false" />
     </list>
@@ -61,6 +62,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -101,7 +103,7 @@
       <workItem from="1605683752764" duration="2475000" />
       <workItem from="1605686340592" duration="7459000" />
       <workItem from="1606131894572" duration="48000" />
-      <workItem from="1606492026961" duration="1376000" />
+      <workItem from="1606492026961" duration="2054000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606492555313</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="all">
+      <created>1606493429151</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606493429151</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,21 +184,26 @@
     <MESSAGE value="website tuned" />
     <MESSAGE value="aa" />
     <MESSAGE value="reorganize images" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganize images" />
+    <MESSAGE value="all" />
+    <option name="LAST_COMMIT_MESSAGE" value="all" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="75" key="#Deployment" timestamp="1606493421109">
+    <state x="361" y="75" key="#Deployment" timestamp="1606685142805">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="75" key="#Deployment/0.0.1536.834@0.0.1536.834" timestamp="1606493421109" />
+    <state x="361" y="75" key="#Deployment/0.0.1536.834@0.0.1536.834" timestamp="1606685142805" />
     <state x="345" y="62" key="#SSH_Configurations" timestamp="1606493067438">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="345" y="62" key="#SSH_Configurations/0.0.1536.834@0.0.1536.834" timestamp="1606493067438" />
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606492280174">
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606493605035">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1606492280174" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493605035" />
+    <state x="593" y="319" key="Github.CreateGistDialog" timestamp="1606493580979">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="593" y="319" key="Github.CreateGistDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493580979" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1605686348765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

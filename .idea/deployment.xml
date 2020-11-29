@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="victorrentea.ro" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="victorrentea.ro" uploadOnCheckin="df546f2e-e2a2-4b48-b0e2-7bb59a60c7a8" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="victorrentea.ro">
         <serverdata>
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="victorrentea.ro" />
   </component>
 </project>

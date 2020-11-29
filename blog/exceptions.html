@@ -390,6 +390,7 @@ System.out.println(dates);
 private static Date uglyParse(SimpleDateFormat format, String s) {
   return format.parse(s);
 }
+
 </code></pre>
 <p class="has-line-data" data-line-start="480" data-line-end="481">But creating this new method feels wrong. Or you might not be a Lombok fan. To dive in a little more, if there were a <code>ThrowingFunction</code> interface out there, our <code>s-&gt;format.parse(s)</code> could be <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#target-typing">target-typed</a> to id. This compiles:</p>
 <pre><code>  ...
