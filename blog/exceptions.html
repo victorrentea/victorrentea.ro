@@ -302,6 +302,7 @@ public static Date getLastPromoDate() {
   }
 }
 </code></pre>
+
 <p class="has-line-data" data-line-start="359" data-line-end="360">Indeed, Lombok did add a try-catch block around my function’s body, but it caught Throwable and rethrew it without wrapping it at all!</p>
 <p class="has-line-data" data-line-start="361" data-line-end="362">Something is wrong!</p>
 <p class="has-line-data" data-line-start="363" data-line-end="364">The bytecode throws a <code>Throwable</code> from a method that doesn’t declare <code>throws Throwable</code>! If you copy-paste the code in a .java file, you’ll quickly see that this doesn’t compile!! But was it compiled in the first place?!</p>

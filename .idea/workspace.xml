@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="all">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/exceptions.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/exceptions.html" afterDir="false" />
     </list>
@@ -79,19 +78,6 @@
       <recent name="C:\workspace\victorrentea.ro\clients" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -103,7 +89,8 @@
       <workItem from="1605683752764" duration="2475000" />
       <workItem from="1605686340592" duration="7459000" />
       <workItem from="1606131894572" duration="48000" />
-      <workItem from="1606492026961" duration="2054000" />
+      <workItem from="1606492026961" duration="2078000" />
+      <workItem from="1607720040582" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -154,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606493429151</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="all">
+      <created>1606685160516</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606685160516</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,10 +182,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="all" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="75" key="#Deployment" timestamp="1606685142805">
+    <state x="361" y="75" key="#Deployment" timestamp="1607720079656">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="75" key="#Deployment/0.0.1536.834@0.0.1536.834" timestamp="1606685142805" />
+    <state x="361" y="75" key="#Deployment/0.0.1536.834@0.0.1536.834" timestamp="1607720079656" />
     <state x="345" y="62" key="#SSH_Configurations" timestamp="1606493067438">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
