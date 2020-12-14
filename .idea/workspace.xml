@@ -5,7 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="all" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="all">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +69,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -87,7 +89,8 @@
       <workItem from="1605686340592" duration="7459000" />
       <workItem from="1606131894572" duration="48000" />
       <workItem from="1606492026961" duration="2078000" />
-      <workItem from="1607720040582" duration="85000" />
+      <workItem from="1607720040582" duration="209000" />
+      <workItem from="1607720294492" duration="2569000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -152,7 +155,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607720082813</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="all">
+      <created>1607720131964</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607720131964</updated>
+    </task>
+    <task id="LOCAL-00011" summary="all">
+      <created>1607720161241</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607720161241</updated>
+    </task>
+    <task id="LOCAL-00012" summary="all">
+      <created>1607720179757</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607720179757</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,10 +226,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="593" y="319" key="Github.CreateGistDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493580979" />
-    <state x="277" y="62" key="SettingsEditor" timestamp="1605686348765">
+    <state x="277" y="62" key="SettingsEditor" timestamp="1607721945604">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1605686348765" />
+    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1607721945604" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1605686543574">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
