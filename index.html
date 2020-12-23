@@ -100,8 +100,29 @@
                     <a href="http://victorrentea.teachable.com" target="_blank">Video Courses</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="/blog">Blog&#11088;</a>
+                    <a href="/blog" class="blogmenu">Blog&#11088;</a>
                 </li>
+                <style>
+
+                    @keyframes whiteyellow
+                    {
+                        0%   {color: white;}
+                        100% {color: yellow;}
+                    }
+                    @-webkit-keyframes whiteyellow
+                    {
+                        0%   {color: white;}
+                        100% {color: yellow;}
+                    }
+
+                    .blogmenu {
+                        text-decoration: blink;
+                        animation: whiteyellow 5s linear 1s infinite; /* animation-name followed by duration in seconds*/
+                        /* you could also use milliseconds (ms) or something like 2.5s */
+                        -webkit-animation: whiteyellow 5s linear 0s infinite alternate; /* Chrome and Safari */
+                    }
+
+                </style>
                 <li class="page-scroll">
                     <a href="#clients">Clients</a>
                 </li>

@@ -5,7 +5,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="add wordpress" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="remove wp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +98,8 @@
       <workItem from="1607720040582" duration="209000" />
       <workItem from="1607720294492" duration="2569000" />
       <workItem from="1607932452058" duration="2396000" />
+      <workItem from="1608050235245" duration="4105000" />
+      <workItem from="1608711153411" duration="298000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -194,7 +199,42 @@
       <option name="project" value="LOCAL" />
       <updated>1607932696324</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="remove wp">
+      <created>1608050412854</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608050412854</updated>
+    </task>
+    <task id="LOCAL-00016" summary="remove wp">
+      <created>1608050437797</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608050437797</updated>
+    </task>
+    <task id="LOCAL-00017" summary="remove wp">
+      <created>1608050548173</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608050548173</updated>
+    </task>
+    <task id="LOCAL-00018" summary="remove wp">
+      <created>1608063407692</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608063407692</updated>
+    </task>
+    <task id="LOCAL-00019" summary="remove wp">
+      <created>1608063559118</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608063559118</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +266,8 @@
     <MESSAGE value="reorganize images" />
     <MESSAGE value="all" />
     <MESSAGE value="add wordpress" />
-    <option name="LAST_COMMIT_MESSAGE" value="add wordpress" />
+    <MESSAGE value="remove wp" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove wp" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="75" key="#Deployment" timestamp="1607720125889">
