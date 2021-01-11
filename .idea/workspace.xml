@@ -5,8 +5,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="remove wp">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/freelancer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,9 @@
       <workItem from="1607720294492" duration="2569000" />
       <workItem from="1607932452058" duration="2396000" />
       <workItem from="1608050235245" duration="4105000" />
-      <workItem from="1608711153411" duration="298000" />
+      <workItem from="1608711153411" duration="1767000" />
+      <workItem from="1609752129182" duration="95000" />
+      <workItem from="1610364933727" duration="935000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -234,7 +237,28 @@
       <option name="project" value="LOCAL" />
       <updated>1608063559118</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="test">
+      <created>1608711642267</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1608711642267</updated>
+    </task>
+    <task id="LOCAL-00021" summary="test">
+      <created>1608711675193</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608711675193</updated>
+    </task>
+    <task id="LOCAL-00022" summary="test">
+      <created>1609752143473</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609752143473</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,49 +291,7 @@
     <MESSAGE value="all" />
     <MESSAGE value="add wordpress" />
     <MESSAGE value="remove wp" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove wp" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="361" y="75" key="#Deployment" timestamp="1607720125889">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="75" key="#Deployment/0.0.1536.834@0.0.1536.834" timestamp="1607720125889" />
-    <state x="345" y="62" key="#SSH_Configurations" timestamp="1606493067438">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="345" y="62" key="#SSH_Configurations/0.0.1536.834@0.0.1536.834" timestamp="1606493067438" />
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606493605035">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493605035" />
-    <state x="593" y="319" key="Github.CreateGistDialog" timestamp="1606493580979">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="593" y="319" key="Github.CreateGistDialog/0.0.1536.834@0.0.1536.834" timestamp="1606493580979" />
-    <state x="277" y="62" key="SettingsEditor" timestamp="1607721945604">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="277" y="62" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1607721945604" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1605686543574">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.834@0.0.1536.834" timestamp="1605686543574" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1605686536471">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1605686536471" />
-    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605692364597">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="586" y="331" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1605692364597" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1605685426067">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1605685426067" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1607951705083">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/0.-1080.1920.1050@0.0.1536.834" timestamp="1607951705083" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605704642957" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
