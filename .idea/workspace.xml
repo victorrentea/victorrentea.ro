@@ -5,9 +5,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="new conf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="intellij tricks" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +105,7 @@
       <workItem from="1612814827047" duration="429000" />
       <workItem from="1613139852243" duration="1936000" />
       <workItem from="1613592229913" duration="599000" />
+      <workItem from="1614772729659" duration="141000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -318,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613141799114</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="intellij tricks">
+      <created>1614772824704</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1614772824704</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +361,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="new clients" />
     <MESSAGE value="new conf" />
-    <option name="LAST_COMMIT_MESSAGE" value="new conf" />
+    <MESSAGE value="intellij tricks" />
+    <option name="LAST_COMMIT_MESSAGE" value="intellij tricks" />
   </component>
 </project>
