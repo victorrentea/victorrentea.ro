@@ -1014,6 +1014,7 @@ section.alternate {
     color: white;
 }
 
+/*--------offer button ---------*/
 .button-71 {
     background-color: #0078d0;
     border: 0;
@@ -1065,5 +1066,56 @@ section.alternate {
 @media (min-width: 768px) {
     .button-71 {
         padding: 16px 48px;
+    }
+}
+
+/*------- image carousel-------*/
+#client-voice .carousel-control.right {
+    background: none !important;
+}
+
+#client-voice .carousel-control.left {
+    background: none !important;
+}
+
+#client-voice .container {
+    padding-top: 160px;
+    padding-bottom: 00px;
+}
+
+#client-voice .carousel-caption {
+    padding-bottom: 10px;
+}
+
+#client-voice a {
+    color: white;
+    text-decoration: none;
+}
+
+#client-voice .carousel-caption p {
+    font-size: 26px;
+}
+
+#client-voice p.author {
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    #client-voice .carousel-caption p {
+        font-size: 12px;
+    }
+
+    #client-voice p.author {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    #client-voice .carousel-caption p {
+        font-size: 16px;
+    }
+
+    #client-voice p.author {
+        font-size: 10px;
     }
 }
