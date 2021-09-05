@@ -5,7 +5,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bg - Copy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/freelancer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +80,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -83,6 +90,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\victorrentea.ro" />
       <recent name="C:\workspace\victorrentea.ro\blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -117,6 +125,9 @@
       <workItem from="1615888105374" duration="1323000" />
       <workItem from="1617266299174" duration="946000" />
       <workItem from="1619734110352" duration="218000" />
+      <workItem from="1620791767302" duration="236000" />
+      <workItem from="1630665853555" duration="2066000" />
+      <workItem from="1630784399430" duration="14945000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -391,7 +402,42 @@
       <option name="project" value="LOCAL" />
       <updated>1619734153520</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="test">
+      <created>1620791859145</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1620791859145</updated>
+    </task>
+    <task id="LOCAL-00041" summary="test">
+      <created>1620791907533</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1620791907533</updated>
+    </task>
+    <task id="LOCAL-00042" summary="test">
+      <created>1620791952732</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1620791952732</updated>
+    </task>
+    <task id="LOCAL-00043" summary="test">
+      <created>1620791963746</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1620791963746</updated>
+    </task>
+    <task id="LOCAL-00044" summary="test">
+      <created>1620791995219</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1620791995219</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

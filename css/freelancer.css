@@ -131,11 +131,24 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18BC9C;
+  /*background: #18BC9C;*/
+  /*background-image: url("../bg.jpg");*/
+  /*background-image: url("../banner1.jpg");*/
+  /*background: url(../banner1.jpg) no-repeat center center fixed;*/
+
+  /*background-position: top; !* Center the image *!*/
+  /*background-repeat: no-repeat; !* Do not repeat the image *!*/
+
+  /*background-position-y: 100px;*/
+  background: black;
+  background-image: url(../bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain; /* Resize the background image to cover the entire container */
   color: white;
 }
 header .container {
-  padding-top: 100px;
+  margin-top: 50px;
   padding-bottom: 50px;
 }
 header img {
@@ -155,7 +168,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 130px;
+    margin-top: 100px;
     padding-bottom: 100px;
   }
   header .intro-text .name {
@@ -750,3 +763,44 @@ header a:hover {
   }
 }
 
+
+
+.follow-but {
+  background: #1b95e0;;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+}
+
+.follow-but:hover {
+  text-decoration: none;
+  color: #1b95e0;
+  background: white;
+}
+
+.offer-row > div {
+  padding: 20px;
+}
+
+a.offer-item div {
+  background-color: #3c3c67;
+  color: white;
+  box-shadow: 7px 7px 5px #aaaaaa;
+  padding-bottom: 5px;
+  margin: 20px;
+}
+
+a.offer-item:hover {
+  text-decoration: none;
+}
+a.offer-item:hover div {
+  background-color: #6d6db9;
+}
+
+.alternate  {
+  background-color: #3c3c67;
+  color: white;
+}
