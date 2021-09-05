@@ -100,10 +100,10 @@
                     <a href="#webinar" target="_blank">Video Courses</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="/blog" class="blogmenu">Blog&#11088;</a>
+                    <a href="/blog" class="blogmenu">Blog<sup style="font-size: xx-small">new</sup></a>
                 </li>
                 <style>
-
+                    /* blinking blog */
                     @keyframes whiteyellow
                     {
                         0%   {color: white;}
@@ -114,7 +114,6 @@
                         0%   {color: white;}
                         100% {color: yellow;}
                     }
-
                     .blogmenu {
                         animation: whiteyellow 2s linear 1s infinite; /* animation-name followed by duration in seconds*/
                         /* you could also use milliseconds (ms) or something like 2.5s */
@@ -137,17 +136,10 @@
             </ul>
         </div>
 
-
         <!-- /.navbar-collapse -->
     </div>
-    <!--<div style="position: absolute; left: 50%;">
-			<div style="position: relative; left: -50%; background-color:yellow;" id="motto">
-			XXX
-			</div>
-		</div>
-		-->
     <div style="position:absolute; text-align:center; width:100%; line-height:17px">
-		<span style="background-color:#f6bd24;" id="motto">
+		<span id="motto">
 		</span>
     </div>
     <!-- /.container-fluid -->
@@ -155,23 +147,6 @@
 
 
 <style>
-
-    #motto {
-        opacity: 0;
-        padding-left: 8px;
-        padding-right: 8px;
-
-        -webkit-transition: opacity 2s ease-in;
-        -moz-transition: opacity 2s ease-in;
-        -ms-transition: opacity 2s ease-in;
-        -o-transition: opacity 2s ease-in;
-        transition: opacity 2s ease-in;
-    }
-
-    #motto.load {
-        opacity: 1;
-    }
-
 
     /* timeer count down*/
     .syotimer {
@@ -292,99 +267,8 @@
 
 
 <!-- Header -->
-<header style="">
-    <div class="container" style="padding-bottom: 0px" >
-    <!--<img src="bg.jpg" style="width: 100vw; position: absolute; left: 0">-->
-<!--
-    <img src="banner1.jpg" style="width: 100vw; position: absolute; left: 0">
--->
-        <!--<div class="row">
-			<h3><a style="color:white; text-decoration: underline" href="https://docs.google.com/forms/d/1hUELv1crSy3ZB9lW7RDQell4xf-WkvhfQR7iB-8FcuQ/edit" target="_blank">Subscribe to my Training Sessions</a><br />to get a <span style="color:red">30% discount</span> coupon to anything on <br /><a style="color:white; text-decoration: underline" href="http://victorrentea.teachable.com" target="_blank">victorrentea.teachable.com</a><br />until <b>Nov 8th 23:59 EET<b>.</h3>
-			<div id="simple_timer"></div>
-
-			</div>-->
-
-<!--<div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-        <img class="img-responsive" src="intro.gif" alt="" />
-    </div>
-
-</div>-->
-
-
-       <!-- <div class="row" id="fata-imagine">
-            <div class="col-xs-8 col-xs-offset-2">
-                <img class="img-responsive" src="fata.jpg" alt="" style="margin-bottom: 0px"/>
-            </div>
-
-        </div>-->
-        <!--
-         <div class="row" id="fata-video" style="display:none;">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        <div class="video-container">
-                            <div id="player" class="video"></div>
-
-                        </div>
-
-                        <style>
-                            * {
-                                padding: 0;
-                                margin: 0;
-                                box-sizing: border-box;
-                            }
-
-                            #video {
-                                position: relative;
-                                padding-bottom: 56.25%; /* 16:9 */
-                                height: 0;
-                            }
-
-                            #video iframe {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                            }
-                        </style>
-
-                        <script>
-                            // 2. This code loads the IFrame Player API code asynchronously.
-                            var tag = document.createElement('script');
-
-                            tag.src = "https://www.youtube.com/iframe_api";
-                            var firstScriptTag = document.getElementsByTagName('script')[0];
-                            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                            // 3. This function creates an <iframe> (and YouTube player)
-                            //    after the API code downloads.
-                            var player;
-
-                            function onYouTubeIframeAPIReady() {
-                                player = new YT.Player('player', {
-                                    height: '390',
-                                    width: '1040',
-                                    videoId: 'XgQsCIvVo1M',
-
-                                    rel: 0,
-                                    events: {
-                                        'onReady': onPlayerReady
-                                    }
-                                });
-                            }
-
-                            // 4. The API will call this function when the video player is ready.
-                            function onPlayerReady(event) {
-                                $("#fata-imagine").hide();
-                                $("#fata-video").show();
-                            }
-
-                        </script>
-
-
-                    </div>
-                </div>-->
-
+<header>
+    <div class="container" >
 
         <div class="row">
             <div class="col-lg-6 intro intro-bg">
@@ -546,25 +430,25 @@
             <div class="col-lg-4 text-center">
                 <a href="#training" class="offer-item">
                     <div>
-                        <img src="company-training.png" width="200px">
+                        <img src="img/company-training.png" width="200px">
                         <h3>Company Training</h3>
                         <p>Dedicated workshops for you and your colleagues for the most effective learning experience, fully tailored to your challenges and project's tech stack</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 text-center">
-                <a href="#" class="offer-item">
+                <a href="https://itkonekt.com/itkonekt-dev-days-fall/" class="offer-item" target="_blank">
                     <div>
-                        <img src="open-group-white.png" width="200px">
+                        <img src="img/open-group-white.png" width="200px">
                         <h3>Live Masterclass</h3>
                         <p>Join a group with other developers to brainstorm mainstream best practices in a live, entertaining session</p>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 text-center">
-                <a href="https://victorrentea.teachable.com/" class="offer-item">
+                <a href="https://victorrentea.teachable.com/" class="offer-item" target="_blank">
                     <div>
-                        <img src="academy-white.png" width="200px" alt="icon">
+                        <img src="img/academy-white.png" width="200px" alt="icon">
                         <h3>Video Courses</h3>
                         <p>Intense recorded webinars focused on key topics, with follow&#8209;up support for clarifications
                         </p>
@@ -574,7 +458,7 @@
             <div class="col-lg-4 text-center">
                 <a href="https://victorrentea.teachable.com/" class="offer-item">
                     <div>
-                        <img src="consultancy-white.png" width="200px" alt="icon">
+                        <img src="img/consultancy-white.png" width="200px" alt="icon">
                         <h3>Consultancy</h3>
                         <p>Brainstorm your architecture or tackle challenging tasks, together with your team
                         </p>
@@ -584,7 +468,7 @@
             <div class="col-lg-4 text-center">
                 <a href="https://victorrentea.teachable.com/" class="offer-item">
                     <div>
-                        <img src="coaching.png" width="200px" alt="icon">
+                        <img src="img/coaching.png" width="200px" alt="icon">
                         <h3>Personal Coaching</h3>
                         <p>One-to-one sessions for experienced developers that want to skyrocket their skills
                         </p>
@@ -594,7 +478,7 @@
             <div class="col-lg-4 text-center" >
                 <a href="https://forms.gle/fPB4xkG4iVUD8BpJA" class="offer-item">
                     <div>
-                        <img src="email.png" width="200px" alt="icon">
+                        <img src="img/email.png" width="200px" alt="icon">
                         <h3>Subscribe</h3>
                         <p>Learn about upcoming live webinars, and enjoy exclusive discounts</p>
                     </div>
@@ -607,7 +491,7 @@
             <div class="col-lg-4 text-center">
                 <a href="#talks" class="offer-item">
                     <div>
-                        <img src="youtube-yellow.png" width="200px" alt="icon">
+                        <img src="img/youtube.png" width="200px" alt="icon">
                         <h3>Recorded Talks</h3>
                         <p>Watch my top-rated talks, along with other talks that have inspired my work
                         </p>
@@ -617,7 +501,7 @@
             <div class="col-lg-4 text-center">
                 <a href="https://www.meetup.com/bucharest-software-craftsmanship-community/" class="offer-item">
                     <div>
-                        <img src="meetup.png" width="200px" alt="icon">
+                        <img src="img/meetup.png" width="200px" alt="icon">
                         <h3>Join my Community</h3>
                         <p>Join the community I founded and engage me in free online meetups</p>
                     </div>
@@ -626,14 +510,14 @@
             <div class="col-lg-4 text-center">
                 <a href="https://victorrentea.ro/blog/" class="offer-item">
                     <div>
-                        <img src="blog.png" width="200px" alt="icon">
+                        <img src="img/blog.png" width="200px" alt="icon">
                         <h3>My Blog</h3>
                         <p>Check out my (little) blog</p>
                     </div>
                 </a>
             </div>
         </div>
-
+    </div>
 </section>
 <!-- Portfolio Grid Section -->
 <section id="training" class="alternate">
@@ -666,9 +550,13 @@
             <p class="blink_me" style="color:yellow">
                 Detailed agenda, terms and conditions:
             </p>
-            <a href="https://drive.google.com/open?id=1cQglXi1SUabmMFlTiYwsSThA1u0b1sDm" target="_blank">
-                <img src="label/overview.jpg" class="img-responsive img-centered" alt=""
-                     style="border:6px solid red;">
+            <a class="button-71" href="https://drive.google.com/open?id=1cQglXi1SUabmMFlTiYwsSThA1u0b1sDm" target="_blank">
+                <!--<img src="label/overview.jpg" class="img-responsive img-centered" alt=""
+                     style="border:6px solid red;">-->
+
+                <h3>Detailed<br />Training Curricula<br />(pdf)</h3>
+
+                <!-- HTML !-->
             </a>
         </div>
     </div>
@@ -886,7 +774,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Goodies</h2>
+                <h2>Other Goodies</h2>
                 <hr class="star-light">
             </div>
         </div>
@@ -1583,12 +1471,12 @@
 
 </section>
 
-<section id="talks" class="alt success">
+<section id="talks" class="alternate">
     <div class="container">
         <div class="row alt">
             <div class="col-lg-12 text-center">
-                <h2>Conference Talks</h2>
-                <hr class="star-primary">
+                <h2>Talks &amp; Meetups</h2>
+                <hr class="star-light">
             </div>
             <div class="col-lg-12 text-center">
                 <h3></h3>
