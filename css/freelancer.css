@@ -215,6 +215,8 @@ header img {
 #motto {
     background-color: #f6bd24;
 
+    display: none;
+
     opacity: 0;
     padding-left: 8px;
     padding-right: 8px;
