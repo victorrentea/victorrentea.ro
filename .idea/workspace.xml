@@ -6,9 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logo/client-incubyte.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/freelancer.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/freelancer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/talk-list.old.html" beforeDir="false" afterPath="$PROJECT_DIR$/talk-list.old.html" afterDir="false" />
     </list>
@@ -128,14 +126,7 @@
       <workItem from="1619734110352" duration="218000" />
       <workItem from="1620791767302" duration="236000" />
       <workItem from="1630665853555" duration="2066000" />
-      <workItem from="1630784399430" duration="25873000" />
-    </task>
-    <task id="LOCAL-00004" summary="website tuned">
-      <created>1605692599815</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1605692599816</updated>
+      <workItem from="1630784399430" duration="27569000" />
     </task>
     <task id="LOCAL-00005" summary="aa">
       <created>1606131907517</created>
@@ -473,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630873389306</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="add clients">
+      <created>1630875412293</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1630875412293</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,6 +547,7 @@
     <MESSAGE value="push" />
     <MESSAGE value="refactro" />
     <MESSAGE value="link" />
-    <option name="LAST_COMMIT_MESSAGE" value="link" />
+    <MESSAGE value="add clients" />
+    <option name="LAST_COMMIT_MESSAGE" value="add clients" />
   </component>
 </project>
