@@ -13,6 +13,39 @@ p {
 p.small {
   font-size: 16px;
 }
+@media (min-width: 1080px) {
+  .offer-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+  }
+  /*.offer-row > [class*='col-'] {*/
+  .offer-row > .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+  }
+  .offer-row a {
+    height: 100%;
+  }
+  .offer-row a div {
+    height: 100%;
+  }
+
+}
+/*
+
+.offer-row{
+  overflow: hidden;
+}
+
+.offer-row > .col-lg-4 {
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+*/
+
 a,
 a:hover,
 a:focus,
@@ -41,7 +74,7 @@ ul.agenda>li li {
 }
 */
 
-.agenda,  {
+.agenda  {
 	text-align:left
 }
 .agenda>li, .portfolio-modal li {
@@ -155,6 +188,16 @@ header img {
   display: block;
   margin: 0 auto 20px;
 }
+
+.intro-bg {
+  background: rgba(0, 0, 0, 0.8);
+  padding-bottom: 13px;
+}
+.intro a, .intro a:hover  {
+  color: #f6bd24;
+  font-weight: bold;
+}
+
 header .intro-text .name {
   display: block;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -789,11 +832,11 @@ a.offer-item div {
   background-color: #3c3c67;
   color: white;
   box-shadow: 7px 7px 5px #aaaaaa;
-  padding-bottom: 5px;
+  padding: 5px;
   margin: 20px;
 }
 
-a.offer-item:hover {
+a.offer-item:hover, a.offer-item:active  {
   text-decoration: none;
 }
 a.offer-item:hover div {
