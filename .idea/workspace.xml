@@ -120,7 +120,7 @@
       <workItem from="1619734110352" duration="218000" />
       <workItem from="1620791767302" duration="236000" />
       <workItem from="1630665853555" duration="2066000" />
-      <workItem from="1630784399430" duration="15329000" />
+      <workItem from="1630784399430" duration="15683000" />
     </task>
     <task id="LOCAL-00001" summary="website">
       <created>1605686165303</created>
@@ -437,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630800986281</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="typo">
+      <created>1630801026074</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1630801026074</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,6 +484,7 @@
     <MESSAGE value="intellij tricks" />
     <MESSAGE value="test" />
     <MESSAGE value="big change :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="big change :)" />
+    <MESSAGE value="typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="typo" />
   </component>
 </project>
