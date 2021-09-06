@@ -992,7 +992,7 @@ header .container {
 }
 
 a.offer-item div {
-    background-color: #3c3c67;
+    background-color: #516171;
     color: white;
     box-shadow: 7px 7px 5px #aaaaaa;
     padding: 5px;
@@ -1010,7 +1010,7 @@ a.offer-item:hover div {
 }
 
 section.alternate {
-    background-color: #3c3c67;
+    background-color: #516171;
     color: white;
 }
 
