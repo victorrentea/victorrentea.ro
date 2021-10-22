@@ -53,7 +53,7 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1kSAj5MLuh9nMLS3fQxZK8gRnUC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -130,20 +130,7 @@
       <workItem from="1631255175761" duration="1033000" />
       <workItem from="1631870096513" duration="612000" />
       <workItem from="1632134392902" duration="308000" />
-    </task>
-    <task id="LOCAL-00019" summary="remove wp">
-      <created>1608063559118</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1608063559118</updated>
-    </task>
-    <task id="LOCAL-00020" summary="test">
-      <created>1608711642267</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1608711642267</updated>
+      <workItem from="1634149657612" duration="74000" />
     </task>
     <task id="LOCAL-00021" summary="test">
       <created>1608711675193</created>
@@ -474,7 +461,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632134431535</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="more">
+      <created>1634149693770</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1634149693770</updated>
+    </task>
+    <task id="LOCAL-00069" summary="more">
+      <created>1634149726317</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1634149726317</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
