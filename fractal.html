@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 200px;
+            background: url("fata.jpg");
+            clip-path: polygon(
+                    0% 0%,
+                    100% 0,
+                    0% 100%);
+            position: absolute;
+            top: 0px;
+            left: 200px;
+        }
+
+        .NW {
+            transform-origin: left bottom;
+            transform: scaleX(-1);
+        }
+        .SE {
+            transform-origin: left bottom;
+            transform: scaleY(-1);
+        }
+        .SW {
+            transform-origin: left bottom;
+            transform: scaleX(-1) scaleY(-1);
+        }
+
+
+        /*.two {*/
+        /*    transform: scaleX(-1) rotate(45deg);*/
+        /*    transform-origin: bottom right;*/
+
+        /*}*/
+    </style>
+</head>
+
+<body>
+
+<div class="box"></div>
+<div class="box NW"></div>
+<div class="box SW"></div>
+<div class="box SE" style=""></div>
+
+
+</body>
+</html>
