@@ -142,14 +142,8 @@
       <workItem from="1636527897605" duration="974000" />
       <workItem from="1638279442397" duration="501000" />
       <workItem from="1639572257813" duration="624000" />
-      <workItem from="1646033445206" duration="2638000" />
-    </task>
-    <task id="LOCAL-00029" summary="new conf">
-      <created>1613141737284</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1613141737284</updated>
+      <workItem from="1646033445206" duration="4180000" />
+      <workItem from="1646182819839" duration="16000" />
     </task>
     <task id="LOCAL-00030" summary="new conf">
       <created>1613141799114</created>
@@ -487,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646035000550</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="conf list">
+      <created>1646038098730</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1646038098730</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +542,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="initial commit" />
     <MESSAGE value="removed full list of talks. Destroyed youtube iframes." />
     <MESSAGE value="website tuned" />
     <MESSAGE value="aa" />
@@ -566,6 +566,7 @@
     <MESSAGE value="star" />
     <MESSAGE value="yolo" />
     <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
+    <MESSAGE value="conf list" />
+    <option name="LAST_COMMIT_MESSAGE" value="conf list" />
   </component>
 </project>
