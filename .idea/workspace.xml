@@ -8,10 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="conf list">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,20 +144,6 @@
       <workItem from="1639572257813" duration="624000" />
       <workItem from="1646033445206" duration="4180000" />
       <workItem from="1646182819839" duration="16000" />
-    </task>
-    <task id="LOCAL-00031" summary="intellij tricks">
-      <created>1614772824704</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1614772824704</updated>
-    </task>
-    <task id="LOCAL-00032" summary="carousel">
-      <created>1615888116779</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1615888116779</updated>
     </task>
     <task id="LOCAL-00033" summary="intellij tricks">
       <created>1615888211529</created>
@@ -491,7 +474,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652803522709</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="test">
+      <created>1652803792444</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1652803792445</updated>
+    </task>
+    <task id="LOCAL-00081" summary="test">
+      <created>1652803817405</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1652803817405</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +553,6 @@
     <MESSAGE value="new conf" />
     <MESSAGE value="carousel" />
     <MESSAGE value="intellij tricks" />
-    <MESSAGE value="test" />
     <MESSAGE value="big change :)" />
     <MESSAGE value="typo" />
     <MESSAGE value="rename" />
@@ -570,6 +566,7 @@
     <MESSAGE value="yolo" />
     <MESSAGE value="updates" />
     <MESSAGE value="conf list" />
-    <option name="LAST_COMMIT_MESSAGE" value="conf list" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
