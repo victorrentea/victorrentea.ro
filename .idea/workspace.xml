@@ -8,7 +8,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="stuff" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="offer">
+      <change afterPath="$PROJECT_DIR$/logo/client-axxes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-esure.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-hindawi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-intermarche.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-isd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-mambu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-massmutual.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-sourcelabs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-tora.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-verifone.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,6 +94,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/victorrentea/workspace/victorrentea.ro/training-offer&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,11 +108,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/training-offer" />
       <recent name="C:\workspace\victorrentea.ro" />
       <recent name="C:\workspace\victorrentea.ro\poze" />
       <recent name="C:\workspace\victorrentea.ro\blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\workspace\victorrentea.ro\img" />
       <recent name="C:\workspace\victorrentea.ro\blog" />
       <recent name="C:\workspace\victorrentea.ro\logo" />
@@ -150,13 +166,8 @@
       <workItem from="1646182819839" duration="16000" />
       <workItem from="1652879942348" duration="201000" />
       <workItem from="1656012433054" duration="753000" />
-    </task>
-    <task id="LOCAL-00038" summary="test">
-      <created>1617266653303</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1617266653303</updated>
+      <workItem from="1656609140698" duration="734000" />
+      <workItem from="1657274802643" duration="2349000" />
     </task>
     <task id="LOCAL-00039" summary="test">
       <created>1619734153520</created>
@@ -494,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656014172766</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="offer">
+      <created>1656609273782</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1656609273782</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +566,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="reorganize images" />
     <MESSAGE value="all" />
     <MESSAGE value="add wordpress" />
     <MESSAGE value="remove wp" />
@@ -573,6 +590,7 @@
     <MESSAGE value="end" />
     <MESSAGE value="yolo" />
     <MESSAGE value="stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
+    <MESSAGE value="offer" />
+    <option name="LAST_COMMIT_MESSAGE" value="offer" />
   </component>
 </project>
