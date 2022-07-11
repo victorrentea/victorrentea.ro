@@ -8,20 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="offer">
-      <change afterPath="$PROJECT_DIR$/logo/client-axxes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-esure.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-hindawi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-intermarche.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-isd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-mambu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-massmutual.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-sourcelabs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-tora.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-verifone.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="added clients" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,11 +101,11 @@
       <recent name="C:\workspace\victorrentea.ro\blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/logo" />
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\workspace\victorrentea.ro\img" />
       <recent name="C:\workspace\victorrentea.ro\blog" />
       <recent name="C:\workspace\victorrentea.ro\logo" />
-      <recent name="C:\workspace\victorrentea.ro\clients" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -167,14 +154,7 @@
       <workItem from="1652879942348" duration="201000" />
       <workItem from="1656012433054" duration="753000" />
       <workItem from="1656609140698" duration="734000" />
-      <workItem from="1657274802643" duration="2349000" />
-    </task>
-    <task id="LOCAL-00039" summary="test">
-      <created>1619734153520</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1619734153520</updated>
+      <workItem from="1657274802643" duration="2391000" />
     </task>
     <task id="LOCAL-00040" summary="test">
       <created>1620791859145</created>
@@ -512,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656609273782</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="added clients">
+      <created>1657277232296</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1657277232297</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +553,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="all" />
     <MESSAGE value="add wordpress" />
     <MESSAGE value="remove wp" />
     <MESSAGE value="new clients" />
@@ -591,6 +577,7 @@
     <MESSAGE value="yolo" />
     <MESSAGE value="stuff" />
     <MESSAGE value="offer" />
-    <option name="LAST_COMMIT_MESSAGE" value="offer" />
+    <MESSAGE value="added clients" />
+    <option name="LAST_COMMIT_MESSAGE" value="added clients" />
   </component>
 </project>
