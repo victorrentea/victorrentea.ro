@@ -8,19 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
-      <change afterPath="$PROJECT_DIR$/vlad/Pipi2.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/apa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/apa.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/papa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/papa.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/pipi.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/trambu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/trambu.m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/wc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,14 +165,7 @@
       <workItem from="1662462449400" duration="606000" />
       <workItem from="1662659728775" duration="934000" />
       <workItem from="1663610378919" duration="21000" />
-      <workItem from="1665682890858" duration="2886000" />
-    </task>
-    <task id="LOCAL-00051" summary="refactro">
-      <created>1630873160969</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1630873160969</updated>
+      <workItem from="1665682890858" duration="3322000" />
     </task>
     <task id="LOCAL-00052" summary="link">
       <created>1630873389306</created>
@@ -522,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663610393775</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="yolo">
+      <created>1665686090044</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1665686090044</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
