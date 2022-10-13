@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vlad</title>
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/freelancer.css" rel="stylesheet">
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+        .zoomit {
+            z-index: 10;
+            -webkit-animation-name: cssAnimation;
+            -webkit-animation-duration: 2s;
+            -webkit-animation-iteration-count: 2;
+            /*-webkit-animation-timing-function: ease-out;*/
+            /*-webkit-animation-fill-mode: revert;*/
+            -webkit-animation-direction: alternate;
+            /*-webkit-animation-direction: alternate;*/
+
+        }
+
+        @-webkit-keyframes cssAnimation {
+            from {
+                -webkit-transform: scale(1);
+            }
+            to {
+                -webkit-transform: scale(1.7);
+            }
+        }
+        img {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body id="page-top" class="index">
+<script type="application/javascript">
+    var audio = null;
+    var prevDiv = null;
+    function onClickImage(e, audioFileName) {
+        if (prevDiv) prevDiv.classList.remove('zoomit');
+        prevDiv = e;
+        e.classList.add('zoomit');
+        if (audio) audio.pause();
+        audio = new Audio(audioFileName);
+        audio.volume = 0.4
+        audio.play();
+    }
+</script>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-2 text-center" onclick="onClickImage(this, 'apa.m4a')">
+            <img src="apa.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="col-lg-4 text-center" onclick="onClickImage(this, 'pipi.m4a')">
+            <img src="wc.jpg" class="img-responsive" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-lg-offset-2 text-center" onclick="onClickImage(this, 'papa.m4a')">
+            <img src="papa.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="col-lg-4 text-center" onclick="onClickImage(this, 'trambu.m4a')">
+            <img src="trambu.jpg" class="img-responsive" alt="">
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

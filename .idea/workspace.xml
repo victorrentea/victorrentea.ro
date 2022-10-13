@@ -8,7 +8,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
+      <change afterPath="$PROJECT_DIR$/vlad/Pipi2.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/apa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/apa.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/papa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/papa.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/pipi.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/trambu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/trambu.m4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/wc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,6 +89,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "false",
@@ -102,11 +115,11 @@
       <recent name="C:\workspace\victorrentea.ro\blog" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/logo" />
+      <recent name="$PROJECT_DIR$/vlad" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/logo" />
       <recent name="C:\workspace\victorrentea.ro\img" />
       <recent name="C:\workspace\victorrentea.ro\blog" />
-      <recent name="C:\workspace\victorrentea.ro\logo" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -163,13 +176,8 @@
       <workItem from="1662239846857" duration="1342000" />
       <workItem from="1662462449400" duration="606000" />
       <workItem from="1662659728775" duration="934000" />
-    </task>
-    <task id="LOCAL-00050" summary="push">
-      <created>1630871188258</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1630871188259</updated>
+      <workItem from="1663610378919" duration="21000" />
+      <workItem from="1665682890858" duration="2886000" />
     </task>
     <task id="LOCAL-00051" summary="refactro">
       <created>1630873160969</created>
@@ -507,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662660658821</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="yolo">
+      <created>1663610393775</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1663610393775</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
