@@ -8,9 +8,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="tolo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlad/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,10 +90,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.file-colors"
+    "settings.editor.selected.configurable": "web.server",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -168,14 +168,8 @@
       <workItem from="1662462449400" duration="606000" />
       <workItem from="1662659728775" duration="934000" />
       <workItem from="1663610378919" duration="21000" />
-      <workItem from="1665682890858" duration="4740000" />
-    </task>
-    <task id="LOCAL-00054" summary="yolo">
-      <created>1630877294234</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1630877294234</updated>
+      <workItem from="1665682890858" duration="4951000" />
+      <workItem from="1671018744361" duration="3777000" />
     </task>
     <task id="LOCAL-00055" summary="yolo">
       <created>1630884969642</created>
@@ -513,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665686455722</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="tolo">
+      <created>1665687807450</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1665687807450</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +568,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="add wordpress" />
     <MESSAGE value="remove wp" />
     <MESSAGE value="new clients" />
     <MESSAGE value="new conf" />
@@ -592,6 +592,7 @@
     <MESSAGE value="offer" />
     <MESSAGE value="added clients" />
     <MESSAGE value="yolo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
+    <MESSAGE value="tolo" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolo" />
   </component>
 </project>
