@@ -36,6 +36,14 @@
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
 
+Header set X-Content-Type-Options nosniff
+Header always append X-Frame-Options SAMEORIGIN
+Header set Content-Security-Policy "script-src 'none';"
+
+Redirect /talks https://docs.google.com/document/d/e/2PACX-1vRNf99FCnZI2fqAzabT9t61743f5IE3282PtcBJCi7UdI8Vct4r120oBqDeOMb7vZY630-6E2T0a9kF/pub
+Redirect /photo https://drive.google.com/drive/folders/1V-U0GZQQYiKo6z3dLWbaE1Cvs9ajzw92?usp=sharing
+Redirect /training-offer https://drive.google.com/open?id=1cQglXi1SUabmMFlTiYwsSThA1u0b1sDm
+
 
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
