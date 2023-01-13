@@ -9,9 +9,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
-      <change afterPath="$PROJECT_DIR$/community/qr.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crafters-community.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dzone-article-functional.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feed/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/feed/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/cabin - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/cabin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/cake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/circus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/safe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/portfolio/submarine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/intellij-talk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jpoint-zoomed-512.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linkedin scripts/linkedin-remove-scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/talk-list.old.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/techy-readers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,14 +193,9 @@
       <workItem from="1665682890858" duration="4951000" />
       <workItem from="1671018744361" duration="3777000" />
       <workItem from="1671309612969" duration="2220000" />
-      <workItem from="1673422680137" duration="5390000" />
-    </task>
-    <task id="LOCAL-00061" summary="more">
-      <created>1631255395141</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1631255395141</updated>
+      <workItem from="1673422680137" duration="6079000" />
+      <workItem from="1673445640211" duration="8000" />
+      <workItem from="1673591626054" duration="301000" />
     </task>
     <task id="LOCAL-00062" summary="more">
       <created>1631255472654</created>
@@ -518,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673426726521</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="yolo">
+      <created>1673434861449</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1673434861449</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
