@@ -8,31 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crafters-community.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dzone-article-functional.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feed/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/feed/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/cabin - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/cabin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/cake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/circus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/game.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/safe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/portfolio/submarine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/intellij-talk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpoint-zoomed-512.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/linkedin scripts/linkedin-remove-scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/talk-list.old.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/techy-readers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo cleanup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,14 +171,7 @@
       <workItem from="1671309612969" duration="2220000" />
       <workItem from="1673422680137" duration="6079000" />
       <workItem from="1673445640211" duration="8000" />
-      <workItem from="1673591626054" duration="301000" />
-    </task>
-    <task id="LOCAL-00062" summary="more">
-      <created>1631255472654</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1631255472654</updated>
+      <workItem from="1673591626054" duration="407000" />
     </task>
     <task id="LOCAL-00063" summary="more">
       <created>1631269893649</created>
@@ -540,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673434861449</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="yolo cleanup">
+      <created>1673591935007</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1673591935008</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +570,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="remove wp" />
     <MESSAGE value="new clients" />
     <MESSAGE value="new conf" />
     <MESSAGE value="carousel" />
@@ -619,6 +594,7 @@
     <MESSAGE value="added clients" />
     <MESSAGE value="tolo" />
     <MESSAGE value="yolo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
+    <MESSAGE value="yolo cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="yolo cleanup" />
   </component>
 </project>
