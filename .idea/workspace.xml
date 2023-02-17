@@ -8,7 +8,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo cleanup" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,20 +174,8 @@
       <workItem from="1673422680137" duration="6079000" />
       <workItem from="1673445640211" duration="8000" />
       <workItem from="1673591626054" duration="407000" />
-    </task>
-    <task id="LOCAL-00063" summary="more">
-      <created>1631269893649</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1631269893649</updated>
-    </task>
-    <task id="LOCAL-00064" summary="more">
-      <created>1631269916601</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1631269916601</updated>
+      <workItem from="1674629415697" duration="122000" />
+      <workItem from="1676624042719" duration="1000" />
     </task>
     <task id="LOCAL-00065" summary="more">
       <created>1631269952294</created>
@@ -516,7 +506,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673591935008</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="yolo">
+      <created>1674629448780</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1674629448780</updated>
+    </task>
+    <task id="LOCAL-00113" summary="yolo">
+      <created>1674629485499</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1674629485499</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,8 +597,8 @@
     <MESSAGE value="offer" />
     <MESSAGE value="added clients" />
     <MESSAGE value="tolo" />
-    <MESSAGE value="yolo" />
     <MESSAGE value="yolo cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo cleanup" />
+    <MESSAGE value="yolo" />
+    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
   </component>
 </project>
