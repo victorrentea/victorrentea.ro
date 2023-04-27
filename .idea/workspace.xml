@@ -8,9 +8,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="add company details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,14 +177,7 @@
       <workItem from="1674629415697" duration="122000" />
       <workItem from="1676624042719" duration="1000" />
       <workItem from="1676624136497" duration="9000" />
-      <workItem from="1678312160149" duration="328000" />
-    </task>
-    <task id="LOCAL-00066" summary="more">
-      <created>1631870117551</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1631870117551</updated>
+      <workItem from="1678312160149" duration="1543000" />
     </task>
     <task id="LOCAL-00067" summary="more">
       <created>1632134431535</created>
@@ -523,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676624142469</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="add company details">
+      <created>1678312583296</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1678312583296</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +576,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="new clients" />
     <MESSAGE value="new conf" />
     <MESSAGE value="carousel" />
     <MESSAGE value="intellij tricks" />
@@ -602,6 +600,7 @@
     <MESSAGE value="tolo" />
     <MESSAGE value="yolo cleanup" />
     <MESSAGE value="yolo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
+    <MESSAGE value="add company details" />
+    <option name="LAST_COMMIT_MESSAGE" value="add company details" />
   </component>
 </project>
