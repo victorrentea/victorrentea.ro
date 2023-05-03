@@ -8,9 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="add company details">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,13 +176,7 @@
       <workItem from="1676624042719" duration="1000" />
       <workItem from="1676624136497" duration="9000" />
       <workItem from="1678312160149" duration="1543000" />
-    </task>
-    <task id="LOCAL-00067" summary="more">
-      <created>1632134431535</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1632134431535</updated>
+      <workItem from="1682576192254" duration="317000" />
     </task>
     <task id="LOCAL-00068" summary="more">
       <created>1634149693770</created>
@@ -522,13 +514,25 @@
       <option name="project" value="LOCAL" />
       <updated>1678312583296</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="yolo">
+      <created>1682576302873</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1682576302873</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a0a85aa6-9f9f-4683-a185-fad8095c6624" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -539,7 +543,6 @@
         <entry key="a0a85aa6-9f9f-4683-a185-fad8095c6624">
           <value>
             <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -558,14 +561,10 @@
                   </entry>
                 </map>
               </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="a0a85aa6-9f9f-4683-a185-fad8095c6624" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -599,8 +598,8 @@
     <MESSAGE value="added clients" />
     <MESSAGE value="tolo" />
     <MESSAGE value="yolo cleanup" />
-    <MESSAGE value="yolo" />
     <MESSAGE value="add company details" />
-    <option name="LAST_COMMIT_MESSAGE" value="add company details" />
+    <MESSAGE value="yolo" />
+    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
   </component>
 </project>
