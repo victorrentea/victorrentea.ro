@@ -2,7 +2,7 @@
 Mergeti la http://start.spring.io
     Project: Maven
     Language: Java
-    Spring Boot: latest (3.1.4)
+    Spring Boot: latest (3.1.4) sau 2.7.16
     jar
     Java 17
     - Dependencies:
