@@ -25,6 +25,8 @@ class Audit {id, text}
 
 curl --location 'http://localhost:8080/reservations' --header 'Content-Type: application/json' --data '{"name":"nume"}'
 
+in src/main/java/lombok.config    in el pui
+lombok.anyConstructor.addConstructorProperties=true
 
 record Dto
 
