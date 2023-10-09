@@ -23,6 +23,9 @@ REST API
 class Reservation {id, name, creationDate}
 class Audit {id, text}
 
+curl --location 'http://localhost:8080/reservations' --header 'Content-Type: application/json' --data '{"name":"nume"}'
+
+
 record Dto
 
 CR: sa nu se insere datele de test la startup decat daca profilul = 'local'
