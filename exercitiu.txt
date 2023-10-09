@@ -1,0 +1,46 @@
+=======================
+Mergeti la http://start.spring.io
+    Project: Maven
+    Language: Java
+    Spring Boot: latest (3.1.4)
+    jar
+    Java 17
+    - Dependencies:
+        - Spring web - REST
+        - Spring Data JPA pt @Entity
+        - Validation pt @NotNull
+        - H2 o SQL DB in-mem
+        - Lombok pt ca java e 1995
+        - devtools pt ca la rebuild proj sa faca restart automat pe local
+        - Actuator pt Ops
+REST API
+- getReservationById: GET /reservations/{id}
+- createReservation: POST /reservations?name=xxxxxxx
+    -> returns new id in response body
+- getAllReservations: GET /reservations
+
+@Entity Model:
+class Reservation {id, name, creationDate}
+class Audit {id, text}
+
+record Dto
+
+CR: sa nu se insere datele de test la startup decat daca profilul = 'local'
+CR: GET /reservation/latest sa intoarca ultimele n=${max.reservations} rezervari create dupa creationDate (order by descendent), max.reservations citit din fisier .properties
+CR: numele rezervarii sa fie nenul minim 5 caractere
+CR: sa expunem Swagger/OpenAPI (http://localost:8080/v3/api-docs) + swagger-ui (http://localhost:8080/swagger-ui.html)
+CR: getReservationById daca nu gaseste in DB sa intoarca 404 Hint: ResponseEntity sau @ResponseStatus in @RestControllerAdvice sau o exceptie custom cu @ResponseStatus(404)
+CR: POST/ create reservation sa insere si audit in aceeasi tranzactie
+
+
+
+
+
+
+CR: [opt] sa logati toate apelurile la orice metoda dintr-un @RestController
+CR: Sa startezi o metoda cedureaza Thread.sleep(2000) in mod asincron;
+CR: Iti faci un endpoint nou @GetMapping("hello") {return"Hello!"} si sa ti-l chemi cu @RestTemplate si cu @FeignClient
+CR: sa masori cat timp ia acest apel sa iasa metrica Micrometer pe /actuator/promotheus   a se vedea baeldung.com
+ --challenge--
+CR: sa faci o tx sa se canceleze?
+CR: sa pierzi tranzactia cand pleci de pe thread?
