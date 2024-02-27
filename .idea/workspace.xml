@@ -8,15 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
-      <change afterPath="$PROJECT_DIR$/logo/client-dkv.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-flowtraders.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-pentest-tools.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-sts.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-swift.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="new clients" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +197,7 @@
       <workItem from="1706685833460" duration="87000" />
       <workItem from="1706685925875" duration="202000" />
       <workItem from="1707345348675" duration="1220000" />
-      <workItem from="1708154341054" duration="1645000" />
+      <workItem from="1708154341054" duration="2149000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -550,7 +542,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +596,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="rename" />
     <MESSAGE value="rename back" />
     <MESSAGE value="push" />
     <MESSAGE value="refactro" />
@@ -629,6 +620,7 @@
     <MESSAGE value="tubo" />
     <MESSAGE value="add face" />
     <MESSAGE value="yolo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
+    <MESSAGE value="new clients" />
+    <option name="LAST_COMMIT_MESSAGE" value="new clients" />
   </component>
 </project>
