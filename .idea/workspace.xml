@@ -627,4 +627,8 @@
     <MESSAGE value="yolo" />
     <option name="LAST_COMMIT_MESSAGE" value="yolo" />
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
 </project>
