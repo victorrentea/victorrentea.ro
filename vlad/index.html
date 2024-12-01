@@ -4,38 +4,20 @@
     <meta charset="UTF-8">
     <title>Vlad</title>
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/freelancer.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <style>
-        body {
-            background-color: black;
-        }
-        .zoomit {
-            z-index: 10;
-            -webkit-animation-name: cssAnimation;
-            -webkit-animation-duration: 2s;
-            -webkit-animation-iteration-count: 2;
-            -webkit-animation-direction: alternate;
-
-        }
-
-        @-webkit-keyframes cssAnimation {
-            from {
-                -webkit-transform: scale(1);
-            }
-            to {
-                -webkit-transform: scale(1.7);
-            }
-        }
-        img {
-            margin: 20px;
-            cursor: pointer;
-        }
-    </style>
 </head>
-<body id="page-top" class="index">
+
+<body class="index">
+
 <script type="application/javascript">
+    document.onfullscreenchange = function () {
+        if (!document.fullscreenElement) {
+            let button = document.querySelector('#fullscreen-button');
+            button.style.display = 'block';
+            button.focus();
+        }
+    }
     var audio = null;
     var prevDiv = null;
     function onClickImage(e, audioFileName) {
@@ -50,6 +32,9 @@
 </script>
 
 <div class="container">
+    <div class="row text-center" >
+        <button autofocus class="col-lg-2" id="fullscreen-button" onclick="document.body.requestFullscreen(); this.style.display='none';">Fullscreen</button>
+    </div>
 
     <div class="row">
         <div onclick="onClickImage(this, 'apa.m4a')"
@@ -61,8 +46,7 @@
         <div onclick="onClickImage(this, 'pipi.m4a')"
              class="text-center
                 col-md-offset-0 col-md-4
-                col-xs-offset-3 col-xs-6
-                " >
+                col-xs-offset-3 col-xs-6" >
             <img src="wc.jpg" class="img-responsive" alt="">
         </div>
 

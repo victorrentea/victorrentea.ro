@@ -12,6 +12,7 @@
     <customRepositories />
     <composerUpdateOptions />
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FindBugsConfigurable">
     <option name="make" value="true" />
     <option name="effort" value="default" />
