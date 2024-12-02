@@ -1,0 +1,165 @@
+<html>
+<head>
+    <title> ⭒✩Vorbeste in imagini✩⭒</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0.5%;
+        }
+        button {
+            cursor: pointer;
+            font-size: 20pt;
+        }
+        #text{
+            font-size:25pt;
+            padding: 5pt;
+            width:100%;
+        }
+        #bottom-button-bar {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom:0
+        }
+        #bottom-button-bar button{
+            background-color: transparent;
+        }
+        :fullscreen, ::backdrop {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 8px;
+        }
+        button.backspace {
+            position: absolute;
+            height: 41pt;
+            right: 0;
+            margin-right: 0.5%;
+        }
+        div#canvas {
+            background: lightgrey;
+        }
+        div#canvas img {
+            /*width: 12.5%;*/
+            width: 20%;
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+<div id="bottom-button-bar"  >
+    <button autofocus id="fullscreen-button" onclick="document.body.requestFullscreen(); this.style.display='none';">
+        Fullscreen
+    </button>
+    <button onclick="speakText()"> Speak 🗣️</button>
+</div>
+<input id="text" type="text" readonly="readonly"/>
+<button onclick="stergeCuvant()" onmousedown="onStergeDown()" class="backspace"> ⌫</button>
+<br>
+<div id="canvas">
+
+</div>
+<div id="images">
+    <img id="want" src="want.jpg" alt="vreau">
+
+
+    <img src="water.jpg" alt="apă" >
+
+    <img src="water.jpg" alt="apă">
+    <img src="tea.jpg" alt="ceai">
+
+
+    <img src="wc.jpg" alt="veceu">
+
+
+    <img src="eggs.jpg" alt="ouă" parent="drink">
+    <img src="milk.jpg" alt="lapte">
+    <img src="cold.jpg" alt="rece">
+    <img src="sleep.jpg" alt="nani">
+    <img src="yes.jpg" alt="da">
+    <img src="no.jpg" alt="nu">
+    <img src="enough.jpg" alt="gata">
+    <img src="help.jpg" alt="ajutor">
+    <img src="mom.jpg" alt="mama">
+    <img src="dad.jpg" alt="tata">
+    <img src="emma.jpg" alt="Emma">
+    <img src="kiss.jpg" alt="pupă">
+    <img src="auch.jpg" alt="buba">
+
+    <img src="bread.jpg" alt="paine_cu_unt">
+    <img src="soup.jpg" alt="supă">
+    <img src="banana.jpg" alt="banană">
+    <img src="sticks.jpg" alt="sticks">
+    <img src="lays.jpg" alt="lays">
+    <img src="pomber.jpg" alt="pomber">
+
+</div>
+
+VREAU
+> sa mananc
+    > ...
+> sa beau
+    > ..
+> sa dorm
+> in brate
+> cada
+> la veceu
+> sa merg
+    > sus
+    > jos
+    > afara
+    > la mama
+    > tata
+DA/SUPER
+NU
+STOP
+DOARE > cap, mana, picior, burta
+SIMT > trist, obosit, suparat, furios
+
+<script>
+    // remove spaces between <img> <img> to avoid space between images
+    const imagesE=document.getElementById('images');
+    imagesE.innerHTML= imagesE.innerHTML.replace(/>\s+</g, '><');
+    for (let img of imagesE.children) {
+        img.onclick= function () { prompt(img.alt); }
+    }
+
+    const textE=document.getElementById('text');
+    function prompt(text) {
+        textE.value += ' ' + text;
+    }
+    function stergeCuvant(){
+        let pozitieUltimSpatiu = textE.value.lastIndexOf(" ");
+        textE.value = textE.value.substring(0, pozitieUltimSpatiu);
+        clearTimeout(timerDown);
+    }
+    var timerDown = null;
+    function onStergeDown() {
+        timerDown = setTimeout(() => {textE.value="";}, 500);
+    }
+    document.onfullscreenchange = function () {
+        if (!document.fullscreenElement) {
+            let button = document.querySelector('#fullscreen-button');
+            button.style.display = 'inline';
+            button.focus();
+        }
+    }
+    function speakText() {
+        if (! 'speechSynthesis' in window) {
+            alert("Sorry, your browser does not support speech synthesis.");
+            return;
+        }
+        const text = document.getElementById("text").value;
+        const speech = new SpeechSynthesisUtterance(text);
+
+        // Optional: Customize voice, pitch, and rate
+        speech.voice = window.speechSynthesis.getVoices()[0]; // Select the first available voice
+        speech.pitch = 1; // Default is 1 (range is 0 to 2)
+        speech.rate = 0.8;  // Default is 1 (range is 0.1 to 10)
+
+        window.speechSynthesis.speak(speech);
+    }
+</script>
+</body>
+</html>

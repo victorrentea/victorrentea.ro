@@ -8,17 +8,38 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
-      <change afterPath="$PROJECT_DIR$/vlad/emma.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/bed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/bomboana.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/colors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess-backup" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess-backup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="push">
+      <change afterPath="$PROJECT_DIR$/vlad/img/auch.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/banana.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/bomboana.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/bread.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/cold.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/dad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/eggs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/emma.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/emma.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/enough.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/help.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/kiss.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/lays.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/milk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/mom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/no.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/pomber.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/sleep.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/soup.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/sticks.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/tea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/want.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/water.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/wc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/yes.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlad/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/emma.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bed.png" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/img/bed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bomboana.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/colors.png" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/img/colors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/like.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,31 +123,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.emma.html.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "false",
-    "WebServerToolWindowFactoryState": "true",
-    "full.screen.before.presentation.mode": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/victorrentea/workspace/victorrentea.ro/vlad/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.emma.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/victorrentea/workspace/victorrentea.ro/vlad/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/vlad/img" />
@@ -242,7 +263,8 @@
       <workItem from="1714062085859" duration="803000" />
       <workItem from="1716186497351" duration="234000" />
       <workItem from="1721969051377" duration="225000" />
-      <workItem from="1733043802771" duration="6691000" />
+      <workItem from="1733043802771" duration="20736000" />
+      <workItem from="1733085749690" duration="1573000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -587,7 +609,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +664,6 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="rename back" />
-    <MESSAGE value="push" />
     <MESSAGE value="refactro" />
     <MESSAGE value="link" />
     <MESSAGE value="add clients" />
@@ -666,7 +687,8 @@
     <MESSAGE value="add face" />
     <MESSAGE value="new clients" />
     <MESSAGE value="yolo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
+    <MESSAGE value="push" />
+    <option name="LAST_COMMIT_MESSAGE" value="push" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
