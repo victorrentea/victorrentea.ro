@@ -8,45 +8,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="wip">
-      <change afterPath="$PROJECT_DIR$/vlad/img/apple.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/bath.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/blueberry.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/board.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/bombons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/book.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/bread-butter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/drink.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/eat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/feel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/grape.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/hand.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/hand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/happy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/hot.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/iogurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/juice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/music.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/my-room.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/outside.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/pasta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/pizza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/pure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/sad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/strawberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/toys.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/walk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/wet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/img/white.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vlad/rupe.html" afterDir="false" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="project">
+      <change afterPath="$PROJECT_DIR$/vlad/img/angry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/belly.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/ear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/foot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/head.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/hug.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/teeth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vlad/img/throat.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vlad/img/emma.html" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/img/emma.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlad/img/sleep.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/img/sleep.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlad/img/soup.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/img/soup.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlad/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vlad/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +248,7 @@
       <workItem from="1733305578371" duration="1201000" />
       <workItem from="1733345029840" duration="599000" />
       <workItem from="1733405338943" duration="370000" />
-      <workItem from="1733406464535" duration="9412000" />
+      <workItem from="1733406464535" duration="10488000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -621,7 +593,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="180" />
+    <option name="localTasksCounter" value="181" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +647,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="refactro" />
     <MESSAGE value="link" />
     <MESSAGE value="add clients" />
     <MESSAGE value="more" />
@@ -700,7 +671,8 @@
     <MESSAGE value="yolo" />
     <MESSAGE value="push" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="project" />
+    <option name="LAST_COMMIT_MESSAGE" value="project" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

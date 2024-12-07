@@ -37,6 +37,7 @@
         button.backspace {
             position: absolute;
             height: 41pt;
+            width: 80pt;
             right: 0;
             margin-right: 0.5%;
         }
@@ -79,7 +80,7 @@
     const itemsPerPage = 18;
     const topItems = [
         {
-            img: 'eat.jpg', text: 'să mănânc', children: [
+            img: 'eat.jpg', text: 'vreau să mănânc', children: [
                 {img: 'banana.jpg', text: 'banană'},
                 {img: 'sticks.jpg', text: 'sticks'},
                 {img: 'lays.jpg', text: 'lays'},
@@ -98,7 +99,7 @@
             ]
         },
         {
-            img: 'drink.jpg', text: 'să beau', children: [
+            img: 'drink.jpg', text: 'vreau să beau', children: [
                 {img: 'water.jpg', text: 'apă'},
                 {img: 'milk.jpg', text: 'lapte'},
                 {img: 'tea.jpg', text: 'ceai'},
@@ -113,7 +114,7 @@
                 {img: 'mom.jpg', text: 'la mama'},
                 {img: 'dad.jpg', text: 'la tata'},
                 {img: 'emma.jpg', text: 'Emma'},
-                {img: 'kiss.jpg', text: 'pupă'},
+                {img: 'hug.jpg', text: 'pupă'},
                 {img: 'bath.jpg', text: 'baie'},
                 {img: 'wc.jpg', text: 'toaleta'},
                 {img: 'music.jpg', text: 'muzica'},
@@ -132,10 +133,17 @@
                 {img: 'sad.png', text: 'trist'},
                 {img: 'cold.jpg', text: 'mi-e rece'},
                 {img: 'hot.jpg', text: 'mi-e cald'},
+                {img: 'angry.png', text: 'suparat'},
                 {img: 'wet.jpg', text: 'ud'},
                 {
                     img: 'auch.jpg', text: 'ma doare', children: [
                         {img: 'hand.png', text: 'mana'},
+                        {img: 'foot.png', text: 'picior'},
+                        {img: 'head.png', text: 'cap'},
+                        {img: 'teeth.png', text: 'dinti'},
+                        {img: 'throat.png', text: 'gat'},
+                        {img: 'ear.png', text: 'ureche'},
+                        {img: 'belly.png', text: 'burta'},
                     ]
                 },
             ]
@@ -189,7 +197,7 @@
             img.onclick = function () {
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
-                else setCanvas(topItems);
+                // else setCanvas(topItems);
             }
             canvasE.appendChild(img);
         }
