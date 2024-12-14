@@ -1,12 +1,13 @@
 <html>
 <head>
     <title>Vorbeste, Vlad!</title>
-    <link rel="icon" type="image/png" href="favicon3.png">
+    <link href="favicon3.png" rel="icon" type="image/png">
     <meta charset="UTF-8">
     <style>
         body {
             margin: 0.5%;
         }
+
         * {
             -webkit-touch-callout: none;
         }
@@ -71,15 +72,15 @@
 </div>
 <input id="text" readonly="readonly" type="text"/>
 <button class="backspace"
-        ontouchstart="stergeTot(); event.returnValue = false;"
         onclick="stergeTot(); event.returnValue = false;"
-        > ⌫
-<!--        ontouchstart="stergeCuvant(); event.returnValue = false;"-->
-<!--        ontouchend="onStergeDown();event.returnValue = false;"-->
-<!--        ontouchmove="event.returnValue = false;"-->
-<!--        ontouchcancel="event.returnValue = false;"-->
-<!--        onclick="stergeCuvant();event.returnValue = false;"-->
-<!--        onmousedown="onStergeDown();event.returnValue = false;"-->
+        ontouchstart="stergeTot(); event.returnValue = false;"
+> ⌫
+    <!--        ontouchstart="stergeCuvant(); event.returnValue = false;"-->
+    <!--        ontouchend="onStergeDown();event.returnValue = false;"-->
+    <!--        ontouchmove="event.returnValue = false;"-->
+    <!--        ontouchcancel="event.returnValue = false;"-->
+    <!--        onclick="stergeCuvant();event.returnValue = false;"-->
+    <!--        onmousedown="onStergeDown();event.returnValue = false;"-->
 
 </button>
 <br>
@@ -96,7 +97,7 @@
 <script>
 
     //https://stackoverflow.com/questions/42160260/prevent-force-touch-event-on-image-but-still-allow-long-press-event-in-ios-safar
-    window.addEventListener('touchforcechange', function(event) {
+    window.addEventListener('touchforcechange', function (event) {
         var force = event.changedTouches[0].force;
         var id = event.changedTouches[0].target.id;
 
@@ -221,6 +222,7 @@
     }
 
     var imgPressTimer = null;
+
     function setCanvas(items) {
         canvasE.innerHTML = '';
         for (let item of items) {
@@ -262,7 +264,6 @@
     }
 
 
-
     function prompt(text) {
         textE.value += ' ' + text;
     }
@@ -270,6 +271,7 @@
     function stergeTot() {
         textE.value = "";
     }
+
     function stergeCuvant() {
         let pozitieUltimSpatiu = textE.value.lastIndexOf(" ");
         textE.value = textE.value.substring(0, pozitieUltimSpatiu);
@@ -293,12 +295,16 @@
     }
 
     var googleRequest = null;
+
     function speakGoogle(text) {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
-        // if (googleRequest) {
-        //     googleRequest.abort();
-        // }
-        googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key="+googleApiKey, {
+        if (googleRequest) {
+            try {
+                googleRequest.abort();
+            } catch (e) {
+            }
+        }
+        googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key=" + googleApiKey, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -354,22 +360,22 @@
                 input: text,
             })
         })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error, status = ${response.status}`);
-            }
-            return response.arrayBuffer();
-        })
-        .then((buffer) => audioCtx.decodeAudioData(buffer))
-        .then((decodedData) => {
-            const source = new AudioBufferSourceNode(audioCtx);
-            source.buffer = decodedData;
-            source.connect(audioCtx.destination);
-            return source;
-        })
-        .then((source) => {
-            source.start(0);
-        });
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+                return response.arrayBuffer();
+            })
+            .then((buffer) => audioCtx.decodeAudioData(buffer))
+            .then((decodedData) => {
+                const source = new AudioBufferSourceNode(audioCtx);
+                source.buffer = decodedData;
+                source.connect(audioCtx.destination);
+                return source;
+            })
+            .then((source) => {
+                source.start(0);
+            });
 
     }
 </script>
