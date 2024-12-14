@@ -71,13 +71,16 @@
 </div>
 <input id="text" readonly="readonly" type="text"/>
 <button class="backspace"
-        ontouchstart="stergeCuvant(); event.returnValue = false;"
-        ontouchend="onStergeDown();event.returnValue = false;"
-        ontouchmove="event.returnValue = false;"
-        ontouchcancel="event.returnValue = false;"
-        onclick="stergeCuvant();event.returnValue = false;"
-        onmousedown="onStergeDown();event.returnValue = false;"
-        touchstart> ⌫
+        ontouchstart="stergeTot(); event.returnValue = false;"
+        onclick="stergeTot(); event.returnValue = false;"
+        > ⌫
+<!--        ontouchstart="stergeCuvant(); event.returnValue = false;"-->
+<!--        ontouchend="onStergeDown();event.returnValue = false;"-->
+<!--        ontouchmove="event.returnValue = false;"-->
+<!--        ontouchcancel="event.returnValue = false;"-->
+<!--        onclick="stergeCuvant();event.returnValue = false;"-->
+<!--        onmousedown="onStergeDown();event.returnValue = false;"-->
+
 </button>
 <br>
 <div id="canvas">
@@ -261,6 +264,9 @@
         textE.value += ' ' + text;
     }
 
+    function stergeTot() {
+        textE.value = "";
+    }
     function stergeCuvant() {
         let pozitieUltimSpatiu = textE.value.lastIndexOf(" ");
         textE.value = textE.value.substring(0, pozitieUltimSpatiu);
