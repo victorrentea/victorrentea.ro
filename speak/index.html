@@ -7,6 +7,9 @@
         body {
             margin: 0.5%;
         }
+        * {
+            -webkit-touch-callout: none;
+        }
 
         button {
             cursor: pointer;
@@ -63,7 +66,7 @@
     <button autofocus id="fullscreen-button" onclick="document.body.requestFullscreen(); this.style.display='none';">
         Fullscreen
     </button>
-    <button onclick="speakOpenAI(document.getElementById('text').value || 'Vreau să dorm!')"> Speak OpenAI️</button>
+    <!--<button onclick="speakOpenAI(document.getElementById('text').value || 'Vreau să dorm!')"> Speak OpenAI️</button>-->
     <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>
 </div>
 <input id="text" readonly="readonly" type="text"/>
