@@ -83,11 +83,24 @@
 <!--<img src="bed.png" onerror="errors.push(src)">-->
 
 <script>
+
+    //https://stackoverflow.com/questions/42160260/prevent-force-touch-event-on-image-but-still-allow-long-press-event-in-ios-safar
+    window.addEventListener('touchforcechange', function(event) {
+        var force = event.changedTouches[0].force;
+        var id = event.changedTouches[0].target.id;
+
+        if ($('#' + id).hasClass('class') && force > 0.1) {
+            event.preventDefault();
+            console.log('prevented 3D touch on element with id = ' + id);
+        }
+    });
+
+
     const textE = document.getElementById('text');
     const itemsPerPage = 18;
     const topItems = [
         {
-            img: 'eat.jpg', text: 'vreau să mănânc', children: [
+            img: 'eat.jpg', text: 'vreau', children: [
                 {img: 'banana.jpg', text: 'banană'},
                 {img: 'sticks.jpg', text: 'sticks'},
                 {img: 'lays.jpg', text: 'lays'},
