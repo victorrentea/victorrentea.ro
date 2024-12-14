@@ -250,7 +250,8 @@
                 if (item.children) setCanvas(item.children);
                 else if (item.text) {
                     setCanvas(topItems);
-                    speak();
+                    simplifyText()
+                        .then(() => speak());
                 }
             }
             img.onmousedown = function (e) {
@@ -366,6 +367,36 @@
                 audio.play();
             })
         ;
+    }
+
+    function simplifyText() {
+        const gemini_api_key="AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
+
+  //       curl \
+  // -H "Content-Type: application/json" \
+  // -d "{\"contents\":[{\"parts\":[{\"text\":\"Explain how AI works\"}]}]}" \
+  // -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YOUR_API_KEY"
+
+        return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + gemini_api_key, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "contents": [{
+                        "parts": [{"text": "Reply with the simplest form of this text written by clicking on images in an AAC app: " + textE.value}]
+                }]
+            })
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((json) => {
+            textE.value = json.contents[0].parts[0].text;
+        })
     }
 
     function speak() {
