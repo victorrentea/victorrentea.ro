@@ -384,7 +384,7 @@
             },
             body: JSON.stringify({
                 "contents": [{
-                        "parts": [{"text": "Reply with the simplest form of this text written by clicking on images in an AAC app: " + textE.value}]
+                        "parts": [{"text": "The following text was written using an AAC app by clicking on images. Find a simpler form of it in romanian. \n\n " + textE.value}]
                 }]
             })
         })
@@ -395,7 +395,7 @@
             return response.json();
         })
         .then((json) => {
-            textE.value = json.contents[0].parts[0].text;
+            textE.value = json.candidates[0].content[0].parts[0].text;
         })
     }
 
