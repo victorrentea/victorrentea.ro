@@ -13,7 +13,7 @@
         }
 
         #text {
-            font-size: 25pt;
+            font-size: 200%;
             padding: 5pt;
             width: 100%;
         }
@@ -64,7 +64,9 @@
     <button onclick="speakText()"> Speak 🗣️</button>
 </div>
 <input id="text" readonly="readonly" type="text"/>
-<button class="backspace" onclick="stergeCuvant()" onmousedown="onStergeDown()"> ⌫</button>
+<button class="backspace" onclick="stergeCuvant()"
+        onmousedown="onStergeDown()"
+ touchstart> ⌫</button>
 <br>
 <div id="canvas">
 
@@ -114,7 +116,7 @@
                 {img: 'mom.jpg', text: 'la mama'},
                 {img: 'dad.jpg', text: 'la tata'},
                 {img: 'emma.jpg', text: 'Emma'},
-                {img: 'hug.jpg', text: 'pupă'},
+                {img: 'hug.png', text: 'pupă'},
                 {img: 'bath.jpg', text: 'baie'},
                 {img: 'wc.jpg', text: 'toaleta'},
                 {img: 'music.jpg', text: 'muzica'},
@@ -197,7 +199,7 @@
             img.onclick = function () {
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
-                // else setCanvas(topItems);
+                else if (item.text) setCanvas(topItems);
             }
             canvasE.appendChild(img);
         }
@@ -244,19 +246,24 @@
     }
 
     function speakText() {
-        if (!'speechSynthesis' in window) {
-            alert("Sorry, your browser does not support speech synthesis.");
-            return;
-        }
-        const speech = new SpeechSynthesisUtterance(text);
-        const text = document.getElementById("text").value;
+        // if (!'speechSynthesis' in window) {
+        //     alert("Sorry, your browser does not support speech synthesis.");
+        //     return;
+        // }
+        // const text = document.getElementById("text").value;
+        // const speech = new SpeechSynthesisUtterance(text);
+        //
+        // // Optional: Customize voice, pitch, and rate
+        // speech.voice = window.speechSynthesis.getVoices()[0]; // Select the first available voice
+        // speech.pitch = 1; // Default is 1 (range is 0 to 2)
+        // speech.rate = 0.8;  // Default is 1 (range is 0.1 to 10)
+        //
+        // window.speechSynthesis.speak(speech);
 
-        // Optional: Customize voice, pitch, and rate
-        speech.voice = window.speechSynthesis.getVoices()[0]; // Select the first available voice
-        speech.pitch = 1; // Default is 1 (range is 0 to 2)
-        speech.rate = 0.8;  // Default is 1 (range is 0.1 to 10)
 
-        window.speechSynthesis.speak(speech);
+        var audio = new Audio();
+        audio.src ='https://translate.google.com/translate_tts?ie=utf-8&tl=en&q=Hello%20World.';
+        audio.play();
     }
 </script>
 </body>

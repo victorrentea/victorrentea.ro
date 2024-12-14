@@ -399,6 +399,13 @@ section.success {
     right: 0;
 }
 
+div.client-item img {
+    filter: grayscale(1);
+}
+div.client-item img:hover {
+    filter: grayscale(0);
+}
+
 #training .portfolio-item .portfolio-link {
     display: block;
     position: relative;
