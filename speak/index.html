@@ -292,9 +292,13 @@
         }
     }
 
+    var googleRequest = null;
     function speakGoogle(text) {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
-        fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key="+googleApiKey, {
+        if (googleRequest) {
+            googleRequest.abort();
+        }
+        googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key="+googleApiKey, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
