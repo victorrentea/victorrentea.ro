@@ -296,7 +296,7 @@
     }
 
     var googleRequest = null;
-    const audio = null;
+    var audio = null;
     function speakGoogle(text) {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
         if (googleRequest) {
@@ -342,7 +342,7 @@
             })
             .then((json) => json.audioContent)
             .then((audioContent) => {
-                const audio = new Audio("data:audio/wav;base64," + audioContent);
+                audio = new Audio("data:audio/wav;base64," + audioContent);
                 audio.play();
             })
         ;
