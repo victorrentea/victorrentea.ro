@@ -93,15 +93,15 @@
                 {img: 'lays.jpg', text: 'lays'},
                 {img: 'pomber.jpg', text: 'pomber'},
                 {img: 'eggs.jpg', text: 'ouă'},
-                {img: 'bread-butter.png', text: 'paine cu unt'},
+                {img: 'bread-butter.png', text: 'pâine cu unt'},
                 {img: 'grape.jpg', text: 'struguri'},
                 {img: 'apple.jpg', text: 'măr'},
-                {img: 'soup.jpg', text: 'supa'},
+                {img: 'soup.jpg', text: 'supă'},
                 {img: 'blueberry.jpg', text: 'afine'},
                 {img: 'pure.png', text: 'piure'},
                 {img: 'pasta.png', text: 'paste'},
                 {img: 'pizza.png', text: 'pizza'},
-                {img: 'strawberry.png', text: 'capsuni'},
+                {img: 'strawberry.png', text: 'căpșuni'},
                 {img: 'iogurt.png', text: 'iaurt'},
             ]
         },
@@ -123,14 +123,14 @@
                 {img: 'emma.jpg', text: 'Emma'},
                 {img: 'hug.png', text: 'pupă'},
                 {img: 'bath.jpg', text: 'baie'},
-                {img: 'wc.jpg', text: 'toaleta'},
-                {img: 'music.jpg', text: 'muzica'},
+                {img: 'wc.jpg', text: 'toaletă'},
+                {img: 'music.jpg', text: 'muzică'},
                 {img: 'book.png', text: 'carte'},
-                {img: 'toys.png', text: 'jucarii'},
-                {img: 'board.png', text: 'placa'},
+                {img: 'toys.png', text: 'jucării'},
+                {img: 'board.png', text: 'placă'},
                 {img: 'd.png', text: 'D'},
                 {img: 'phone.png', text: 'telefon'},
-                {img: 'my-room.png', text: 'acasa'},
+                {img: 'my-room.png', text: 'acasă'},
 
             ]
         },
@@ -140,17 +140,17 @@
                 {img: 'sad.png', text: 'trist'},
                 {img: 'cold.jpg', text: 'mi-e rece'},
                 {img: 'hot.jpg', text: 'mi-e cald'},
-                {img: 'angry.png', text: 'suparat'},
+                {img: 'angry.png', text: 'supărat'},
                 {img: 'wet.jpg', text: 'ud'},
                 {
-                    img: 'auch.jpg', text: 'ma doare', children: [
-                        {img: 'hand.png', text: 'mana'},
+                    img: 'auch.jpg', text: 'mă doare', children: [
+                        {img: 'hand.png', text: 'mâna'},
                         {img: 'foot.png', text: 'picior'},
                         {img: 'head.png', text: 'cap'},
-                        {img: 'teeth.png', text: 'dinti'},
-                        {img: 'throat.png', text: 'gat'},
+                        {img: 'teeth.png', text: 'dinți'},
+                        {img: 'throat.png', text: 'gât'},
                         {img: 'ear.png', text: 'ureche'},
-                        {img: 'belly.png', text: 'burta'},
+                        {img: 'belly.png', text: 'burtă'},
                     ]
                 },
             ]
@@ -212,9 +212,11 @@
                     img.onclick();
                     speakGoogle(textE.value);
                 }, 500);
+                e.preventDefault();
             }
             img.onmouseup = function () {
                 clearTimeout(imgPressTimer);
+                e.preventDefault();
             }
             canvasE.appendChild(img);
         }
