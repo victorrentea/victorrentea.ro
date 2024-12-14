@@ -70,12 +70,13 @@
     <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>
 </div>
 <input id="text" readonly="readonly" type="text"/>
-<button class="backspace" onclick="stergeCuvant()"
-        ontouchstart="event.returnValue = false;"
-        ontouchend="event.returnValue = false;"
+<button class="backspace"
+        ontouchstart="stergeCuvant(); event.returnValue = false;"
+        ontouchend="onStergeDown();event.returnValue = false;"
         ontouchmove="event.returnValue = false;"
         ontouchcancel="event.returnValue = false;"
-        onmousedown="onStergeDown()"
+        onclick="stergeCuvant();event.returnValue = false;"
+        onmousedown="onStergeDown();event.returnValue = false;"
         touchstart> ⌫
 </button>
 <br>
