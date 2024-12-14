@@ -229,7 +229,10 @@
             img.onclick = function () {
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
-                else if (item.text) setCanvas(topItems);
+                else if (item.text) {
+                    setCanvas(topItems);
+                    speak();
+                }
             }
             img.onmousedown = function (e) {
                 imgPressTimer = setTimeout(() => {
@@ -326,6 +329,10 @@
                 audio.play();
             })
         ;
+    }
+
+    function speak() {
+        speakGoogle(textE.value);
     }
 
     function speakOpenAI(text) {
