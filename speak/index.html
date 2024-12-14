@@ -339,7 +339,8 @@
             .then((audioContent) => {
                 if (audio) {
                     try {
-                        audio.stop();
+                        audio.pause();
+
                     } catch (e) {
                     }
                 }
