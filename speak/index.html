@@ -1,6 +1,7 @@
 <html>
 <head>
-    <title> ⭒✩Vorbeste in imagini✩⭒</title>
+    <title>Vorbeste, Vlad!</title>
+    <link rel="icon" type="image/png" href="favicon3.png">
     <meta charset="UTF-8">
     <style>
         body {
@@ -26,7 +27,8 @@
         }
 
         #bottom-button-bar button {
-            background-color: transparent;
+            background-color: white;
+            box-shadow: 0 0 5px 0;
         }
 
         :fullscreen, ::backdrop {
@@ -61,12 +63,14 @@
     <button autofocus id="fullscreen-button" onclick="document.body.requestFullscreen(); this.style.display='none';">
         Fullscreen
     </button>
-    <button onclick="speakText()"> Speak 🗣️</button>
+    <button onclick="speakOpenAI(document.getElementById('text').value || 'Vreau să dorm!')"> Speak OpenAI️</button>
+    <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>
 </div>
 <input id="text" readonly="readonly" type="text"/>
 <button class="backspace" onclick="stergeCuvant()"
         onmousedown="onStergeDown()"
- touchstart> ⌫</button>
+        touchstart> ⌫
+</button>
 <br>
 <div id="canvas">
 
@@ -79,6 +83,7 @@
 <!--<img src="bed.png" onerror="errors.push(src)">-->
 
 <script>
+    const textE = document.getElementById('text');
     const itemsPerPage = 18;
     const topItems = [
         {
@@ -97,7 +102,7 @@
                 {img: 'pasta.png', text: 'paste'},
                 {img: 'pizza.png', text: 'pizza'},
                 {img: 'strawberry.png', text: 'capsuni'},
-                {img: 'iogurt.png', text: 'iogurt'},
+                {img: 'iogurt.png', text: 'iaurt'},
             ]
         },
         {
@@ -191,6 +196,7 @@
         }
     }
 
+    var imgPressTimer = null;
     function setCanvas(items) {
         canvasE.innerHTML = '';
         for (let item of items) {
@@ -200,6 +206,15 @@
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
                 else if (item.text) setCanvas(topItems);
+            }
+            img.onmousedown = function (e) {
+                imgPressTimer = setTimeout(() => {
+                    img.onclick();
+                    speakGoogle(textE.value);
+                }, 500);
+            }
+            img.onmouseup = function () {
+                clearTimeout(imgPressTimer);
             }
             canvasE.appendChild(img);
         }
@@ -217,7 +232,7 @@
         }
     }
 
-    const textE = document.getElementById('text');
+
 
     function prompt(text) {
         textE.value += ' ' + text;
@@ -245,25 +260,77 @@
         }
     }
 
-    function speakText() {
-        // if (!'speechSynthesis' in window) {
-        //     alert("Sorry, your browser does not support speech synthesis.");
-        //     return;
-        // }
-        // const text = document.getElementById("text").value;
-        // const speech = new SpeechSynthesisUtterance(text);
-        //
-        // // Optional: Customize voice, pitch, and rate
-        // speech.voice = window.speechSynthesis.getVoices()[0]; // Select the first available voice
-        // speech.pitch = 1; // Default is 1 (range is 0 to 2)
-        // speech.rate = 0.8;  // Default is 1 (range is 0.1 to 10)
-        //
-        // window.speechSynthesis.speak(speech);
+    function speakGoogle(text) {
+        const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
+        fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key="+googleApiKey, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "audioConfig": {
+                    "audioEncoding": "LINEAR16",
+                    "effectsProfileId": [
+                        "small-bluetooth-speaker-class-device"
+                    ],
+                    "pitch": 0,
+                    "speakingRate": 1
+                },
+                "input": {
+                    "text": text
+                },
+                "voice": {
+                    "languageCode": "ro-RO",
+                    "name": "ro-RO-Wavenet-A"
+                }
+            })
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+                return response.json(); // base64 encoded
+            })
+            .then((json) => json.audioContent)
+            .then((audioContent) => {
+                const audio = new Audio("data:audio/wav;base64," + audioContent);
+                audio.play();
+            })
+        ;
+    }
 
+    function speakOpenAI(text) {
+        const audioCtx = new AudioContext();
+        fetch("https://api.openai.com/v1/audio/speech", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${OPENAI_API_KEY}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                model: "tts-1",
+                // voice: "alloy",
+                voice: "echo",
+                input: text,
+            })
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.arrayBuffer();
+        })
+        .then((buffer) => audioCtx.decodeAudioData(buffer))
+        .then((decodedData) => {
+            const source = new AudioBufferSourceNode(audioCtx);
+            source.buffer = decodedData;
+            source.connect(audioCtx.destination);
+            return source;
+        })
+        .then((source) => {
+            source.start(0);
+        });
 
-        var audio = new Audio();
-        audio.src ='https://translate.google.com/translate_tts?ie=utf-8&tl=en&q=Hello%20World.';
-        audio.play();
     }
 </script>
 </body>
