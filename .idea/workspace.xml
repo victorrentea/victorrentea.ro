@@ -8,7 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="google speech">
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="overlap">
       <change beforePath="$PROJECT_DIR$/speak/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/speak/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +246,7 @@
       <workItem from="1733588351925" duration="4768000" />
       <workItem from="1734155372098" duration="157000" />
       <workItem from="1734186288716" duration="179000" />
-      <workItem from="1734201129531" duration="6405000" />
+      <workItem from="1734201129531" duration="6718000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -591,7 +591,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="193" />
+    <option name="localTasksCounter" value="198" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +645,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="star" />
     <MESSAGE value="updates" />
     <MESSAGE value="conf list" />
     <MESSAGE value="test" />
@@ -670,7 +669,8 @@
     <MESSAGE value="wp" />
     <MESSAGE value="move" />
     <MESSAGE value="google speech" />
-    <option name="LAST_COMMIT_MESSAGE" value="google speech" />
+    <MESSAGE value="overlap" />
+    <option name="LAST_COMMIT_MESSAGE" value="overlap" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

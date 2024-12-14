@@ -45,6 +45,7 @@
             height: 41pt;
             width: 80pt;
             right: 0;
+            font-size: 250%;
             margin-right: 0.5%;
         }
 
@@ -295,7 +296,7 @@
     }
 
     var googleRequest = null;
-
+    const audio = null;
     function speakGoogle(text) {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
         if (googleRequest) {
@@ -303,6 +304,9 @@
                 googleRequest.abort();
             } catch (e) {
             }
+        }
+        if (audio) {
+            audio.stop();
         }
         googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key=" + googleApiKey, {
             method: "POST",
