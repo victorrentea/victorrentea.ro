@@ -395,7 +395,7 @@
             return response.json();
         })
         .then((json) => {
-            textE.value = json.candidates[0].content[0].parts[0].text;
+            textE.value = json.candidates[0].content.parts[0].text;
         })
     }
 
