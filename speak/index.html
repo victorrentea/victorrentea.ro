@@ -53,6 +53,16 @@
             margin-right: 0.5%;
         }
 
+        button.speak {
+            position: absolute;
+            height: 42pt;
+            border: 3px solid lightgrey;
+            width: 7%;
+            right: 0;
+            font-size: 250%;
+            margin-right: 7.5%;
+        }
+
         div#canvas {
             background: white;
         }
@@ -73,13 +83,13 @@
         Fullscreen
     </button>
     <!--<button onclick="speakOpenAI(document.getElementById('text').value || 'Vreau să dorm!')"> Speak OpenAI️</button>-->
-    <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>
+<!--    <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>-->
 </div>
 <input id="text" readonly="readonly" type="text"/>
 <button class="backspace"
         onclick="stergeTot(); event.returnValue = false;"
         ontouchstart="stergeTot(); event.returnValue = false;"
-> ⌫
+> ⌫ </button>
     <!--        ontouchstart="stergeCuvant(); event.returnValue = false;"-->
     <!--        ontouchend="onStergeDown();event.returnValue = false;"-->
     <!--        ontouchmove="event.returnValue = false;"-->
@@ -87,7 +97,8 @@
     <!--        onclick="stergeCuvant();event.returnValue = false;"-->
     <!--        onmousedown="onStergeDown();event.returnValue = false;"-->
 
-</button>
+<button class="speak" onclick="speak();"> 📢 </button>
+
 <br>
 <div id="canvas">
 
