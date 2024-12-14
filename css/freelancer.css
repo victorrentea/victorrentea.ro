@@ -400,6 +400,7 @@ section.success {
 }
 
 div.client-item img {
+    cursor: pointer;
     filter: grayscale(1);
 }
 div.client-item img:hover {
