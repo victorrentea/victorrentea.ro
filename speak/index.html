@@ -258,11 +258,9 @@
                     img.onclick();
                     speakGoogle(textE.value);
                 }, 500);
-                e.preventDefault();
             }
             img.onmouseup = function () {
                 clearTimeout(imgPressTimer);
-                e.preventDefault();
             }
             canvasE.appendChild(img);
         }
