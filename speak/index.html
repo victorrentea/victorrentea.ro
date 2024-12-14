@@ -306,7 +306,10 @@
             }
         }
         if (audio) {
-            audio.stop();
+            try {
+                audio.stop();
+            } catch (e) {
+            }
         }
         googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key=" + googleApiKey, {
             method: "POST",
