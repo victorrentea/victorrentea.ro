@@ -295,9 +295,9 @@
     var googleRequest = null;
     function speakGoogle(text) {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
-        if (googleRequest) {
-            googleRequest.abort();
-        }
+        // if (googleRequest) {
+        //     googleRequest.abort();
+        // }
         googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key="+googleApiKey, {
             method: "POST",
             headers: {
