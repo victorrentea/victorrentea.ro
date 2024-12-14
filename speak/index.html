@@ -369,6 +369,10 @@
         ;
     }
 
+    const aiPrompt = `The following text was written using an AAC app
+    by clicking on images. Find a simpler form of it in romanian. Do not add anything beyond the simple form:
+ `;
+
     function simplifyText() {
         const gemini_api_key="AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
 
@@ -384,7 +388,7 @@
             },
             body: JSON.stringify({
                 "contents": [{
-                        "parts": [{"text": "The following text was written using an AAC app by clicking on images. Find a simpler form of it in romanian. \n\n " + textE.value}]
+                        "parts": [{"text": aiPrompt + textE.value}]
                 }]
             })
         })
@@ -395,6 +399,7 @@
             return response.json();
         })
         .then((json) => {
+            console.log(json);
             textE.value = json.candidates[0].content.parts[0].text;
         })
     }
