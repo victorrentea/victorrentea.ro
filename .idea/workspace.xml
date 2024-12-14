@@ -8,7 +8,76 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="wp" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="wp">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/angry.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/angry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/apple.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/apple.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/auch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/auch.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/banana.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/banana.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bath.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/bath.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bed.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/bed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/belly.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/belly.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/blueberry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/blueberry.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/board.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/board.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bomboana.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/bomboana.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bombons.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/bombons.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/book.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/book.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bread-butter.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/bread-butter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/bread.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/bread.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/cold.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/cold.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/colors.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/colors.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/d.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/d.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/dad.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/dad.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/drink.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/drink.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/ear.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/ear.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/eat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/eat.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/eggs.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/eggs.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/emma.html" beforeDir="false" afterPath="$PROJECT_DIR$/speak/emma.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/emma.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/emma.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/enough.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/enough.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/feel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/feel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/foot.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/foot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/grape.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/grape.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/hand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/hand.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/hand.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/hand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/happy.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/happy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/head.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/head.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/help.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/help.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/hot.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/hot.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/hug.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/hug.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/iogurt.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/iogurt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/juice.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/juice.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/kiss.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/kiss.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/lays.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/lays.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/milk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/milk.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/mom.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/mom.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/music.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/music.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/my-room.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/my-room.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/no.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/no.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/outside.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/outside.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/pasta.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/pasta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/phone.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/phone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/pizza.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/pizza.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/pomber.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/pomber.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/pure.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/pure.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/sad.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/sad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/sleep.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/sleep.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/soup.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/soup.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/sticks.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/sticks.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/strawberry.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/strawberry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/tea.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/tea.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/teeth.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/teeth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/throat.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/throat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/toys.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/toys.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/walk.png" beforeDir="false" afterPath="$PROJECT_DIR$/speak/walk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/want.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/want.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/water.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/water.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/wc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/wc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/wet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/wet.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/white.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/white.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlad/img/yes.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/speak/yes.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +181,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -243,6 +312,8 @@
       <workItem from="1733406464535" duration="10488000" />
       <workItem from="1733588351925" duration="4768000" />
       <workItem from="1734155372098" duration="157000" />
+      <workItem from="1734186288716" duration="179000" />
+      <workItem from="1734201129531" duration="148000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -587,7 +658,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
