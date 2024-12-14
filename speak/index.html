@@ -305,12 +305,7 @@
             } catch (e) {
             }
         }
-        if (audio) {
-            try {
-                audio.stop();
-            } catch (e) {
-            }
-        }
+
         googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key=" + googleApiKey, {
             method: "POST",
             headers: {
@@ -342,6 +337,12 @@
             })
             .then((json) => json.audioContent)
             .then((audioContent) => {
+                if (audio) {
+                    try {
+                        audio.stop();
+                    } catch (e) {
+                    }
+                }
                 audio = new Audio("data:audio/wav;base64," + audioContent);
                 audio.play();
             })
