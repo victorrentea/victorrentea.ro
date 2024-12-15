@@ -67,28 +67,30 @@
         div#canvas {
             background: white;
         }
-
-        div#canvas img, div#images img {
-            /*width: 12.5%;*/
+        div#canvas div{
+            display: inline-block;
             width: 16.66%;
+            position: relative;
+            /*width: 12.5%;*/
+        }
+        div#canvas img{
             display: inline-block;
             box-sizing: border-box;
             border: 5px solid lightgrey;
+            width: 100%;
         }
-        div#canvas img.plus::before {
+
+        div#canvas div.plus::before {
             content: '';
             position: absolute;
+            z-index: 10;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 10;
+            pointer-events: none;
             background-image: url('plus.png');
             background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            /*opacity: 0; !* Hidden by default *!*/
-            /*transition: opacity 0.3s ease-in-out;*/
         }
     </style>
 </head>
@@ -219,7 +221,7 @@
         {img: 'pointing.png', text: 'Arata!'},
         {img: 'change.png', text: 'Altceva!'},
         {img: 'pause.png', text: 'Pauza'},
-        {img: 'plus.png'},
+        {img: 'white.jpg'},
         {img: 'white.jpg'},
         {img: 'white.jpg'},
         {img: 'white.jpg'},
@@ -260,9 +262,11 @@
     function setCanvas(items) {
         canvasE.innerHTML = '';
         for (let item of items) {
+            let div = document.createElement('div');
+            if (item.children) div.className="plus";
+
             let img = document.createElement('img');
             img.src = item.img;
-            if (item.children) img.className="plus";
             img.onclick = function () {
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
@@ -281,7 +285,8 @@
             img.onmouseup = function () {
                 clearTimeout(imgPressTimer);
             }
-            canvasE.appendChild(img);
+            canvasE.appendChild(div);
+            div.appendChild(img);
         }
     }
 
