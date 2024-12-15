@@ -44,24 +44,26 @@
             width: 100%;
         }
 
-        button.backspace {
+        .top-button {
             position: absolute;
             height: 42pt;
             border: 3px solid lightgrey;
             width: 7%;
             right: 0;
             font-size: 250%;
+        }
+        button#backspace {
             margin-right: 0.5%;
         }
 
-        button.speak {
-            position: absolute;
-            height: 42pt;
-            border: 3px solid lightgrey;
-            width: 7%;
-            right: 0;
-            font-size: 250%;
+        button#edit {
             margin-right: 7.5%;
+        }
+        button#speak {
+            margin-right: 14.5%;
+        }
+        button#fullscreen{
+            margin-right: 21.5%;
         }
 
         div#canvas {
@@ -88,6 +90,8 @@
             left: 0;
             width: 100%;
             height: 100%;
+            box-sizing: border-box;
+            border: 5px solid lightgrey;
             pointer-events: none;
             background-image: url('plus.png');
             background-size: cover;
@@ -103,11 +107,15 @@
 <!--    <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>-->
 </div>
 <input id="text" tabindex="-1" readonly="readonly" type="text"/>
-<button class="speak" tabindex="-1" onclick="speak();"> 📢 </button>
-<button class="backspace" tabindex="-1"
-        onclick="stergeTot(); event.returnValue = false;"
-        ontouchstart="stergeTot(); event.returnValue = false;"
-> ⌫ </button>
+<!--<div class="top-buttons">-->
+    <button id="fullscreen" title="Fullscreen" class="top-button" tabindex="-1" onclick="document.body.requestFullscreen(); this.style.display='none';"> ↕️ </button>
+    <button id="speak" title="Speak" class="top-button" tabindex="-1" onclick="speak();"> 📢 </button>
+    <button id="edit" style="background: " title="Change Image" class="top-button" tabindex="-1" onclick="toggleEdit();"> ✍️ </button>
+    <button id="backspace" class="top-button" tabindex="-1"
+            onclick="stergeTot(); event.returnValue = false;"
+            ontouchstart="stergeTot(); event.returnValue = false;"
+    > ⌫ </button>
+<!--</div>-->
     <!--        ontouchstart="stergeCuvant(); event.returnValue = false;"-->
     <!--        ontouchend="onStergeDown();event.returnValue = false;"-->
     <!--        ontouchmove="event.returnValue = false;"-->
@@ -124,11 +132,50 @@
 <div id="images">
 
 </div>
-
+<!--<input id="custom-image-file" type="file" />
+<button onclick="changePicture()"></button>-->
 
 <!--<img src="bed.png" onerror="errors.push(src)">-->
 
+<input type="file" id="fileInput" />
+<pre id="fileContent" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></pre>
+<img id="test">
+
 <script>
+    // Get references to the file input and display area
+    const fileInputE = document.getElementById('fileInput');
+    const fileContent = document.getElementById('fileContent');
+    const testimg = document.getElementById("test");
+
+    var imageOverrides = {};
+    // localStorage.
+
+    fileInputE.addEventListener('change', function () {
+        const file = fileInputE.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            fileContent.textContent = event.target.result; // Display file content
+            // test.src=event.target.result;
+            let editedImgE = document.getElementById(imageIdUnderEdit);
+            editedImgE.src=event.target.result;
+            // imageOverrides[imageIdUnderEdit]=event.target.result;
+            localStorage.setItem(imageIdUnderEdit, event.target.result);
+        };
+
+        reader.onerror = function () {
+            alert("Could not load file.");
+        };
+
+        reader.readAsDataURL(file);
+    });
+    var editMode=false;
+    const editButtonE=document.getElementById("edit");
+    function toggleEdit() {
+        editMode = !editMode;
+        editButtonE.style.background=editMode?"red":"";
+    }
 
     //https://stackoverflow.com/questions/42160260/prevent-force-touch-event-on-image-but-still-allow-long-press-event-in-ios-safar
     window.addEventListener('touchforcechange', function (event) {
@@ -248,17 +295,8 @@
 
     const canvasE = document.getElementById('canvas');
 
-    function checkImages(items) {
-        for (let item of items) {
-            canvasE.innerHTML = '';
-            if (item.children) {
-                checkImages(item.children);
-            }
-        }
-    }
-
+    var imageIdUnderEdit = "";
     var imgPressTimer = null;
-
     function setCanvas(items) {
         canvasE.innerHTML = '';
         for (let item of items) {
@@ -266,24 +304,22 @@
             if (item.children) div.className="plus";
 
             let img = document.createElement('img');
-            img.src = item.img;
+            img.id = item.img;
+            // img.src = imageOverrides[item.img] ?? item.img;
+            img.src = localStorage.getItem(item.img) ?? item.img;
             img.onclick = function () {
+                if (editMode) {
+                    imageIdUnderEdit=img.id;
+                    fileInputE.click();
+                    toggleEdit();
+                    return;
+                }
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
                 else if (item.text) {
                     setCanvas(topItems);
-                    simplifyText()
-                        .then(() => speak());
+                    simplifyText().then(() => speak());
                 }
-            }
-            img.onmousedown = function (e) {
-                imgPressTimer = setTimeout(() => {
-                    img.onclick();
-                    speakGoogle(textE.value);
-                }, 500);
-            }
-            img.onmouseup = function () {
-                clearTimeout(imgPressTimer);
             }
             canvasE.appendChild(div);
             div.appendChild(img);
@@ -308,7 +344,14 @@
     }
 
     function stergeTot() {
-        textE.value = "";
+        if (editMode) {
+            // imageOverrides={};
+            localStorage.clear();
+            toggleEdit();
+            setCanvas(topItems);
+        } else {
+            textE.value = "";
+        }
     }
 
     function stergeCuvant() {
@@ -328,6 +371,10 @@
     document.onfullscreenchange = function () {
         if (!document.fullscreenElement) {
             let button = document.querySelector('#fullscreen-button');
+            button.style.display = 'inline';
+            // button.focus();
+
+            button = document.querySelector('#fullscreen');
             button.style.display = 'inline';
             button.focus();
         }
