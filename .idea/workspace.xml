@@ -9,6 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="crop square when uploading new pics">
+      <change afterPath="$PROJECT_DIR$/vorbeste/crop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vorbeste/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vorbeste/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +248,7 @@
       <workItem from="1733588351925" duration="4768000" />
       <workItem from="1734155372098" duration="157000" />
       <workItem from="1734186288716" duration="179000" />
-      <workItem from="1734201129531" duration="19269000" />
+      <workItem from="1734201129531" duration="20232000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -591,7 +593,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="236" />
+    <option name="localTasksCounter" value="237" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -18,18 +18,6 @@
             font-size: 20pt;
         }
 
-        #bottom-button-bar {
-            width: 100%;
-            text-align: center;
-            position: absolute;
-            bottom: 0
-        }
-
-        #bottom-button-bar button {
-            background-color: white;
-            box-shadow: 0 0 5px 0;
-        }
-
         :fullscreen, ::backdrop {
             background-color: rgba(255, 255, 255, 0);
             padding: 8px;
@@ -96,18 +84,12 @@
             background-size: cover;
         }
     </style>
+    <script type="text/javascript" src="crop.js"></script>
 </head>
 <body>
-<div id="bottom-button-bar">
-    <button autofocus id="fullscreen-button" onclick="document.body.requestFullscreen(); this.style.display='none';">
-        Fullscreen
-    </button>
-    <!--<button onclick="speakOpenAI(document.getElementById('text').value || 'Vreau să dorm!')"> Speak OpenAI️</button>-->
-<!--    <button onclick="speakGoogle(document.getElementById('text').value || 'Vreau să dorm!')"> Speak Google</button>-->
-</div>
 <input id="text" tabindex="-1" readonly="readonly" type="text"/>
 <!--<div class="top-buttons">-->
-    <button id="fullscreen" title="Fullscreen" class="top-button" tabindex="-1" onclick="document.body.requestFullscreen(); this.style.display='none';"> ↕️ </button>
+    <button id="fullscreen" title="Fullscreen" class="top-button" onclick="document.body.requestFullscreen(); this.style.display='none';"> ↕️ </button>
     <button id="speak" title="Speak" class="top-button" tabindex="-1" onclick="speak();"> 📢 </button>
     <button id="edit" style="background: " title="Change Image" class="top-button" tabindex="-1" onclick="toggleEdit();"> ✍️ </button>
     <button id="backspace" class="top-button" tabindex="-1"
@@ -318,19 +300,46 @@
 
     document.onfullscreenchange = function () {
         if (!document.fullscreenElement) {
-            let button = document.querySelector('#fullscreen-button');
-            button.style.display = 'inline';
-            // button.focus();
 
-            button = document.querySelector('#fullscreen');
+            let button = document.querySelector('#fullscreen');
+            button.focus();
             button.style.display = 'inline';
             button.focus();
         }
     }
 
+    const aiPrompt = `Urmatorul text a fost scris intr-o aplicatie AAC apasand pe imagini.
+    Gaseste o forma corecta gramatical, fara a adauga pe cat posibil cuvinte in plus sau repetitii.
+
+ `;
+
+    function simplifyText() {
+        const gemini_api_key="AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
+        return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + gemini_api_key, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                "contents": [{
+                        "parts": [{
+                            "text": aiPrompt + textE.value
+                        }]
+                }]
+            })
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((json) => {
+            textE.value = json.candidates[0].content.parts[0].text;
+        })
+    }
+
     var googleRequest = null;
     var audio = null;
-    function speakGoogle(text) {
+    function speak() {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
         if (googleRequest) {
             try {
@@ -359,7 +368,7 @@
                     "speakingRate": 1
                 },
                 "input": {
-                    "text": text
+                    "text": textE.value
                 },
                 "voice": {
                     "languageCode": "ro-RO",
@@ -385,92 +394,6 @@
                 audio.play();
             })
         ;
-    }
-
-    const aiPrompt = `Urmatorul text a fost scris intr-o aplicatie AAC apasand pe imagini.
-    Gaseste o forma corecta gramatical, fara a adauga pe cat posibil cuvinte in plus sau repetitii.
-
- `;
-
-    function simplifyText() {
-        const gemini_api_key="AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
-
-        return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + gemini_api_key, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                "contents": [{
-                        "parts": [{"text": aiPrompt + textE.value}]
-                }]
-            })
-        })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error, status = ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((json) => {
-            console.log(json);
-            textE.value = json.candidates[0].content.parts[0].text;
-        })
-    }
-
-    function speak() {
-        speakGoogle(textE.value);
-    }
-
-    /**
-     * @param {string} url - The source image
-     * @param {number} aspectRatio - The aspect ratio
-     * @return {Promise<HTMLCanvasElement>} A Promise that resolves with the resulting image as a canvas element
-     */
-    function crop(url, aspectRatio) {
-        // we return a Promise that gets resolved with our canvas element
-        return new Promise((resolve) => {
-            // this image will hold our source image data
-            const inputImage = new Image();
-
-            // we want to wait for our image to load
-            inputImage.onload = () => {
-                // let's store the width and height of our image
-                const inputWidth = inputImage.naturalWidth;
-                const inputHeight = inputImage.naturalHeight;
-
-                // get the aspect ratio of the input image
-                const inputImageAspectRatio = inputWidth / inputHeight;
-
-                // if it's bigger than our target aspect ratio
-                let outputWidth = inputWidth;
-                let outputHeight = inputHeight;
-                if (inputImageAspectRatio > aspectRatio) {
-                    outputWidth = inputHeight * aspectRatio;
-                } else if (inputImageAspectRatio < aspectRatio) {
-                    outputHeight = inputWidth / aspectRatio;
-                }
-
-                // calculate the position to draw the image at
-                const outputX = (outputWidth - inputWidth) * 0.5;
-                const outputY = (outputHeight - inputHeight) * 0.5;
-
-                // create a canvas that will present the output image
-                const outputImage = document.createElement('canvas');
-
-                // set it to the same size as the image
-                outputImage.width = outputWidth;
-                outputImage.height = outputHeight;
-
-                // draw our image at position 0, 0 on the canvas
-                const ctx = outputImage.getContext('2d');
-                ctx.drawImage(inputImage, outputX, outputY);
-                resolve(outputImage);
-            };
-
-            // start loading our image
-            inputImage.src = url;
-        });
     }
 </script>
 </body>
