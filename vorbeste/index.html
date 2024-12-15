@@ -129,21 +129,12 @@
 <div id="canvas">
 
 </div>
-<div id="images">
 
-</div>
-<!--<input id="custom-image-file" type="file" />
-<button onclick="changePicture()"></button>-->
-
-<!--<img src="bed.png" onerror="errors.push(src)">-->
-
-<input type="file" id="fileInput" />
-<img id="test">
+<input type="file" id="fileInput" style="display: none"/>
 
 <script>
     // Get references to the file input and display area
     const fileInputE = document.getElementById('fileInput');
-    const testimg = document.getElementById("test");
 
     fileInputE.addEventListener('change', function () {
         const file = fileInputE.files[0];
@@ -174,18 +165,6 @@
         editButtonE.style.background=editMode?"red":"";
         backspaceE.style.background=editMode?"yellow":"";
     }
-
-    //https://stackoverflow.com/questions/42160260/prevent-force-touch-event-on-image-but-still-allow-long-press-event-in-ios-safar
-    window.addEventListener('touchforcechange', function (event) {
-        var force = event.changedTouches[0].force;
-        var id = event.changedTouches[0].target.id;
-
-        if ($('#' + id).hasClass('class') && force > 0.1) {
-            event.preventDefault();
-            console.log('prevented 3D touch on element with id = ' + id);
-        }
-    });
-
 
     const textE = document.getElementById('text');
     const itemsPerPage = 18;
@@ -294,7 +273,6 @@
     const canvasE = document.getElementById('canvas');
 
     var imageIdUnderEdit = "";
-    var imgPressTimer = null;
     function setCanvas(items) {
         canvasE.innerHTML = '';
         for (let item of items) {
@@ -325,17 +303,6 @@
 
     setCanvas(topItems);
 
-
-    // remove spaces between <img> <img>
-    const imagesE = document.getElementById('images');
-    imagesE.innerHTML = imagesE.innerHTML.replace(/>\s+</g, '><');
-    for (let img of imagesE.children) {
-        img.onclick = function () {
-            prompt(img.alt);
-        }
-    }
-
-
     function prompt(text) {
         textE.value += ' ' + text;
     }
@@ -348,20 +315,6 @@
         } else {
             textE.value = "";
         }
-    }
-
-    function stergeCuvant() {
-        let pozitieUltimSpatiu = textE.value.lastIndexOf(" ");
-        textE.value = textE.value.substring(0, pozitieUltimSpatiu);
-        clearTimeout(timerDown);
-    }
-
-    var timerDown = null;
-
-    function onStergeDown() {
-        timerDown = setTimeout(() => {
-            textE.value = "";
-        }, 500);
     }
 
     document.onfullscreenchange = function () {
@@ -443,11 +396,6 @@
     function simplifyText() {
         const gemini_api_key="AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
 
-  //       curl \
-  // -H "Content-Type: application/json" \
-  // -d "{\"contents\":[{\"parts\":[{\"text\":\"Explain how AI works\"}]}]}" \
-  // -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YOUR_API_KEY"
-
         return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + gemini_api_key, {
             method: "POST",
             headers: {
@@ -473,40 +421,6 @@
 
     function speak() {
         speakGoogle(textE.value);
-    }
-
-    function speakOpenAI(text) {
-        const audioCtx = new AudioContext();
-        fetch("https://api.openai.com/v1/audio/speech", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${OPENAI_API_KEY}`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                model: "tts-1",
-                // voice: "alloy",
-                voice: "echo",
-                input: text,
-            })
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error, status = ${response.status}`);
-                }
-                return response.arrayBuffer();
-            })
-            .then((buffer) => audioCtx.decodeAudioData(buffer))
-            .then((decodedData) => {
-                const source = new AudioBufferSourceNode(audioCtx);
-                source.buffer = decodedData;
-                source.connect(audioCtx.destination);
-                return source;
-            })
-            .then((source) => {
-                source.start(0);
-            });
-
     }
 
     /**
