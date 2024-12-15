@@ -24,7 +24,6 @@
 
 
         #text {
-            font-size: 200%;
             border: 3px solid lightgrey;
             padding: 5pt;
             width: 100%;
@@ -56,6 +55,15 @@
             background: white;
         }
 
+        @media (orientation: landscape) {
+            div#canvas div {
+                width: 16.66%;
+            }
+            #text {
+                font-size: 200%;
+            }
+        }
+
         @media (orientation: portrait) {
             div#canvas div {
                 width: 25%;
@@ -71,8 +79,8 @@
 
         div#canvas div{
             display: inline-block;
-            width: 16.66%; /*landscape*/
-            /*width: 33.3%;*/ /*portrait*/
+            /*width: 16.66%;*/
+            /*width: 33.3%;*/
             object-fit: cover;
             position: relative;
         }
