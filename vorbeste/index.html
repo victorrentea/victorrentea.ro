@@ -261,6 +261,7 @@
         for (let item of items) {
             let img = document.createElement('img');
             img.src = item.img;
+            if (item.children) img.className="plus";
             img.onclick = function () {
                 if (item.text) prompt(item.text);
                 if (item.children) setCanvas(item.children);
