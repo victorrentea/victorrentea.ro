@@ -55,12 +55,25 @@
         div#canvas {
             background: white;
         }
+
+        @media (orientation: landscape) {
+            div#canvas div {
+                width: 16.66%;
+            }
+        }
+
+        @media (orientation: portrait) {
+            div#canvas div {
+                width: 25%;
+            }
+        }
+
         div#canvas div{
             display: inline-block;
-            width: 16.66%;
+            /*width: 16.66%;*/
+            /*width: 33.3%;*/
             object-fit: cover;
             position: relative;
-            /*width: 12.5%;*/
         }
         div#canvas img{
             display: inline-block;
@@ -394,6 +407,13 @@
             })
         ;
     }
+
+    // var x= 1000;
+    // var y= 5000;
+    //
+    // var r = 5;
+
+
 </script>
 </body>
 </html>
