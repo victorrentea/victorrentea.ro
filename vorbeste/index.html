@@ -12,19 +12,18 @@
         * {
             -webkit-touch-callout: none;
         }
+        :fullscreen, ::backdrop {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 8px;
+        }
 
         button {
             cursor: pointer;
             font-size: 20pt;
         }
 
-        :fullscreen, ::backdrop {
-            background-color: rgba(255, 255, 255, 0);
-            padding: 8px;
-        }
 
         #text {
-            font-size: 200%;
             border: 3px solid lightgrey;
             padding: 5pt;
             width: 100%;
@@ -60,11 +59,17 @@
             div#canvas div {
                 width: 16.66%;
             }
+            #text {
+                font-size: 200%;
+            }
         }
 
         @media (orientation: portrait) {
             div#canvas div {
                 width: 25%;
+            }
+            #text {
+                font-size: 400%;
             }
         }
 
