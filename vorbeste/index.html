@@ -145,8 +145,8 @@
             crop(imageData, 1)
                 .then(croppedImage => {
                     let editedImgE = document.getElementById(imageIdUnderEdit);
-                    editedImgE.src=croppedImage;
-                    localStorage.setItem(imageIdUnderEdit, croppedImage);
+                    editedImgE.src=croppedImage.toDataURL();
+                    localStorage.setItem(imageIdUnderEdit, croppedImage.toDataURL());
                 });
         };
 
