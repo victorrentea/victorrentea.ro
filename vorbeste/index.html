@@ -18,8 +18,6 @@
             font-size: 20pt;
         }
 
-
-
         #bottom-button-bar {
             width: 100%;
             text-align: center;
@@ -148,7 +146,7 @@
                 .then(croppedImage => {
                     let editedImgE = document.getElementById(imageIdUnderEdit);
                     editedImgE.src=croppedImage;
-                    localStorage.setItem(imageIdUnderEdit, event.target.result);
+                    localStorage.setItem(imageIdUnderEdit, croppedImage);
                 });
         };
 
@@ -246,7 +244,7 @@
         {img: 'pointing.png', text: 'Arata!'},
         {img: 'change.png', text: 'Altceva!'},
         {img: 'pause.png', text: 'Pauza'},
-        {img: 'white.jpg'},
+        {img: 'aspect.png'},
         {img: 'white.jpg'},
         {img: 'white.jpg'},
         {img: 'white.jpg'},
