@@ -110,23 +110,13 @@
 </head>
 <body>
 <input id="text" tabindex="-1" readonly="readonly" type="text"/>
-<!--<div class="top-buttons">-->
     <button id="fullscreen" title="Fullscreen" class="top-button" onclick="document.body.requestFullscreen(); this.style.display='none';"> ↕️ </button>
     <button id="speak" title="Speak" class="top-button" tabindex="-1" onclick="speak();"> 📢 </button>
-    <button id="edit" style="background: " title="Change Image" class="top-button" tabindex="-1" onclick="toggleEdit();"> ✍️ </button>
+    <button id="edit" title="Change Image" class="top-button" tabindex="-1" onclick="toggleEdit();"> ✍️ </button>
     <button id="backspace" class="top-button" tabindex="-1"
             onclick="stergeTot(); event.returnValue = false;"
             ontouchstart="stergeTot(); event.returnValue = false;"
     > ⌫ </button>
-<!--</div>-->
-    <!--        ontouchstart="stergeCuvant(); event.returnValue = false;"-->
-    <!--        ontouchend="onStergeDown();event.returnValue = false;"-->
-    <!--        ontouchmove="event.returnValue = false;"-->
-    <!--        ontouchcancel="event.returnValue = false;"-->
-    <!--        onclick="stergeCuvant();event.returnValue = false;"-->
-    <!--        onmousedown="onStergeDown();event.returnValue = false;"-->
-
-
 
 <br>
 <div id="canvas">
@@ -331,10 +321,10 @@
     }
 
     const aiPrompt = `Urmatorul text a fost scris intr-o aplicatie AAC apasand pe imagini.
-    Gaseste o forma corecta gramatical, fara a adauga pe cat posibil cuvinte in plus sau repetitii.
-    Emma e sora persoanei.
+    Persoana are o sora pe nume Emma.
+    Gaseste o forma simpla corecta gramatical, fara a adauga pe cat posibil cuvinte in plus sau repetitii.
 
-    Aici e textul:
+    Acesta este textul:
 
  `;
 
