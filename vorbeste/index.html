@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Vorbeste cu Mine!</title>
-    <link href="favicon3.png" rel="icon" type="image/png">
+    <link href="favicon.png" rel="icon" type="image/png">
     <meta charset="UTF-8">
     <style>
         body {
@@ -12,6 +12,7 @@
         * {
             -webkit-touch-callout: none;
         }
+
         :fullscreen, ::backdrop {
             background-color: rgba(255, 255, 255, 0);
             padding: 8px;
@@ -37,6 +38,7 @@
             right: 0;
             font-size: 250%;
         }
+
         button#backspace {
             margin-right: 0.5%;
         }
@@ -44,10 +46,12 @@
         button#edit {
             margin-right: 7.5%;
         }
+
         button#speak {
             margin-right: 14.5%;
         }
-        button#fullscreen{
+
+        button#fullscreen {
             margin-right: 21.5%;
         }
 
@@ -59,6 +63,7 @@
             div#canvas div {
                 width: 16.66%;
             }
+
             #text {
                 font-size: 200%;
             }
@@ -68,23 +73,26 @@
             div#canvas div {
                 width: 25%;
             }
+
             #text {
                 font-size: 400%;
             }
+
             .top-button {
                 height: 70pt;
                 width: 7%;
             }
         }
 
-        div#canvas div{
+        div#canvas div {
             display: inline-block;
             /*width: 16.66%;*/
             /*width: 33.3%;*/
             object-fit: cover;
             position: relative;
         }
-        div#canvas img{
+
+        div#canvas img {
             display: inline-block;
             box-sizing: border-box;
             border: 5px solid lightgrey;
@@ -106,61 +114,23 @@
             background-size: cover;
         }
     </style>
-    <script type="text/javascript" src="crop.js"></script>
+    <script src="image-edit.js" type="text/javascript"></script>
 </head>
 <body>
-<input id="text" tabindex="-1" readonly="readonly" type="text"/>
-    <button id="fullscreen" title="Fullscreen" class="top-button" onclick="document.body.requestFullscreen(); this.style.display='none';"> ↕️ </button>
-    <button id="speak" title="Speak" class="top-button" tabindex="-1" onclick="speak();"> 📢 </button>
-    <button id="edit" title="Change Image" class="top-button" tabindex="-1" onclick="toggleEdit();"> ✍️ </button>
-    <button id="backspace" class="top-button" tabindex="-1"
-            onclick="stergeTot(); event.returnValue = false;"
-            ontouchstart="stergeTot(); event.returnValue = false;"
-    > ⌫ </button>
-
+<input id="text" readonly="readonly" tabindex="-1" type="text"/>
+<button class="top-button" id="fullscreen"
+        onclick="document.body.requestFullscreen(); this.style.display='none';"
+        title="Fullscreen"> ↕️</button>
+<button class="top-button" id="speak" onclick="speak();" tabindex="-1" title="Speak"> 📢</button>
+<button class="top-button" id="edit" onclick="toggleEdit();" tabindex="-1" title="Change Image"> ✍️</button>
+<button class="top-button" id="backspace" onclick="stergeTot();" tabindex="-1"> ⌫</button>
 <br>
 <div id="canvas">
-
 </div>
 
-<input type="file" id="fileInput" style="display: none"/>
+<input id="fileInput" style="display: none" type="file"/>
 
 <script>
-    // Get references to the file input and display area
-    const fileInputE = document.getElementById('fileInput');
-
-    fileInputE.addEventListener('change', function () {
-        const file = fileInputE.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-
-        reader.onload = function (event) {
-            const imageData = event.target.result;
-            crop(imageData, 1)
-                .then(croppedImage => {
-                    let editedImgE = document.getElementById(imageIdUnderEdit);
-                    editedImgE.src=croppedImage.toDataURL();
-                    localStorage.setItem(imageIdUnderEdit, croppedImage.toDataURL());
-                });
-        };
-
-        reader.onerror = function () {
-            alert("Could not load file.");
-        };
-
-        reader.readAsDataURL(file);
-    });
-    var editMode=false;
-    const editButtonE=document.getElementById("edit");
-    const backspaceE=document.getElementById("backspace");
-    function toggleEdit() {
-        editMode = !editMode;
-        editButtonE.style.background=editMode?"red":"";
-        backspaceE.style.background=editMode?"yellow":"";
-    }
-
-    const textE = document.getElementById('text');
-    const itemsPerPage = 18;
     const topItems = [
         {
             img: 'eat.jpg', text: 'vreau', children: [
@@ -249,6 +219,8 @@
     ];
     const homeItem = {img: 'home.png', children: topItems};
 
+    const textE = document.getElementById('text');
+    const itemsPerPage = 18;
     function addHome(items) {
         for (let item of items) {
             if (item.children) {
@@ -266,18 +238,19 @@
     const canvasE = document.getElementById('canvas');
 
     var imageIdUnderEdit = "";
+
     function setCanvas(items) {
         canvasE.innerHTML = '';
         for (let item of items) {
             let div = document.createElement('div');
-            if (item.children) div.className="plus";
+            if (item.children) div.className = "plus";
 
             let img = document.createElement('img');
             img.id = item.img;
             img.src = localStorage.getItem(item.img) ?? item.img;
             img.onclick = function () {
                 if (editMode) {
-                    imageIdUnderEdit=img.id;
+                    imageIdUnderEdit = img.id;
                     fileInputE.click();
                     toggleEdit();
                     return;
@@ -312,7 +285,6 @@
 
     document.onfullscreenchange = function () {
         if (!document.fullscreenElement) {
-
             let button = document.querySelector('#fullscreen');
             button.focus();
             button.style.display = 'inline';
@@ -328,45 +300,51 @@
  `;
 
     function simplifyText() {
-        const gemini_api_key="AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
+        geminiAI(aiPrompt + textE.value)
+            .then((json) => {
+                textE.value = json.candidates[0].content.parts[0].text;
+            })
+    }
+
+    function geminiAI(prompt) {
+        const gemini_api_key = "AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
         return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + gemini_api_key, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 "contents": [{
-                        "parts": [{
-                            "text": aiPrompt + textE.value
-                        }]
+                    "parts": [{
+                        "text": prompt
+                    }]
                 }]
             })
         })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error, status = ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((json) => {
-            textE.value = json.candidates[0].content.parts[0].text;
-        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((json) => {
+                textE.value = json.candidates[0].content.parts[0].text;
+            });
     }
-    var googleRequest = null;
-    var audio = null;
+
+    let speakRequest = null;
+    let audio = null;
+
     function speak() {
         const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
-        if (googleRequest) {
-            try {
-                googleRequest.abort();
-            } catch (e) {
-            }
+        if (speakRequest) try {
+            speakRequest.abort();
+        } catch (e) {
         }
-        if (audio) {
-            try {
-                audio.pause();
-            } catch (e) {
-            }
+        if (audio) try {
+            audio.pause();
+        } catch (e) {
         }
-        googleRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key=" + googleApiKey, {
+
+        speakRequest = fetch("https://texttospeech.googleapis.com/v1/text:synthesize?key=" + googleApiKey, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -405,16 +383,43 @@
                 }
                 audio = new Audio("data:audio/wav;base64," + audioContent);
                 audio.play();
-            })
-        ;
+            });
     }
 
-    // var x= 1000;
-    // var y= 5000;
-    //
-    // var r = 5;
+    const fileInputE = document.getElementById('fileInput');
+    fileInputE.addEventListener('change', function () {
+        const file = fileInputE.files[0];
+        if (!file) return;
+        const reader = new FileReader();
 
+        reader.onload = function (event) {
+            const imageData = event.target.result;
+            crop(imageData, 1)
+                .then(imageUrl => {
+                    console.log("Before:", imageUrl);
+                    return resizeImage(imageUrl);
+                })
+                .then(imageUrl => {
+                    console.log("After:", imageUrl);
+                    let editedImgE = document.getElementById(imageIdUnderEdit);
+                    editedImgE.src = imageUrl;
+                    localStorage.setItem(imageIdUnderEdit, imageUrl);
+                });
+        };
 
+        reader.onerror = function () {
+            alert("Could not load file.");
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    let editMode = false;
+    function toggleEdit() {
+        editMode = !editMode;
+        document.getElementById("edit").style.background = editMode ? "red" : "";
+        document.getElementById("backspace").style.background = editMode ? "yellow" : "";
+    }
 </script>
 </body>
 </html>
