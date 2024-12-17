@@ -301,8 +301,8 @@
 
     function simplifyText() {
         geminiAI(aiPrompt + textE.value)
-            .then((json) => {
-                textE.value = json.candidates[0].content.parts[0].text;
+            .then((aiResponse) => {
+                textE.value = aiResponse;
             })
     }
 
