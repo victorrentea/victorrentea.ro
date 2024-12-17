@@ -115,6 +115,7 @@
         }
     </style>
     <script src="image-edit.js" type="text/javascript"></script>
+    <script src="google-key.js" type="text/javascript"></script>
 </head>
 <body>
 <input id="text" readonly="readonly" tabindex="-1" type="text"/>
@@ -307,8 +308,7 @@
     }
 
     function geminiAI(prompt) {
-        const gemini_api_key = "AIzaSyDN4IzkS79NcW5E87kuwtCeJiuqYRp9gzk";
-        return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + gemini_api_key, {
+        return fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + geminiApiKey, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -334,7 +334,6 @@
     let audio = null;
 
     function speak() {
-        const googleApiKey = "AIzaSyDCRBksTm_8-MB-xr55MasWtXUyFpnd3Kc";
         if (speakRequest) try {
             speakRequest.abort();
         } catch (e) {
