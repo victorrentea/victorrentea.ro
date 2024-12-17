@@ -300,7 +300,7 @@
  `;
 
     function simplifyText() {
-        geminiAI(aiPrompt + textE.value)
+        return geminiAI(aiPrompt + textE.value)
             .then((aiResponse) => {
                 textE.value = aiResponse;
             })
