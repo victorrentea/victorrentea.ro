@@ -8,7 +8,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="remove keys" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="remove keys">
+      <change afterPath="$PROJECT_DIR$/vorbeste/bombons.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vorbeste/chips.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vorbeste/bombons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vorbeste/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vorbeste/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,6 +253,7 @@
       <workItem from="1734186288716" duration="179000" />
       <workItem from="1734201129531" duration="28230000" />
       <workItem from="1734371857449" duration="14632000" />
+      <workItem from="1734600568313" duration="2064000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
