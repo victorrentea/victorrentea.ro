@@ -9,8 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
+      <change afterPath="$PROJECT_DIR$/logo/client-bitvavo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-booking.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-finastra.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-konecranes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-playtika.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logo/client-werfen.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vorbeste/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vorbeste/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +257,8 @@
       <workItem from="1734201129531" duration="28230000" />
       <workItem from="1734371857449" duration="14632000" />
       <workItem from="1734600568313" duration="2504000" />
+      <workItem from="1734797535926" duration="8000" />
+      <workItem from="1734853911128" duration="908000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
