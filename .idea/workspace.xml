@@ -8,15 +8,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="yolo">
-      <change afterPath="$PROJECT_DIR$/logo/client-bitvavo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-booking.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-finastra.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-konecranes.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-playtika.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo/client-werfen.jpg" afterDir="false" />
+    <list default="true" id="95057d3f-e852-444c-9a8e-cc5a72fb0215" name="Default Changelist" comment="logo">
+      <change afterPath="$PROJECT_DIR$/.idea/CodeGraphProjectSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vorbeste/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vorbeste/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,8 +140,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -258,7 +253,12 @@
       <workItem from="1734371857449" duration="14632000" />
       <workItem from="1734600568313" duration="2504000" />
       <workItem from="1734797535926" duration="8000" />
-      <workItem from="1734853911128" duration="908000" />
+      <workItem from="1734853911128" duration="3086000" />
+      <workItem from="1736752149644" duration="20000" />
+      <workItem from="1738772053896" duration="1958000" />
+      <workItem from="1738874374616" duration="599000" />
+      <workItem from="1738941695800" duration="520000" />
+      <workItem from="1739000927717" duration="6000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -603,7 +603,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="264" />
+    <option name="localTasksCounter" value="265" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +657,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="add face" />
     <MESSAGE value="new clients" />
     <MESSAGE value="push" />
     <MESSAGE value="wip" />
@@ -682,7 +681,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="remove keys" />
     <MESSAGE value="yolo" />
-    <option name="LAST_COMMIT_MESSAGE" value="yolo" />
+    <MESSAGE value="logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="logo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

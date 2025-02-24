@@ -60,11 +60,16 @@
             background: white;
         }
 
+        div#canvas div {
+            display: inline-block;
+            object-fit: cover;
+            position: relative;
+        }
+
         @media (orientation: landscape) {
             div#canvas div {
                 width: 16.66%;
             }
-
             #text {
                 font-size: 200%;
             }
@@ -85,13 +90,7 @@
             }
         }
 
-        div#canvas div {
-            display: inline-block;
-            /*width: 16.66%;*/
-            /*width: 33.3%;*/
-            object-fit: cover;
-            position: relative;
-        }
+
 
         div#canvas img {
             display: inline-block;
