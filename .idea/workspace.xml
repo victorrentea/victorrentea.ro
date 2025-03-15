@@ -136,8 +136,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
       </set>
     </attachedChunks>
   </component>
@@ -257,6 +257,7 @@
       <workItem from="1739000927717" duration="6000" />
       <workItem from="1740380474040" duration="127000" />
       <workItem from="1741476500859" duration="3077000" />
+      <workItem from="1741680132030" duration="1879000" />
     </task>
     <task id="LOCAL-00069" summary="more">
       <created>1634149726317</created>
@@ -601,7 +602,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683129709644</updated>
     </task>
-    <option name="localTasksCounter" value="268" />
+    <option name="localTasksCounter" value="269" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
