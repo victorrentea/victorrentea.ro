@@ -1,0 +1,52 @@
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors On
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php73"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors On
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php73"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+Header set X-Content-Type-Options nosniff
+Header always append X-Frame-Options SAMEORIGIN
+
+Redirect /talks https://docs.google.com/document/d/e/2PACX-1vRNf99FCnZI2fqAzabT9t61743f5IE3282PtcBJCi7UdI8Vct4r120oBqDeOMb7vZY630-6E2T0a9kF/pub
+Redirect /photo https://drive.google.com/drive/folders/1V-U0GZQQYiKo6z3dLWbaE1Cvs9ajzw92?usp=sharing
+Redirect /training-offer https://drive.google.com/open?id=1cQglXi1SUabmMFlTiYwsSThA1u0b1sDm
+Redirect /catalog https://docs.google.com/document/d/1XkkHc4XDUKRelTCZsf_Ls4pF3zVWI4PS
+Redirect /stickers https://drive.google.com/drive/folders/1aLywnVait8nNLkdtviB7ie3rkve7_XyX?usp=sharing
+Redirect /community https://www.meetup.com/bucharest-software-craftsmanship-community
+
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://victorrentea.ro/$1 [R,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php72” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
