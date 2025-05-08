@@ -35,7 +35,7 @@ Header always append X-Frame-Options SAMEORIGIN
 Redirect /talks https://docs.google.com/document/d/e/2PACX-1vRNf99FCnZI2fqAzabT9t61743f5IE3282PtcBJCi7UdI8Vct4r120oBqDeOMb7vZY630-6E2T0a9kF/pub
 Redirect /photo https://drive.google.com/drive/folders/1V-U0GZQQYiKo6z3dLWbaE1Cvs9ajzw92?usp=sharing
 Redirect /training-offer https://drive.google.com/open?id=1cQglXi1SUabmMFlTiYwsSThA1u0b1sDm
-Redirect /catalog https://docs.google.com/document/d/1XkkHc4XDUKRelTCZsf_Ls4pF3zVWI4PS
+Redirect /catalog https://docs.google.com/document/d/1XkkHc4XDUKRelTCZsf_Ls4pF3zVWI4PS/preview
 Redirect /stickers https://drive.google.com/drive/folders/1aLywnVait8nNLkdtviB7ie3rkve7_XyX?usp=sharing
 Redirect /community https://www.meetup.com/bucharest-software-craftsmanship-community
 
