@@ -80,7 +80,7 @@ Click <a href="" onclick="downloadAll()">here</a> to download all files - your b
         const allAnchors = document.querySelectorAll('a');
 
         const pdfAnchorUrls = Array.from(allAnchors)
-            .filter(anchor => anchor.href.endsWith('.pdf'))
+            .filter(anchor => anchor.href.endsWith('/pdf'))
             .map(anchor => anchor.href);
 
         alert(`Starting ${pdfAnchorUrls.length} downloads`)
