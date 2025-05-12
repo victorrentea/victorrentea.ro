@@ -83,6 +83,7 @@ Click <a href="" onclick="downloadAll()">here</a> to download all files - your b
             .filter(anchor => anchor.href.endsWith('.pdf'))
             .map(anchor => anchor.href);
 
+        alert(`Starting ${pdfAnchorUrls.length} downloads`)
         // open all downloads
         for (const url of pdfAnchorUrls) {
             window.open(url);
