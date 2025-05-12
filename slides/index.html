@@ -74,6 +74,24 @@ Please <a
         Reactive/WebFlux</a></li>
 </ul>
 PS: I couldn't find any way to create a link that allows you to download all in a single zip.
+Click <a href="" onclick="downloadAll()">here</a> to download all files - your browser might ask you permission to download multiple files.
+<script>
+    function downloadAll() {
+        e.preventDefault();
+
+        const allAnchors = document.querySelectorAll('a');
+
+        const pdfAnchorUrls = Array.from(allAnchors)
+            .filter(anchor => anchor.href.endsWith('.pdf'))
+            .map(anchor => anchor.href);
+
+        // open all downloads
+        for (const url of pdfAnchorUrls) {
+            window.open(url);
+        }
+    }
+</script>
+
 <hr/>
 <ul>
     <li><a href="https://victorrentea.ro/catalog" target="_blank">
