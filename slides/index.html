@@ -73,23 +73,8 @@ Please <a
     <li><a href="https://docs.google.com/presentation/d/1EG7uHj8LYUzHAEhpSQ-7MJgnli-3e75c/export/pdf">
         Reactive/WebFlux</a></li>
 </ul>
-PS: I couldn't find any way to create a link that allows you to download all in a single zip.
-Click <a href="" onclick="downloadAll()">here</a> to download all files - your browser might ask you permission to download multiple files.
-<script>
-    function downloadAll() {
-        const allAnchors = document.querySelectorAll('a');
-
-        const pdfAnchorUrls = Array.from(allAnchors)
-            .filter(anchor => anchor.href.endsWith('/pdf'))
-            .map(anchor => anchor.href);
-
-        alert(`Starting ${pdfAnchorUrls.length} downloads`)
-        // open all downloads
-        for (const url of pdfAnchorUrls) {
-            window.open(url);
-        }
-    }
-</script>
+PS: I couldn't find any way to create a link that allows you to download all in a single zip.<br />
+In case of errors, please retry after a few minutes.
 
 <hr/>
 <ul>
