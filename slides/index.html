@@ -125,8 +125,8 @@ PS: I couldn't find any way to create a link that allows you to download all in 
 
         addLinkChecks()
         let button = document.getElementById("check-links-button");
-        button.style.display="none"
-        button.parentElement.innerHTML+="> Please Wait ..."
+        button.style.visibility="false";
+        button.parentElement.innerText += "> Please Wait ..."
     }
 
     // addLinkChecks();
