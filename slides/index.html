@@ -15,7 +15,7 @@
 🤫 Top Secret Page: don't post this URL online 🤫<br/>
 Can take up to 30 seconds for Google Drive to generate a PDF.<br/>
 In case of errors, please retry after a few minutes.
-<button onclick="addLinkChecks()">Check Links</button>
+<button id="check-links-button" onclick="addLinkChecks()">Check Links</button>
 <br/>
 If link remains broken, please <a
         href="mailto:victorrentea@gmail.com?subject=Broken slides link">report it to me</a>.
@@ -120,6 +120,13 @@ PS: I couldn't find any way to create a link that allows you to download all in 
             if (anchor.href.startsWith("https://docs.google.com"))
                 isLinkValid(anchor.href).then(b => anchor.text += b ? " ✅" : " ❌");
         }
+    }
+    function onCheckLinksClick() {
+
+        addLinkChecks()
+        let button = document.getElementById("check-links-button");
+        button.style.display="none"
+        button.parentElement.innerHTML+="> Please Wait ..."
     }
 
     // addLinkChecks();
