@@ -102,13 +102,15 @@ PS: I couldn't find any way to create a link that allows you to download all in 
 </ul>
 <script>
 
-    // function isLinkValid(url)
+    function isLinkValid(url) {
+        console.log(url)
+        return true;
+    }
     function addLinkChecks() {
         let anchors = document.getElementsByTagName("a");
         for (let i = 0; i < anchors.length; i++) {
             let anchor = anchors[i];
-            anchor.text += "✅";
-            // if (isLinkValid(anchor.href))
+            anchor.text += isLinkValid(anchor.href) ? " ✅":" ❌";
         }
     }
     addLinkChecks();
