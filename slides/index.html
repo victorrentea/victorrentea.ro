@@ -122,11 +122,11 @@ PS: I couldn't find any way to create a link that allows you to download all in 
         }
     }
     function onCheckLinksClick() {
-
-        addLinkChecks()
         let button = document.getElementById("check-links-button");
         button.style.visibility="false";
         button.parentElement.innerText += "> Please Wait ..."
+
+        addLinkChecks()
     }
 
     // addLinkChecks();
