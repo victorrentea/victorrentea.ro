@@ -100,5 +100,18 @@ PS: I couldn't find any way to create a link that allows you to download all in 
             Presentation</a> Tips & Tricks & Tools (including sound effects) 🔈
     </li>
 </ul>
+<script>
+
+    // function isLinkValid(url)
+    function addLinkChecks() {
+        let anchors = document.getElementsByTagName("a");
+        for (let i = 0; i < anchors.length; i++) {
+            let anchor = anchors[i];
+            anchor.text += "✅";
+            // if (isLinkValid(anchor.href))
+        }
+    }
+    addLinkChecks();
+</script>
 </body>
 </html>
