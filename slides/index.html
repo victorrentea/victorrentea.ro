@@ -103,14 +103,25 @@ PS: I couldn't find any way to create a link that allows you to download all in 
 <script>
 
     function isLinkValid(url) {
-        console.log(url)
-        return true;
+        console.log(url);
+
+        return fetch(url, {
+            method: 'HEAD'
+        }).then(response => {
+            console.log('Status:', response.status);
+            console.log('Headers:', [...response.headers.entries()]);
+            return response.ok;
+        }).catch(err => {
+            console.error('HEAD request failed:', err);
+            return false;
+        });
     }
     function addLinkChecks() {
         let anchors = document.getElementsByTagName("a");
         for (let i = 0; i < anchors.length; i++) {
             let anchor = anchors[i];
-            anchor.text += isLinkValid(anchor.href) ? " ✅":" ❌";
+            if (anchor.href.startsWith("https://docs.google.com"))
+                isLinkValid(anchor.href).then(b => anchor.text += b ? " ✅":" ❌");
         }
     }
     addLinkChecks();
