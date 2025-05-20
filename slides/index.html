@@ -14,7 +14,7 @@
 <h3>Victor's Training Slides</h3>
 🤫 Top Secret Page: don't post this URL online 🤫<br/>
 Can take up to 30 seconds for Google Drive to generate a PDF.<br/>
-In case of errors, please retry after a few minutes.
+In case of errors (Google throttling?), please retry after a few minutes.
 <button id="check-links-button" onclick="onCheckLinksClick()">Check Links⏱️</button><span id="check-counter"></span>
 <br/>
 If link remains broken, please <a
@@ -130,7 +130,7 @@ PS: I couldn't find any way to create a link that allows you to download all in 
                     });
             }
         }
-        checkCounterSpan.innerText = "Checking... Please be patient."
+        checkCounterSpan.innerText = "Checking..."
     }
     function onCheckLinksClick() {
         let button = document.getElementById("check-links-button");
