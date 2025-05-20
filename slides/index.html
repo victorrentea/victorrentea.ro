@@ -15,7 +15,7 @@
 🤫 Top Secret Page: don't post this URL online 🤫<br/>
 Can take up to 30 seconds for Google Drive to generate a PDF.<br/>
 In case of errors, please retry after a few minutes.
-<button id="check-links-button" onclick="onCheckLinksClick()">Check Links⏱️</button>
+<button id="check-links-button" onclick="onCheckLinksClick()">Check Links⏱️</button><span id="check-counter"></span>
 <br/>
 If link remains broken, please <a
         href="mailto:victorrentea@gmail.com?subject=Broken slides link">report it to me</a>.
@@ -113,18 +113,28 @@ PS: I couldn't find any way to create a link that allows you to download all in 
             .catch(err => false);
     }
 
+    let checkCounterSpan = document.getElementById("check-counter");
     function addLinkChecks() {
         let anchors = document.getElementsByTagName("a");
+        let totalLinks = 0;
+        let checked = 0;
         for (let i = 0; i < anchors.length; i++) {
             let anchor = anchors[i];
-            if (anchor.href.startsWith("https://docs.google.com"))
-                isLinkValid(anchor.href).then(b => anchor.text += b ? " ✅" : " ❌");
+            if (anchor.href.startsWith("https://docs.google.com")) {
+                totalLinks ++;
+                isLinkValid(anchor.href)
+                    .then(b => anchor.text += b ? " ✅" : " ❌")
+                    .then(x => {
+                        checked ++;
+                        checkCounterSpan.innerText = checked + " / " +totalLinks;
+                    });
+            }
         }
     }
     function onCheckLinksClick() {
         let button = document.getElementById("check-links-button");
         button.style.visibility="hidden";
-        addLinkChecks()
+                addLinkChecks()
     }
 
     // addLinkChecks();
