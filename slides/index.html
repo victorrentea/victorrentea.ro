@@ -130,11 +130,12 @@ PS: I couldn't find any way to create a link that allows you to download all in 
                     });
             }
         }
+        checkCounterSpan.innerText = "Checking... Please be patient."
     }
     function onCheckLinksClick() {
         let button = document.getElementById("check-links-button");
         button.style.visibility="hidden";
-                addLinkChecks()
+        addLinkChecks();
     }
 
     // addLinkChecks();
