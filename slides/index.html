@@ -8,11 +8,13 @@
 <body>
 <h1>Victor's Training Slides</h1>
 <p>🤫 Top Secret Page: <span style="color: red">don't post this URL online</span></p>
-<p>It may take up to 30 seconds to generate the PDF of the latest version.</p>
-<p>On error, please retry - Google throttling?</p>
-<button id="check-links-button" onclick="onCheckLinksClick()">Check Links⏱️</button><span id="check-counter"></span>
-<p>If link remains broken, please <a
-        href="mailto:victorrentea@gmail.com?subject=Broken slides link">report it to me</a>.</p>
+<p>It may take up to 30 seconds to generate the PDF of the latest version.<br/>
+    On error, please retry - Google throttling?<br/>
+    <button id="check-links-button" onclick="onCheckLinksClick()">Check Links⏱️</button>
+    <span id="check-counter"></span>
+    If link remains broken, please <a
+            href="mailto:victorrentea@gmail.com?subject=Broken slides link">report it to me</a>.
+</p>
 <ul>
     <li><a href="https://docs.google.com/presentation/d/1Fc0AmD8Gzx6MSUi_K5iY8B_oZL6q3w2k/export/pdf">
         Bio Victor
@@ -108,6 +110,7 @@
     }
 
     let checkCounterSpan = document.getElementById("check-counter");
+
     function addLinkChecks() {
         let anchors = document.getElementsByTagName("a");
         let totalLinks = 0;
@@ -115,20 +118,21 @@
         for (let i = 0; i < anchors.length; i++) {
             let anchor = anchors[i];
             if (anchor.href.startsWith("https://docs.google.com")) {
-                totalLinks ++;
+                totalLinks++;
                 isLinkValid(anchor.href)
                     .then(b => anchor.text += b ? " ✅" : " ❌")
                     .then(x => {
-                        checked ++;
-                        checkCounterSpan.innerText = checked + " / " +totalLinks;
+                        checked++;
+                        checkCounterSpan.innerText = checked + " / " + totalLinks;
                     });
             }
         }
         checkCounterSpan.innerText = "Checking..."
     }
+
     function onCheckLinksClick() {
         let button = document.getElementById("check-links-button");
-        button.style.visibility="hidden";
+        button.style.visibility = "hidden";
         addLinkChecks();
     }
 
