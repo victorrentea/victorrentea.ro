@@ -39,6 +39,7 @@ Redirect /catalog https://docs.google.com/document/d/1XkkHc4XDUKRelTCZsf_Ls4pF3z
 Redirect /stickers https://drive.google.com/drive/folders/1aLywnVait8nNLkdtviB7ie3rkve7_XyX?usp=sharing
 Redirect /community https://www.meetup.com/bucharest-software-craftsmanship-community
 Redirect /java-memory-leaks-heapdumps https://drive.google.com/drive/folders/1NerpI1aKpk3N3wH5RhnvGdLu7vzil7s6
+Redirect /java-memory-leaks-slides https://drive.google.com/open?id=19wXvIHHldfdIUnDF7_6o482UJvZjhxYg
 
 
 RewriteEngine On
