@@ -40,6 +40,7 @@ Redirect /stickers https://drive.google.com/drive/folders/1aLywnVait8nNLkdtviB7i
 Redirect /community https://www.meetup.com/bucharest-software-craftsmanship-community
 Redirect /java-memory-leaks-heapdumps https://drive.google.com/drive/folders/1NerpI1aKpk3N3wH5RhnvGdLu7vzil7s6
 Redirect /java-memory-leaks-slides https://drive.google.com/open?id=19wXvIHHldfdIUnDF7_6o482UJvZjhxYg
+Redirect /top-10-event-pitfalls https://drive.google.com/file/d/1F_TsVDLGPBJoRZGzEOJRCSnO4sgsyCcX
 
 
 RewriteEngine On
