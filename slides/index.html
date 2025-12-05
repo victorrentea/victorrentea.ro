@@ -116,6 +116,7 @@
            target="_blank">
         <b>YouTube</b>: My Brain Focus playlist</a>
     </li>
+    </li>
 </ul>
 <img src="slide.jpg" style="width: 100%;border: 2px solid black">
 <script>
@@ -161,7 +162,7 @@
         const now = new Date();
         const options = { day: '2-digit', month: 'short', year: 'numeric' };
         const formattedDate = now.toLocaleDateString('en-US', options).replace(',', '');
-        document.getElementById("currentDate").textContent = " (" + formattedDate + ")";
+        document.getElementById("currentDate").textContent = " (Today=" + formattedDate + ")";
     };
 </script>
 </body>
