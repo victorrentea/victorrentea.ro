@@ -41,7 +41,7 @@ Redirect /community https://www.meetup.com/bucharest-software-craftsmanship-comm
 Redirect /java-memory-leaks-heapdumps https://drive.google.com/drive/folders/1NerpI1aKpk3N3wH5RhnvGdLu7vzil7s6
 Redirect /java-memory-leaks-slides https://drive.google.com/open?id=19wXvIHHldfdIUnDF7_6o482UJvZjhxYg
 Redirect /top-10-event-pitfalls https://drive.google.com/file/d/1F_TsVDLGPBJoRZGzEOJRCSnO4sgsyCcX
-Redirect /psychology https://drive.google.com/file/d/1NcjHOvrNviLxVMPW-6-VIF7nnEo7x7sm
+Redirect /psychology https://docs.google.com/presentation/d/1KVgI3spS60gO3QXQpvznKTrMbag6Nqmg/export/pdf
 
 
 RewriteEngine On
