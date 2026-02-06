@@ -42,6 +42,8 @@ Redirect /java-memory-leaks-heapdumps https://drive.google.com/drive/folders/1Ne
 Redirect /java-memory-leaks-slides https://drive.google.com/open?id=19wXvIHHldfdIUnDF7_6o482UJvZjhxYg
 Redirect /top-10-event-pitfalls https://drive.google.com/file/d/1F_TsVDLGPBJoRZGzEOJRCSnO4sgsyCcX
 Redirect /psychology https://docs.google.com/presentation/d/1KVgI3spS60gO3QXQpvznKTrMbag6Nqmg/export/pdf
+Redirect /tools https://victorrentea.ro/blog/presentation-tips-for-conference-talks
+
 
 
 RewriteEngine On
